@@ -71,7 +71,7 @@ function pintar(D) {
     <p class="seguir"><a class="volver" href="supuestos.html">Prueba otros supuestos</a></p>
 
     <details><summary>Las ${D.meta.encuestas} encuestas de la media</summary>
-      <p class="fuente-encuestas">Cifras, fechas de campo y muestras: <a href="${DEMOCRATA}" rel="noopener">base de sondeos de Demócrata</a>, que enlaza cada estudio con su publicación original; la última columna dice de dónde sale cada fila. Qué hace cada empresa y cuánto se separa de las demás: <a href="casas.html">Las encuestadoras</a>.</p>
+      <p class="fuente-encuestas">Cifras, fechas de campo y muestras: <a href="${DEMOCRATA}" rel="noopener">base de sondeos de Demócrata</a>, que enlaza cada estudio con su publicación original; la última columna dice de dónde sale cada fila. Qué hace cada empresa y cuánto se separa de las demás: <a href="casas.html">Las encuestadoras</a>. Para filtrarlas y ordenarlas: <a href="encuestas.html">Las encuestas</a>.</p>
       <div class="desliza" tabindex="0" role="region" aria-label="Encuestas de la media"><table class="encuestas"><caption class="mudo">Encuestas de la media, de la más reciente a la más antigua: empresa, medio, fechas de campo, muestra, % de voto y fuente</caption><thead><tr><th scope="col" class="izq">Empresa</th><th scope="col" class="izq">Medio</th><th scope="col" class="izq">Campo</th><th scope="col">Muestra</th><th scope="col">PP</th><th scope="col">PSOE</th><th scope="col">Vox</th><th scope="col">FA</th><th scope="col">Podemos</th><th scope="col">SALF</th><th scope="col" class="izq">Fuente</th></tr></thead><tbody id="encuestas"></tbody></table></div>
     </details>`;
 

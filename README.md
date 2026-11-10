@@ -21,10 +21,10 @@ datos/      encuestas (una fila por ventana de campo, con su fuente), resultados
             reestimaciones propias del CIS y de More in Common
 R/          00 validación de encuestas · 01 base provincial · 02 agregador (JAGS) · 03 escaños y escenarios
             04 More in Common desde microdatos · 05 CIS preelectoral · 06 gráficos · 07 exporta web/datos/modelo.json
-            07b exporta casas.json y supuestos.json · 08 resultados para la porra · 09 comprobación con 2019 y 2023
+            07b exporta casas.json, supuestos.json y encuestas.json · 08 resultados para la porra · 09 comprobación con 2019 y 2023
             10 evaluación tras el 29N · pruebas.R comprobaciones antes de publicar
 salidas/    resultados intermedios (los sorteos completos no se versionan)
-web/        sitio estático (portada, porra, supuestos, encuestadoras, metodología, preguntas, evaluación):
+web/        sitio estático (portada, porra, supuestos, encuestas, encuestadoras, metodología, preguntas, evaluación):
             lee los JSON de web/datos/ y no calcula nada
 docs/       metodología, preguntas frecuentes, guía de actualización diaria (actualizar.md) y de evaluación (evaluacion.md)
 herramientas/ imágenes de vista previa en redes y dirección pública

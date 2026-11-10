@@ -5,8 +5,8 @@
 # Se puede repetir con otra dirección: sustituye la anterior.
 set -euo pipefail
 base="${1:?Falta la dirección pública, p. ej. https://usuario.github.io/porra-electoral}"; base="${base%/}"
-for f in web/index.html web/porra.html web/metodologia.html web/preguntas.html docs/plantilla.html; do
-  case "$(basename "$f")" in index.html) pag="" ;; porra.html) pag="porra.html" ;; preguntas.html) pag="preguntas.html" ;; *) pag="metodologia.html" ;; esac
+for f in web/*.html docs/plantilla.html; do
+  case "$(basename "$f")" in index.html) pag="" ;; plantilla.html) pag="metodologia.html" ;; *) pag="$(basename "$f")" ;; esac
   sed -i -E "s#(property=\"og:image\" content=\")[^\"]*(img/og-[a-z]+\.png)#\1$base/\2#; s#(property=\"og:url\" content=\")[^\"]*\"#\1$base/$pag\"#" "$f"
 done
 grep -h 'og:url\|og:image"' web/index.html web/porra.html

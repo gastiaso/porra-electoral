@@ -1,5 +1,5 @@
-# Exporta los datos de las páginas «Las encuestadoras» (web/datos/casas.json) y «Elige tus supuestos»
-# (web/datos/supuestos.json). Solo lee salidas ya calculadas por 02, 03 y 09: no estima nada.
+# Exporta los datos de las páginas «Las encuestadoras» (web/datos/casas.json), «Elige tus supuestos»
+# (web/datos/supuestos.json) y «Las encuestas» (web/datos/encuestas.json). Solo lee salidas ya calculadas por 02, 03 y 09: no estima nada.
 # Uso (desde la raíz del proyecto):  Rscript R/07b_exportar_extra.R
 suppressPackageStartupMessages({ library(data.table); library(jsonlite) })
 CORTE <- Sys.getenv("CORTE", "2026-11-08")
@@ -90,7 +90,22 @@ anclas <- lapply(ANCLAS, \(cs) {
 supuestos_json <- list(meta = list(corte = CORTE, generado = GENERADO, simulaciones = NSIM, mayoria = 176),
                        error_23J = err23, anclas = anclas, escenarios = esc)
 
+# ------------------------------------------------------------------ encuestas.json
+# Todas las encuestas que entran en la media, con su ficha (empresa, medio, campo, muestra, modo) y su fuente.
+x <- copy(e)[order(-as.integer(as.Date(fin)), casa)]
+encuestas_json <- list(
+  meta = list(corte = CORTE, generado = GENERADO, n = nrow(x), casas = uniqueN(x$casa)),
+  encuestas = lapply(seq_len(nrow(x)), \(i) { u <- x[i]
+    c(list(id = u$casa, empresa = NOMBRE_CASA[[u$casa]], libre = u$casa %in% LIBRES,
+           medio = renombra(u$cliente, CLIENTE), modo = if (is.na(u$modo) || !nzchar(u$modo)) NULL else renombra(u$modo, MODO),
+           inicio = u$inicio, fin = u$fin, n = u$n),
+      setNames(lapply(c(P4, "POD", "SALF"), \(p) num(u[[p]])), c(P4, "POD", "SALF")),
+      list(fuente = fuente_txt(u$fuente), url = fuente_url(u$fuente, u$url),
+           nota = if (is.na(u$nota) || !nzchar(u$nota)) NULL else u$nota))
+  }))
+
 dir.create("web/datos", recursive = TRUE, showWarnings = FALSE)
 write_json(casas_json, "web/datos/casas.json", auto_unbox = TRUE, digits = NA, na = "null", null = "null")
 write_json(supuestos_json, "web/datos/supuestos.json", auto_unbox = TRUE, digits = NA, na = "null", null = "null")
-for (f in c("web/datos/casas.json", "web/datos/supuestos.json")) cat(f, ":", round(file.size(f) / 1024, 1), "KB\n")
+write_json(encuestas_json, "web/datos/encuestas.json", auto_unbox = TRUE, digits = NA, na = "null", null = "null")
+for (f in c("web/datos/casas.json", "web/datos/supuestos.json", "web/datos/encuestas.json")) cat(f, ":", round(file.size(f) / 1024, 1), "KB\n")

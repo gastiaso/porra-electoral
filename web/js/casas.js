@@ -90,6 +90,7 @@ function ficha(c, L) {
       <div>
         <p class="rotulo">${c.entregas.length === 1 ? '1 entrega usada' : `${c.entregas.length} entregas usadas`} <span class="margen">(fechas de campo y entrevistas)</span></p>
         <ul class="entregas">${c.entregas.map(([a, b, n]) => `<li>${campo(a, b)} <span class="n-ent">(${miles(n)})</span></li>`).join('')}</ul>
+        <p class="ver-encuestas"><a href="encuestas.html#empresa=${encodeURIComponent(c.id)}">Ver sus encuestas con todas las cifras</a></p>
         <p class="rotulo">${esCIS ? 'Reestimación propia' : 'Última estimación publicada'} <span class="margen">(campo ${campo(u.inicio, u.fin)}, % de voto)</span></p>
         <table class="mini"><caption class="mudo">${esCIS ? 'Reestimación propia' : 'Última estimación publicada'} de ${esc(c.nombre)}</caption>
           <thead><tr>${P4.map(p => `<th scope="col"><span class="cuadro" style="background:${colorCss(p)}"></span>${CORTO[p]}</th>`).join('')}</tr></thead>

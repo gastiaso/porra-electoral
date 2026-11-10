@@ -130,3 +130,41 @@ h3 { font-family: var(--titular); font-weight: 400; }
   .vistazo th.prob { min-width: 0; }
   .vistazo td.izq { min-width: 7.5em; }
 }
+
+/* ---------------------------------------------------------------- «Las encuestas» (encuestas.html) */
+.filtros { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: flex-end; margin: 18px 0 8px; padding: 12px 14px; border: 2px solid var(--tinta); background: var(--hoja); }
+.filtros label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--tinta-2); }
+.filtros select, .filtros input[type=date] { font: inherit; font-size: 15px; color: var(--tinta); background: var(--papel); border: 2px solid var(--tinta); padding: 6px 8px; min-height: 40px; }
+.filtros .volver { min-height: 40px; }
+.recuento { font-size: 14px; margin: 6px 0 8px; }
+.tabla-encuestas { font-size: 13.5px; }
+.tabla-encuestas td, .tabla-encuestas th { padding: 6px 5px; white-space: nowrap; }
+.tabla-encuestas th { padding: 0; }
+.tabla-encuestas th button.ordenar { all: unset; box-sizing: border-box; display: block; width: 100%; padding: 6px; cursor: pointer; font-family: var(--titular); font-size: 13px; text-align: inherit; }
+.tabla-encuestas th button.ordenar:focus-visible { outline: 3px solid var(--boleto-texto); outline-offset: -3px; }
+.tabla-encuestas th[aria-sort] { background: var(--boleto-fondo); }
+.tabla-encuestas .flecha { color: var(--boleto-texto); }
+.tabla-encuestas .cuadro-th { display: inline-block; width: 9px; height: 9px; margin-right: 4px; border: 1px solid var(--tinta-tenue); vertical-align: 1px; }
+.tabla-encuestas abbr { text-decoration: none; }
+/* empresa, medio y fuente pueden partirse en dos líneas; las cifras, no */
+.tabla-encuestas td:nth-child(2) { white-space: normal; min-width: 7em; max-width: 12em; }
+.tabla-encuestas td:last-child { white-space: normal; min-width: 6em; max-width: 9em; overflow-wrap: anywhere; font-size: 12.5px; }
+.tabla-encuestas .medio { font-size: 12.5px; color: var(--tinta-2); }
+.tabla-encuestas { width: auto; min-width: 100%; }
+.tabla-encuestas sup a { font-size: 11px; padding: 0 2px; }
+.notas-tabla { font-size: 13px; color: var(--tinta-2); margin: 10px 0 0; padding-left: 2.2em; max-width: 80ch; }
+.notas-tabla li { margin: 3px 0; }
+.notas-tabla li:target { background: var(--boleto-fondo); }
+.tabla-encuestas td.vacia { white-space: normal; padding: 14px 6px; }
+.tabla-encuestas .sin-dato { color: var(--tinta-2); }
+.tabla-encuestas .marca-libre { color: var(--boleto-texto); }
+.tabla-encuestas tbody tr:hover td { background: var(--boleto-fondo); }
+/* la primera columna (campo) queda fija al desplazar la tabla en horizontal */
+.tabla-encuestas th:first-child, .tabla-encuestas td:first-child { position: sticky; left: 0; background: var(--papel); z-index: 1; }
+.tabla-encuestas tbody tr:hover td:first-child { background: var(--papel); }
+@media (max-width: 640px) {
+  .filtros { padding: 10px; gap: 8px 12px; }
+  .filtros label { flex: 1 1 45%; }
+  .filtros select, .filtros input[type=date] { width: 100%; }
+}
+.ver-encuestas { font-size: 13.5px; margin: 6px 0 0; }
