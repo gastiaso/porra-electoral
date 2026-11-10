@@ -61,7 +61,7 @@ Es un proyecto personal de Guillermo Astiaso. No lo encarga ni lo paga ningún m
 
 ### ¿Cómo aviso de un error? {#errores}
 
-Escribe a [correo de contacto]. Si se trata de una encuesta, indica la empresa, el medio, las fechas de campo y el enlace a la publicación original. Los errores de datos se corrigen en la siguiente actualización; los cambios de método quedan registrados, con su fecha, en la [metodología](metodologia.html).
+Escribe a Guillermo Astiaso por [LinkedIn](https://www.linkedin.com/in/guillermo-astiaso) o abre una incidencia en [GitHub](https://github.com/gastiaso/porra-electoral/issues). Si se trata de una encuesta, indica la empresa, el medio, las fechas de campo y el enlace a la publicación original. Los errores de datos se corrigen en la siguiente actualización; los cambios de método quedan registrados, con su fecha, en la [metodología](metodologia.html).
 
 ### ¿Son abiertos el código y los datos? {#abiertos}
 
