@@ -1,0 +1,18 @@
+# sorteos completos (se regeneran con ejecutar.R)
+salidas/*.rds
+salidas/*_draws*.csv
+salidas/*.png
+# microdatos de terceros: no se redistribuyen
+datos/mic/*.zip
+# R
+.Rhistory
+.RData
+.Rproj.user/
+# sistema
+.DS_Store
+Thumbs.db
+node_modules/
+# copias y restos de actualizar.R
+salidas/copias/
+salidas/modelo_fallido.json
+salidas/ultima_actualizacion.txt

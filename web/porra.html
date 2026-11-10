@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" class="con-noche">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('porra29n.tema');if(t==='oscuro'||t==='claro')document.documentElement.dataset.tema=t}catch(e){}</script>
+<title>Rellena tu porra · Porra Electoral</title>
+<meta name="description" content="Rellena tu porra de las elecciones generales del 29 de noviembre, compártela y compárala con tus amigos cuando salgan los resultados. Sin dinero.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Porra Electoral">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="porra.html">
+<meta property="og:title" content="Rellena tu porra del 29N · Porra Electoral">
+<meta property="og:description" content="Catorce partidos, un pleno al 15 y los 350 escaños. Séllala, compártela con tus amigos y comprobadla la noche electoral. Sin dinero.">
+<meta property="og:image" content="img/og-porra.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Porra Electoral, jornada 29N: boleto con las casillas 1, X y 2">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fuentes/archivo-black-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuentes/courier-prime-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<main class="boleto porra">
+  <header class="cabecera">
+    <h1><a href="index.html">Porra<br>Electoral</a></h1>
+    <div class="jornada"><b>Jornada 29N</b>Rellena tu porra</div>
+  </header>
+
+  <p class="entradilla">Catorce partidos y un pleno. En cada fila, marca <strong>1</strong> si el partido de la izquierda saca más escaños que el de la derecha en ese sitio, <strong>X</strong> si empatan y <strong>2</strong> si gana el de la derecha. Séllala antes de que abran los colegios, compártela y compárala con tus amigos cuando salgan los resultados. Y, si te atreves, reparte los 350 escaños: gana quien se quede más cerca.</p>
+  <p class="nota">Es un juego sin dinero: aquí no se apuesta nada ni hay premios. No tiene relación con Loterías y Apuestas del Estado. <a href="preguntas.html#dinero">¿Hay dinero o registro de por medio?</a></p>
+
+  <div class="maquina" id="estado" aria-live="polite"></div>
+
+  <form id="boleto" autocomplete="off">
+    <fieldset class="opciones-vista">
+      <legend class="mudo">Opciones</legend>
+      <label id="lbl-media"><input type="checkbox" id="ver-media"> <span id="txt-media">Ver lo que dice la media de encuestas</span></label>
+    </fieldset>
+    <table class="tabla-porra">
+      <caption class="mudo">Boleto de la porra: 14 partidos y el pleno al 15</caption>
+      <thead><tr><th scope="col"><span class="mudo">Fila</span></th><th scope="col" class="izq">Dónde</th><th scope="col" class="izq">Partido</th><th scope="col" class="sig">1</th><th scope="col" class="sig">X</th><th scope="col" class="sig">2</th><th scope="col" class="res"><span class="mudo">Resultado</span></th></tr></thead>
+      <tbody id="filas"></tbody>
+    </table>
+    <div class="pleno-porra" id="pleno"></div>
+    <div class="pleno-porra juego-esc" id="escanos"></div>
+    <div class="alias">
+      <label for="alias">Tu nombre en la porra</label>
+      <input id="alias" maxlength="30" placeholder="Opcional: aparece en el enlace que compartes">
+    </div>
+    <div class="botones acciones">
+      <button class="palanca" id="sellar" type="submit"><svg viewBox="0 0 22 30" aria-hidden="true"><rect x="3" y="24" width="16" height="5" fill="currentColor"/><g class="brazo"><rect x="9.5" y="5" width="3" height="21" fill="currentColor"/><circle cx="11" cy="5" r="4.5" fill="#d9480f"/></g></svg>Sellar la porra</button>
+      <button class="volver" id="nueva" type="button" hidden>Hacer otra porra</button>
+    </div>
+  </form>
+
+  <section id="compartir" hidden>
+    <h2 id="compartir-titulo" tabindex="-1">Compártela</h2>
+    <p class="nota">Tu porra va dentro del enlace: no se guarda en ningún servidor. En este navegador también queda guardada.</p>
+    <div class="enlace"><input id="enlace" readonly aria-label="Enlace de tu porra"><button class="volver" id="copiar" type="button">Copiar enlace</button></div>
+    <div class="botones"><button class="palanca" id="compartir-btn" type="button">Compartir</button><a class="volver" id="whatsapp" target="_blank" rel="noopener">Enviar por WhatsApp<span class="mudo"> (se abre en otra ventana)</span></a></div>
+  </section>
+
+  <section id="pena">
+    <h2>Tu peña</h2>
+    <p class="nota">Pega aquí el enlace de la porra de cada amigo. La peña se guarda en este navegador y tiene su propio enlace para que todos vean lo mismo. Cuando haya resultados, aparece la clasificación.</p>
+    <div class="enlace"><input id="pegar" placeholder="Pega el enlace de una porra" aria-label="Enlace de la porra de un amigo"><button class="volver" id="anadir" type="button">Añadir a la peña</button></div>
+    <p class="nota" id="pena-aviso" aria-live="polite"></p>
+    <div class="desliza" tabindex="0" role="region" aria-label="Porras de la peña"><table class="tabla-pena"><caption class="mudo">Porras de la peña: la marca de cada fila</caption><thead id="pena-cab"></thead><tbody id="pena-filas"></tbody></table></div>
+    <div id="pena-esc" hidden>
+      <h3>Escaños</h3>
+      <div class="desliza" tabindex="0" role="region" aria-label="Escaños de la peña"><table class="tabla-pena tabla-esc"><caption class="mudo">Escaños que ha repartido cada miembro de la peña</caption><thead id="esc-cab"></thead><tbody id="esc-filas"></tbody></table></div>
+    </div>
+    <div class="botones" id="pena-botones" hidden><button class="volver" id="copiar-pena" type="button">Copiar enlace de la peña</button><button class="volver" id="vaciar-pena" type="button">Vaciar la peña</button></div>
+  </section>
+
+  <footer class="pie">
+    <nav aria-label="Secciones"><a href="index.html">La media de encuestas</a><a href="porra.html">Rellena tu porra</a><a href="supuestos.html">Elige tus supuestos</a><a href="casas.html">Las encuestadoras</a><a href="metodologia.html">Cómo se calcula</a><a href="preguntas.html">Preguntas frecuentes</a></nav>
+    <p>Reglas: cada fila acertada vale un punto y el pleno al 15 vale otro; el máximo son 15. En escaños, el desvío es la suma de las diferencias, partido a partido, entre lo que pusiste y lo que sale; gana el menor y sirve de desempate en el 1-X-2. Un partido que no concurre o no saca escaño cuenta con 0. Se corrige con los escaños oficiales en cuanto se publiquen; hasta el escrutinio definitivo, la corrección es provisional.</p>
+    <p class="firma">Un proyecto de Guillermo Astiaso. Código con licencia MIT; datos propios con licencia CC BY 4.0.</p>
+  </footer>
+</main>
+<script type="module" src="js/porra.js"></script>
+</body>
+</html>

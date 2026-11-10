@@ -1,0 +1,29 @@
+# Al archivar la versión congelada tras el 29N: añade date-released (AAAA-MM-DD) y, cuando existan,
+# repository-code y doi. La versión debe coincidir con la de .zenodo.json y DESCRIPTION.
+cff-version: 1.2.0
+message: "Si usas este código o estos datos, cítalos así."
+type: software
+title: "Porra Electoral: media de encuestas y simulación de escaños, elecciones generales 2026"
+abstract: >-
+  Media de las encuestas publicadas para las elecciones generales españolas del 29 de noviembre de 2026,
+  corregida por el efecto casa de cada empresa (modelo bayesiano en JAGS), simulación de escaños en las
+  52 circunscripciones con varios escenarios de error de las encuestas, y juego de porra. Versión congelada
+  con los datos publicados hasta el 23 de noviembre de 2026. Código con licencia MIT; datos propios
+  (agregados, simulaciones y reestimaciones) con licencia CC BY 4.0. Las cifras de cada encuesta
+  pertenecen a sus autores y medios.
+authors:
+  - given-names: Guillermo
+    family-names: Astiaso
+version: "1.0.0"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - elecciones generales
+  - España
+  - encuestas electorales
+  - agregador de encuestas
+  - efecto casa
+  - simulación de escaños
+  - D'Hondt
+  - JAGS

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Plantilla de las imágenes de vista previa (1200x630). Se rinde con herramientas/og.py. Sin cifras: no caduca ni choca con la veda. -->
+<style>
+@font-face { font-family: 'Archivo Black'; src: url(../web/fuentes/archivo-black-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Courier Prime'; src: url(../web/fuentes/courier-prime-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Courier Prime'; font-weight: 700; src: url(../web/fuentes/courier-prime-latin-700-normal.woff2) format('woff2'); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1200px; height: 630px; background: #d9d3c4; }
+.boleto { position: absolute; inset: 30px 40px; background: #fbf8ef; padding: 40px 56px;
+  background-image: repeating-linear-gradient(#fbf8ef 0 31px, rgba(217,72,15,.13) 31px 32px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.jornada { font-family: 'Archivo Black', sans-serif; font-size: 26px; color: #d9480f; letter-spacing: 1px; margin-bottom: 8px; }
+h1 { font-family: 'Archivo Black', sans-serif; font-weight: 400; font-size: 112px; line-height: .93; margin: 0; color: #1c1c1c; letter-spacing: -1px; }
+.casillas { display: flex; gap: 14px; margin: 26px 0 22px; }
+.c { width: 58px; height: 54px; border: 4px solid #d9480f; color: #d9480f; font-family: 'Archivo Black', sans-serif; font-size: 28px; display: flex; align-items: center; justify-content: center; background: #fbf8ef; }
+.lema { font-family: 'Courier Prime', monospace; font-size: 28px; line-height: 1.3; color: #1c1c1c; margin: 0; max-width: 960px; }
+.firma { font-family: 'Courier Prime', monospace; font-size: 20px; color: #57524a; margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="boleto">
+  <div class="jornada">JORNADA 29N</div>
+  <h1>Porra<br>Electoral</h1>
+  <div class="casillas"><span class="c">1</span><span class="c">X</span><span class="c">2</span></div>
+  <p class="lema" id="lema"></p>
+  <div class="firma">Elecciones generales · 29 de noviembre</div>
+</div>
+<script>
+const v = new URLSearchParams(location.search).get('v');
+document.getElementById('lema').textContent = v === 'porra'
+  ? 'Rellena tu porra, compártela con tus amigos y comprobadla la noche electoral.'
+  : 'La media de las encuestas, los escaños que salen y una porra para jugar con tus amigos.';
+</script>
+</body>
+</html>

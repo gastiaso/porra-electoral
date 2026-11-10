@@ -1,0 +1,155 @@
+{
+  "jornada": "Elecciones generales del 29 de noviembre de 2026",
+  "cierre": "2026-11-29T09:00:00+01:00",
+  "regla": "Gana el partido de la izquierda (1) si saca más escaños que el de la derecha en ese ámbito; X si empatan; gana el de la derecha (2) si saca más. Un partido que no concurre o no saca escaño cuenta con 0.",
+  "filas": [
+    {
+      "id": 1,
+      "ambito": "Congreso",
+      "nombre_ambito": "Congreso",
+      "local": "PP",
+      "visitante": "PSOE"
+    },
+    {
+      "id": 2,
+      "ambito": "Congreso",
+      "nombre_ambito": "Congreso",
+      "local": "FA",
+      "visitante": "ERC"
+    },
+    {
+      "id": 3,
+      "ambito": "Congreso",
+      "nombre_ambito": "Congreso",
+      "local": "JUNTS",
+      "visitante": "AC"
+    },
+    {
+      "id": 4,
+      "ambito": "Congreso",
+      "nombre_ambito": "Congreso",
+      "local": "PNV",
+      "visitante": "BILDU"
+    },
+    {
+      "id": 5,
+      "ambito": "Congreso",
+      "nombre_ambito": "Congreso",
+      "local": "POD",
+      "visitante": "SALF"
+    },
+    {
+      "id": 6,
+      "ambito": "Madrid",
+      "nombre_ambito": "Madrid",
+      "local": "PSOE",
+      "visitante": "VOX"
+    },
+    {
+      "id": 7,
+      "ambito": "Barcelona",
+      "nombre_ambito": "Barcelona",
+      "local": "VOX",
+      "visitante": "PP"
+    },
+    {
+      "id": 8,
+      "ambito": "Sevilla",
+      "nombre_ambito": "Sevilla",
+      "local": "PP",
+      "visitante": "PSOE"
+    },
+    {
+      "id": 9,
+      "ambito": "Valencia/València",
+      "nombre_ambito": "Valencia",
+      "local": "PP",
+      "visitante": "PSOE"
+    },
+    {
+      "id": 10,
+      "ambito": "Bizkaia",
+      "nombre_ambito": "Bizkaia",
+      "local": "PNV",
+      "visitante": "BILDU"
+    },
+    {
+      "id": 11,
+      "ambito": "Asturias",
+      "nombre_ambito": "Asturias",
+      "local": "PP",
+      "visitante": "PSOE"
+    },
+    {
+      "id": 12,
+      "ambito": "Palmas (Las)",
+      "nombre_ambito": "Las Palmas",
+      "local": "PP",
+      "visitante": "VOX"
+    },
+    {
+      "id": 13,
+      "ambito": "Ávila",
+      "nombre_ambito": "Ávila",
+      "local": "VOX",
+      "visitante": "PSOE"
+    },
+    {
+      "id": 14,
+      "ambito": "Girona",
+      "nombre_ambito": "Girona",
+      "local": "ERC",
+      "visitante": "JUNTS"
+    }
+  ],
+  "pleno": {
+    "pregunta": "Escaños de PP + Vox en el Congreso",
+    "opciones": [
+      {
+        "id": "0",
+        "texto": "Menos de 176",
+        "min": 0,
+        "max": 175
+      },
+      {
+        "id": "1",
+        "texto": "De 176 a 189",
+        "min": 176,
+        "max": 189
+      },
+      {
+        "id": "2",
+        "texto": "De 190 a 204",
+        "min": 190,
+        "max": 204
+      },
+      {
+        "id": "M",
+        "texto": "205 o más",
+        "min": 205,
+        "max": 350
+      }
+    ]
+  },
+  "escanos": {
+    "pregunta": "Reparte los 350 escaños del Congreso",
+    "total": 350,
+    "partidos": [
+      "PP",
+      "PSOE",
+      "VOX",
+      "FA",
+      "ERC",
+      "BILDU",
+      "PNV",
+      "JUNTS",
+      "AC",
+      "BNG",
+      "CC",
+      "UPN",
+      "POD",
+      "SALF",
+      "OTROS"
+    ]
+  }
+}

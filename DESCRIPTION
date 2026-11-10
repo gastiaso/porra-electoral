@@ -1,0 +1,23 @@
+Package: PorraElectoral
+Title: Porra Electoral: media de encuestas y simulación de escaños, elecciones generales 2026
+Version: 1.0.0
+Authors@R: person("Guillermo", "Astiaso", role = c("aut", "cre"))
+Description: Media de las encuestas publicadas para las elecciones generales españolas del 29 de noviembre
+    de 2026, corregida por el efecto casa (modelo bayesiano en JAGS), simulación de escaños en las 52
+    circunscripciones y juego de porra. No es un paquete instalable: este fichero fija las dependencias.
+    Versiones mínimas = las usadas para publicar.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: es
+Depends: R (>= 4.3)
+Imports:
+    coda (>= 0.19.4.1),
+    data.table (>= 1.14.10),
+    ggplot2 (>= 3.4.4),
+    haven (>= 2.5.4),
+    jsonlite (>= 1.8.8),
+    mvtnorm (>= 1.2.4),
+    nnet (>= 7.3.19),
+    rjags (>= 4.15)
+SystemRequirements: JAGS 4 (>= 4.0.0; publicado con 4.3.2), <https://mcmc-jags.sourceforge.io/>.
+    rjags necesita que JAGS esté instalado en el sistema antes de instalar el paquete.

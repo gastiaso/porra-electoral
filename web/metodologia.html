@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es" class="con-noche">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('porra29n.tema');if(t==='oscuro'||t==='claro')document.documentElement.dataset.tema=t}catch(e){}</script>
+<title>Metodología · Porra Electoral</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Porra Electoral">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="metodologia.html">
+<meta property="og:title" content="Metodología · Porra Electoral">
+<meta property="og:description" content="Metodología de la media de encuestas y de la simulación de escaños para las generales del 29 de noviembre.">
+<meta property="og:image" content="img/og-portada.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Porra Electoral, jornada 29N: boleto con las casillas 1, X y 2">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<main class="boleto">
+  <header class="cabecera">
+    <h1><a href="index.html">Porra<br>Electoral</a></h1>
+    <div class="jornada"><b>Jornada 29N</b>Cómo se calcula</div>
+  </header>
+  <article class="texto">
+<h1 id="metodología">Metodología</h1>
+<p><em>Versión del 10 de noviembre de 2026. El método puede cambiar
+hasta el lanzamiento; los cambios posteriores quedarán registrados aquí
+con su fecha.</em></p>
+<p><em>10-nov: error común ampliado y escenario «si fallan como en 2023»
+recalculado, ambos a partir de la comprobación con 2019 y 2023 (sección
+6).</em></p>
+<h2 id="qué-es-y-qué-no-es">1. Qué es y qué no es</h2>
+<p>Es una <strong>media de encuestas publicadas</strong>, corregida por
+el sesgo de cada empresa y convertida en escaños mediante simulación. No
+es una encuesta propia: no hay trabajo de campo. Tampoco es una
+predicción con garantías. Si las encuestas fallan juntas, como en 2023,
+la media falla con ellas. Por eso la portada enseña también qué pasaría
+con otros supuestos.</p>
+<h2 id="encuestas">2. Encuestas</h2>
+<ul>
+<li>Entran las estimaciones de voto publicadas desde finales de
+septiembre de 2026, con su empresa, cliente, fechas de campo, muestra y
+fuente (<code>datos/encuestas.csv</code>).</li>
+<li>Una empresa que publica un seguimiento diario acumulado entra
+<strong>una sola vez</strong>, con su última entrega, para no contar
+varias veces las mismas entrevistas.</li>
+<li><strong>SW Demoscopia</strong> entra con una muestra efectiva de
+1.000 entrevistas, menor que la declarada, por dos razones: acumula
+entrevistas día a día y hay dudas publicadas sobre su modo de entrevista
+(llamadas automáticas).</li>
+<li>Cifras, fechas de campo y muestras se toman de la <a
+href="https://www.democrata.es/elecciones-generales-espana/herramientas/encuestas">base
+de sondeos de Demócrata</a>, que enlaza cada estudio con su publicación
+original. Las pocas que no figuran allí salen de otras recopilaciones,
+citadas fila a fila; las discrepancias se anotan en la columna
+<code>nota</code>.</li>
+<li><strong>CIS:</strong> no se usa su estimación publicada. Se usa una
+<strong>reestimación propia sobre sus microdatos</strong> (votantes
+probables más reparto de indecisos, modelo M3).</li>
+</ul>
+<h2 id="agregador">3. Agregador</h2>
+<ul>
+<li>Cada partido (PP, PSOE, Vox, Frente Amplio, Podemos y SALF) tiene
+una tendencia diaria que puede cambiar de un día para otro (paseo
+aleatorio).</li>
+<li>Cada encuesta se descompone en cuatro partes: tendencia del día,
+sesgo de su empresa, error de muestreo y un error adicional que se
+estima con los datos.</li>
+<li>Los sesgos de empresa se suponen de <strong>media cero entre las
+empresas privadas</strong>, y en esa media cada empresa pesa lo mismo,
+publique mucho o poco. Es el supuesto que más pesa en el resultado.</li>
+<li><strong>SW Demoscopia y el CIS recalculado quedan fuera de esa
+referencia:</strong> su sesgo se estima libremente, sin obligarlo a
+compensarse con el de las demás. Los paneles de Electomanía entran como
+una empresa privada más.</li>
+<li>Los sesgos pueden ser grandes en una empresa concreta sin arrastrar
+al resto (distribución de colas anchas).</li>
+<li>Se estima por MCMC (JAGS) y se proyecta hasta el 29 de noviembre: la
+incertidumbre crece con los días que faltan.</li>
+</ul>
+<h2 id="de-votos-a-escaños">4. De votos a escaños</h2>
+<ol type="1">
+<li>Se parte de los resultados del 23J en cada circunscripción y de los
+escaños del 29N (Madrid 38 y Cádiz 8; el resto, como en 2023).</li>
+<li>El cambio estatal de cada partido se traslada a cada provincia como
+mezcla de dos reglas: proporcional y aditiva. Se añade una variación
+aleatoria por comunidad y por provincia.</li>
+<li>El espacio de Sumar en 2023 se reparte entre Frente Amplio y
+Podemos, salvo en la Comunitat Valenciana y Canarias, donde concurren
+juntos.</li>
+<li>Partidos de ámbito autonómico: su peso estatal se toma de las
+encuestas que los publican, con un 20 % de incertidumbre. Aliança
+Catalana se reparte en Cataluña con el patrón de Junts.</li>
+<li>Se suma un <strong>error común de todas las encuestas</strong> el
+día de la votación, de tamaño desconocido: desviación típica de 2 puntos
+en PP y PSOE, 1,5 en Vox, 1 en Frente Amplio y 0,7 en Podemos y SALF,
+calibrada con 2019 y 2023 (sección 6). PP y PSOE tienden a fallar en
+sentido contrario, y PP y Vox comparten votantes.</li>
+<li>Ley D’Hondt con umbral del 3 % en cada circunscripción, 4.000
+veces.</li>
+</ol>
+<h2 id="escenarios">5. Escenarios</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Escenario</th>
+<th>Supuesto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Media de las encuestas</td>
+<td>El sesgo medio de las empresas privadas es cero</td>
+</tr>
+<tr class="even">
+<td>Si fallan como en 2023</td>
+<td>Se aplica el error que esta misma media tuvo el 23J (sección 6): el
+PP sobrestimado en 0,9 puntos, el PSOE infraestimado en 3,3, Vox
+sobrestimado en 0,8 y Sumar en 1,0 (para Frente Amplio y Podemos)</td>
+</tr>
+<tr class="odd">
+<td>Si aciertan las de microdatos abiertos</td>
+<td>Se toma la media del CIS y de More in Common, recalculados con el
+mismo modelo</td>
+</tr>
+<tr class="even">
+<td>Si acierta una empresa</td>
+<td>Se toma su desviación respecto a la tendencia en sus fechas de
+campo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="comprobación-con-2019-y-2023">6. Comprobación con 2019 y
+2023</h2>
+<p>El mismo agregador, alimentado solo con las encuestas publicadas
+hasta el último día permitido antes del 10N de 2019 y del 23J de 2023
+(sin el CIS ni agregadores de terceros) y proyectado al día de la
+votación (<code>R/09_backtest.R</code>). Voto en porcentaje sobre voto
+válido:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Elección</th>
+<th>Partido</th>
+<th style="text-align: right;">Resultado</th>
+<th style="text-align: right;">Media</th>
+<th style="text-align: right;">Diferencia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10N 2019</td>
+<td>PSOE</td>
+<td style="text-align: right;">28,0</td>
+<td style="text-align: right;">27,2</td>
+<td style="text-align: right;">+0,8</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>PP</td>
+<td style="text-align: right;">20,8</td>
+<td style="text-align: right;">21,1</td>
+<td style="text-align: right;">−0,3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Vox</td>
+<td style="text-align: right;">15,1</td>
+<td style="text-align: right;">13,8</td>
+<td style="text-align: right;">+1,3</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Unidas Podemos</td>
+<td style="text-align: right;">12,9</td>
+<td style="text-align: right;">12,3</td>
+<td style="text-align: right;">+0,6</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Ciudadanos</td>
+<td style="text-align: right;">6,8</td>
+<td style="text-align: right;">9,2</td>
+<td style="text-align: right;">−2,4</td>
+</tr>
+<tr class="even">
+<td>23J 2023</td>
+<td>PP</td>
+<td style="text-align: right;">33,1</td>
+<td style="text-align: right;">34,0</td>
+<td style="text-align: right;">−0,9</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>PSOE</td>
+<td style="text-align: right;">31,7</td>
+<td style="text-align: right;">28,4</td>
+<td style="text-align: right;">+3,3</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Vox</td>
+<td style="text-align: right;">12,4</td>
+<td style="text-align: right;">13,2</td>
+<td style="text-align: right;">−0,8</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Sumar</td>
+<td style="text-align: right;">12,3</td>
+<td style="text-align: right;">13,3</td>
+<td style="text-align: right;">−1,0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>La diferencia media fue de 1,1 puntos por partido en 2019 y de 1,5
+en 2023. Corregir el sesgo de cada empresa apenas cambia el promedio
+simple de sus últimas encuestas: el error que pesa es el que comparten
+todas.</li>
+<li>Los intervalos del agregador por sí solo recogen 5 de los 9
+resultados. Con el error común que se usaba hasta el 10 de noviembre
+(1,5 puntos en PP y PSOE, 1,2 en Vox, 0,5-0,8 en el resto), 7 de 9:
+quedaban fuera el PSOE en 2023 y Ciudadanos en 2019, por unas dos
+desviaciones. Con el actual (sección 4), 8 de 9; Ciudadanos sigue
+fuera.</li>
+<li>Nueve casos son pocos para calibrar con precisión. El error común
+puede seguir siendo corto para un partido que se hunde o despega en la
+última semana.</li>
+</ul>
+<h2 id="límites-conocidos">7. Límites conocidos</h2>
+<ul>
+<li>Las reglas de traslado a provincias no recogen realineamientos
+territoriales nuevos.</li>
+<li>Aliança Catalana y los partidos autonómicos son muy inciertos.</li>
+<li>La concurrencia de Podemos en las listas de ERC en Cataluña no está
+modelizada.</li>
+<li>El error común está calibrado con pocas elecciones (sección 6).</li>
+</ul>
+<h2 id="última-actualización">8. Última actualización</h2>
+<p>La ley electoral (LOREG, art. 69.7) prohíbe publicar, difundir o
+reproducir sondeos del 24 al 28 de noviembre. La última actualización es
+la del lunes 23 de noviembre; desde entonces no se añade ni se cambia
+ninguna cifra hasta el cierre de los colegios el 29N.</p>
+  </article>
+  <footer class="pie">
+    <nav aria-label="Secciones"><a href="index.html">La media de encuestas</a><a href="porra.html">Rellena tu porra</a><a href="supuestos.html">Elige tus supuestos</a><a href="casas.html">Las encuestadoras</a><a href="metodologia.html">Cómo se calcula</a><a href="preguntas.html">Preguntas frecuentes</a></nav>
+    <p class="datos-pie"><a href="datos/modelo.json">Datos del modelo (JSON)</a><a href="datos/encuestas.csv">Encuestas (CSV)</a></p>
+    <p class="firma">Un proyecto de Guillermo Astiaso. Código con licencia MIT; datos propios con licencia CC BY 4.0.</p>
+  </footer>
+</main>
+<script type="module" src="js/comun.js"></script>
+</body>
+</html>

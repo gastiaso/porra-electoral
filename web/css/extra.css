@@ -1,0 +1,132 @@
+/* Páginas «Las encuestadoras» (casas.html) y «Elige tus supuestos» (supuestos.html). Se carga después de estilo.css y usa
+   solo sus variables de color, para que valga también en el boleto de noche. */
+.titulo-pag { font-family: var(--titular); font-weight: 400; font-size: clamp(28px, 5vw, 38px); line-height: 1.05; margin: 22px 0 4px; }
+.titulo-pag + .entradilla { margin-top: 10px; }
+h3 { font-family: var(--titular); font-weight: 400; }
+
+/* ---------------------------------------------------------------- casas */
+.indice-casas { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 6px; padding: 0; list-style: none; font-size: 13.5px; }
+.indice-casas a { display: inline-block; border: 2px solid var(--tinta); padding: 1px 7px; text-decoration: none; background: var(--papel); }
+.indice-casas a:hover, .indice-casas a:focus-visible { background: var(--tinta); color: var(--papel); }
+.indice-casas .aparte a { border-style: dashed; }
+
+.leyenda-regla { display: grid; grid-template-columns: minmax(0, 1fr); max-width: 360px; margin: 6px 0 4px; font-size: 12.5px; color: var(--tinta-2); }
+.leyenda-regla .marcas { position: relative; display: flex; justify-content: space-between; margin-top: 2px; }
+.leyenda-regla .m0 { position: absolute; left: 50%; transform: translateX(-50%); }
+
+.ficha { border: 2px solid var(--tinta); background: var(--papel); margin: 14px 0; padding: 12px 14px 12px; scroll-margin-top: 12px; }
+.ficha.libre { border-style: dashed; }
+.ficha h3 { font-size: 23px; margin: 0; line-height: 1.1; }
+.ficha-meta { font-size: 14px; color: var(--tinta-2); margin: 3px 0 10px; }
+.ficha-meta b { color: var(--tinta); font-weight: 700; }
+.ficha-cuerpo { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 10px 26px; }
+.rotulo { font-family: var(--titular); font-size: 13.5px; line-height: 1.3; margin: 0 0 4px; }
+.entregas { font-size: 13.5px; margin: 0 0 12px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 2px 14px; }
+.entregas li { white-space: nowrap; }
+.entregas .n-ent { color: var(--tinta-2); }
+.mini { font-size: 15px; margin: 2px 0 4px; }
+.mini th { font-size: 12.5px; padding: 3px 4px 3px; }
+.mini td { padding: 4px 4px; font-weight: 700; border-bottom: 0; }
+.mini th .cuadro { width: 9px; height: 9px; margin-right: 5px; }
+.fuente { font-size: 13px; color: var(--tinta-2); margin: 4px 0 0; overflow-wrap: anywhere; }
+.aparte-nota { font-size: 13.5px; margin: 10px 0 0; padding: 8px 10px; border-left: 4px solid var(--boleto); background: var(--hoja); }
+
+.sesgos { list-style: none; margin: 0; padding: 0; }
+.sesgos li { padding: 6px 0 6px; border-bottom: 1px solid var(--boleto-suave); font-size: 14.5px; line-height: 1.35; }
+.sesgos li:last-child { border-bottom: 0; }
+.sesgos .quien { font-weight: 700; }
+.sesgos .cuadro { width: 10px; height: 10px; margin-right: 6px; }
+.regla { position: relative; display: block; height: 16px; margin: 5px 0 3px;
+  background-image: repeating-linear-gradient(90deg, var(--tinta-tenue) 0 1px, transparent 1px 10%);
+  background-size: 100% 6px; background-repeat: no-repeat; background-position: 0 5px; }
+.regla::before { content: ''; position: absolute; left: 0; right: 0; top: 7px; border-top: 1px solid var(--tinta-media); }
+.regla .cero { position: absolute; left: 50%; top: -1px; bottom: -1px; border-left: 2px solid var(--tinta); }
+.regla .tramo { position: absolute; top: 4px; height: 8px; opacity: .4; }
+.regla .punto { position: absolute; top: 1px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; border: 2px solid var(--papel); box-shadow: 0 0 0 1px var(--tinta); }
+.margen { font-size: 12.5px; color: var(--tinta-2); }
+.sesgos .margen { white-space: nowrap; }
+.igual { display: inline-block; border: 1.5px dashed var(--boleto); color: var(--boleto-texto); font-size: 12px; line-height: 1.3; padding: 0 5px; margin-left: 6px; white-space: nowrap; }
+
+/* ---------------------------------------------------------------- supuestos */
+.comparador { display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); gap: 18px 24px; align-items: start; margin-top: 14px; }
+.comparador fieldset { border: 0; padding: 0; margin: 0 0 16px; min-width: 0; }
+.comparador legend { font-family: var(--titular); font-size: 17px; line-height: 1.2; padding: 0; margin-bottom: 6px; }
+.comparador legend .n { color: var(--boleto-texto); margin-right: 6px; }
+.ayuda { font-size: 13.5px; color: var(--tinta-2); margin: 0 0 6px; }
+
+.opcion { position: relative; display: grid; grid-template-columns: 1.6em 30px minmax(0, 1fr); gap: 0 8px; align-items: start; padding: 7px 4px; border-bottom: 1px solid var(--boleto-suave); cursor: pointer; }
+.opcion:hover .caja { background: var(--hoja); }
+.opcion .n { color: var(--boleto-texto); font-weight: 700; text-align: center; line-height: 28px; }
+.opcion input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.caja { width: 28px; height: 28px; border: 2px solid var(--boleto); display: inline-flex; align-items: center; justify-content: center; background: var(--papel);
+  font-family: var(--titular); font-size: 18px; color: var(--papel); line-height: 1; }
+.opcion input:checked + .caja { background: var(--tinta); border-color: var(--tinta); }
+.opcion input:checked + .caja::after { content: 'X'; }
+.opcion input:focus-visible + .caja { outline: 3px solid var(--boleto); outline-offset: 2px; }
+.opcion .txt { line-height: 1.35; padding-top: 4px; }
+.opcion .txt b { font-weight: 700; }
+.opcion .expl { display: block; font-size: 13px; color: var(--tinta-2); margin-top: 2px; }
+.opcion.activa { background: var(--boleto-tenue); }
+
+.reglas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.reglas .opcion { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; gap: 4px; border: 2px solid var(--tinta); padding: 7px 4px 6px; background: var(--papel); }
+.reglas .opcion .txt { padding-top: 0; font-size: 14px; }
+.reglas .opcion.no { opacity: .45; cursor: not-allowed; }
+.regla-expl { font-size: 13.5px; margin: 8px 0 0; }
+.regla-expl .aviso { display: block; color: var(--boleto-texto); margin-top: 4px; }
+
+.resultado { border: 4px solid var(--tinta); background: var(--papel); padding: 12px 14px 12px; position: sticky; top: 10px; }
+.resultado .rotulo { color: var(--boleto-texto); margin: 0; }
+.resultado h3 { font-size: 21px; line-height: 1.15; margin: 2px 0 8px; }
+.resultado h3 .sub { display: block; font-family: var(--texto); font-size: 13.5px; color: var(--tinta-2); margin-top: 3px; }
+.resultado .cien { max-width: 170px; margin: 4px 0 8px; }   /* colores y rejilla: los de .cien en estilo.css */
+.resultado .veredicto { font-size: 14.5px; line-height: 1.45; margin: 0 0 10px; }
+.resultado .veredicto b { font-family: var(--titular); font-weight: 400; }
+.arriba { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 0 14px; align-items: start; }
+.tabla-sup { font-size: 14.5px; margin: 4px 0 8px; }
+.tabla-sup th { font-size: 12.5px; padding: 4px; }
+.tabla-sup td { padding: 4px; }
+.tabla-sup td.n-esc { font-family: var(--titular); font-size: 18px; width: 2.6em; }
+.tabla-sup td.dif, .tabla-sup th.dif { width: 5.6em; }
+.tabla-sup td.dif { color: var(--tinta-2); font-size: 13px; }
+.tabla-sup td.izq { white-space: nowrap; }
+.tabla-sup td.barra { min-width: 60px; padding-left: 8px; }
+.tabla-sup .cuadro { width: 10px; height: 10px; margin-right: 6px; }
+.barra-esc { position: relative; height: 12px; }
+.barra-esc span { position: absolute; left: 0; top: 0; bottom: 0; }
+.barra-esc i { position: absolute; top: -3px; bottom: -3px; border-left: 2px solid var(--tinta); }
+.resultado .pie-res { font-size: 13.5px; margin: 0; line-height: 1.45; }
+.resultado .pie-res + .pie-res { margin-top: 4px; }
+
+.vistazo td { white-space: nowrap; }
+.vistazo th.prob { white-space: normal; min-width: 6.5em; }
+.vistazo { font-size: 14px; }
+.vistazo th { font-size: 12.5px; }
+.vistazo td.izq { white-space: normal; min-width: 11em; }
+.vistazo tr.sel td { background: var(--boleto-fondo); }
+.vistazo tr.sel td.izq { box-shadow: inset 4px 0 0 var(--boleto); }
+.vistazo button { background: none; border: 0; padding: 0; text-align: left; text-decoration: underline; text-decoration-color: var(--boleto); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.vistazo button:hover { color: var(--boleto-texto); }
+
+@media (max-width: 760px) {
+  .ficha-cuerpo { grid-template-columns: minmax(0, 1fr); }
+  .comparador { grid-template-columns: minmax(0, 1fr); }
+  .resultado { position: static; }
+  .escenarios .opcion:not(.activa) .expl { display: none; }
+}
+@media (max-width: 640px) {
+  .ficha { padding: 10px 10px 10px; }
+  .ficha h3 { font-size: 21px; }
+  .sesgos .margen { font-size: 12px; }
+  .igual { font-size: 11px; margin-left: 4px; padding: 0 4px; }
+  .reglas .opcion { padding: 6px 2px; }
+  .reglas .opcion .txt { font-size: 13px; }
+  .arriba { grid-template-columns: 120px minmax(0, 1fr); gap: 0 12px; }
+  .resultado { padding: 10px 10px; }
+  .vistazo { font-size: 12.5px; }
+  .vistazo td, .vistazo th { padding: 4px 3px; }
+  .vistazo th { font-size: 11.5px; }
+  .vistazo th .cuadro { display: none; }
+  .vistazo th.prob { min-width: 0; }
+  .vistazo td.izq { min-width: 7.5em; }
+}

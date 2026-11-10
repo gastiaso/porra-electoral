@@ -1,0 +1,305 @@
+/* Estética de boleto de quiniela. Tipografías autoalojadas (SIL OFL): Archivo Black y Courier Prime. */
+@font-face { font-family: 'Archivo Black'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(../fuentes/archivo-black-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Archivo Black'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(../fuentes/archivo-black-latin-ext-400-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(../fuentes/courier-prime-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(../fuentes/courier-prime-latin-ext-400-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(../fuentes/courier-prime-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(../fuentes/courier-prime-latin-ext-700-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Courier Prime'; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(../fuentes/courier-prime-latin-400-italic.woff2) format('woff2'); }
+
+/* Colores. --boleto es el naranja de marca (bordes, sellos, rayas); --boleto-texto, el mismo naranja algo más oscuro
+   para que el texto pequeño cumpla el contraste AA (4,5:1) sobre el papel. Los colores de partido son los de comun.js. */
+:root {
+  color-scheme: light;
+  --mesa: #d9d3c4; --papel: #fbf8ef; --hoja: #fff; --tinta: #1c1c1c; --tinta-2: #57524a; --sombra: #b9b2a0;
+  --boleto: #d9480f; --boleto-texto: #bf3f0d; --boleto-suave: rgba(217,72,15,.28); --rayado: rgba(217,72,15,.07);
+  --bien: #2f6b2f; --bien-fondo: rgba(47,107,47,.12); --cuadro-borde: rgba(28,28,28,.28);
+  --cien-fondo: transparent; --cien-tinta: var(--tinta); --cien-blanco: transparent; --cien-relleno: 0;
+  --tinta-tenue: rgba(28,28,28,.16); --tinta-media: rgba(28,28,28,.35); --boleto-tenue: rgba(217,72,15,.06); --boleto-fondo: rgba(217,72,15,.1);
+  --pp: #1D5FA8; --psoe: #D7263D; --vox: #5A9E2F; --fa: #C2407D; --pod: #6B3FA0; --salf: #A0522D;
+  --erc: #E0A030; --junts: #2BA6A3; --bildu: #9AA53B; --pnv: #4F7A5A; --bng: #78AEDB; --cc: #E6C84A; --upn: #6C88AE; --ac: #3E5656;
+  --titular: 'Archivo Black', 'Arial Black', sans-serif; --texto: 'Courier Prime', 'Courier New', monospace;
+}
+/* Boleto de noche. Solo en las páginas que lo admiten (<html class="con-noche">): sigue al sistema salvo que se haya
+   elegido otra cosa con el botón (data-tema en <html>, recordado en localStorage). El bloque va dos veces a propósito:
+   una para la preferencia del sistema y otra para la elección manual. Los colores de partido se aclaran para que las
+   líneas del gráfico tengan al menos 3:1 sobre el papel oscuro y se distingan mejor con daltonismo. */
+@media (prefers-color-scheme: dark) {
+  :root.con-noche:not([data-tema=claro]) {
+    color-scheme: dark;
+    --mesa: #0f0d0a; --papel: #1f1b16; --hoja: #15120e; --tinta: #efe8d8; --tinta-2: #b3aa99; --sombra: #070605;
+    --boleto: #ef6c39; --boleto-texto: #ef6c39; --boleto-suave: rgba(239,108,57,.32); --rayado: rgba(239,108,57,.06);
+    --bien: #7cc47c; --bien-fondo: rgba(124,196,124,.16); --cuadro-borde: rgba(239,232,216,.4);
+    --cien-fondo: #f3eee2; --cien-tinta: #1c1c1c; --cien-blanco: #fff; --cien-relleno: 5px;
+  --tinta-tenue: rgba(239,232,216,.2); --tinta-media: rgba(239,232,216,.42); --boleto-tenue: rgba(239,108,57,.1); --boleto-fondo: rgba(239,108,57,.16);
+    --pp: #6191e0; --psoe: #da293f; --vox: #84c857; --fa: #c94683; --pod: #8a5bc0; --salf: #d07b53;
+  }
+}
+:root.con-noche[data-tema=oscuro] {
+  color-scheme: dark;
+  --mesa: #0f0d0a; --papel: #1f1b16; --hoja: #15120e; --tinta: #efe8d8; --tinta-2: #b3aa99; --sombra: #070605;
+  --boleto: #ef6c39; --boleto-texto: #ef6c39; --boleto-suave: rgba(239,108,57,.32); --rayado: rgba(239,108,57,.06);
+  --bien: #7cc47c; --bien-fondo: rgba(124,196,124,.16); --cuadro-borde: rgba(239,232,216,.4);
+  --cien-fondo: #f3eee2; --cien-tinta: #1c1c1c; --cien-blanco: #fff; --cien-relleno: 5px;
+  --tinta-tenue: rgba(239,232,216,.2); --tinta-media: rgba(239,232,216,.42); --boleto-tenue: rgba(239,108,57,.1); --boleto-fondo: rgba(239,108,57,.16);
+  --pp: #6191e0; --psoe: #da293f; --vox: #84c857; --fa: #c94683; --pod: #8a5bc0; --salf: #d07b53;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--mesa); color: var(--tinta); font-family: var(--texto); font-size: 16px; line-height: 1.5; }
+a { color: var(--tinta); text-decoration-color: var(--boleto); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: var(--boleto-texto); }
+:focus-visible { outline: 3px solid var(--boleto); outline-offset: 3px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+[hidden] { display: none !important; }
+.mudo { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+::placeholder { color: var(--tinta-2); opacity: 1; }
+
+.boleto { max-width: 880px; margin: 28px auto 40px; background: var(--papel); padding: 26px clamp(16px, 4vw, 34px) 24px;
+  box-shadow: 0 2px 0 var(--sombra), 0 14px 30px rgba(0,0,0,.18);
+  background-image: repeating-linear-gradient(0deg, transparent 0 31px, var(--rayado) 31px 32px); }
+
+/* cabecera */
+.cabecera { position: relative; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px 20px; flex-wrap: wrap; border-bottom: 3px solid var(--boleto); padding-bottom: 12px; }
+/* botón del boleto de noche (lo crea comun.js) */
+.tema-fila { position: absolute; top: 0; right: 0; }
+.tema { display: inline-flex; align-items: center; gap: 7px; background: transparent; border: 2px solid var(--tinta);
+  padding: 2px 8px; font-size: 13px; line-height: 1.35; }
+.tema .casilla-tema { width: 13px; height: 13px; border: 2px solid var(--boleto); flex: none; }
+.tema[aria-pressed=true] .casilla-tema { background: var(--boleto); box-shadow: inset 0 0 0 2px var(--papel); }
+.cabecera h1 { font-family: var(--titular); font-weight: 400; font-size: clamp(36px, 7.5vw, 64px); line-height: .95; margin: 0; letter-spacing: -.01em; }
+.cabecera h1 a { text-decoration: none; }
+.jornada { text-align: right; font-size: 14px; line-height: 1.4; }
+.jornada b { font-family: var(--titular); font-weight: 400; font-size: 22px; display: block; }
+
+h2 { font-family: var(--titular); font-weight: 400; font-size: clamp(21px, 3.4vw, 26px); line-height: 1.15; margin: 34px 0 6px; }
+.entradilla { font-size: 17px; margin: 16px 0 8px; max-width: 66ch; }
+.entradilla strong { font-family: var(--titular); font-weight: 400; }
+.nota { font-size: 14px; color: var(--tinta-2); margin: 0 0 12px; max-width: 66ch; }
+
+/* tablas de boleto */
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th { font-family: var(--titular); font-weight: 400; font-size: 13px; text-align: right; padding: 6px; border-bottom: 2px solid var(--tinta); vertical-align: bottom; }
+td { padding: 6px; border-bottom: 1px solid var(--boleto-suave); text-align: right; }
+th.izq, td.izq { text-align: left; }
+td.n { width: 2.4em; text-align: center; color: var(--boleto-texto); font-weight: 700; }
+.cuadro { display: inline-block; width: 11px; height: 11px; margin-right: 8px; vertical-align: -1px; box-shadow: inset 0 0 0 1px var(--cuadro-borde); }
+.pleno td { border-top: 3px double var(--tinta); border-bottom: 0; font-weight: 700; font-size: 17px; padding-top: 10px; }
+.sello { display: inline-block; border: 3px solid var(--boleto); color: var(--boleto); padding: 1px 10px; transform: rotate(-4deg); font-family: var(--titular); font-size: 24px; line-height: 1.2; }
+.sello.no { border-style: dashed; }
+td.esc { font-family: var(--titular); font-size: 18px; }
+
+/* palanca */
+.maquina { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; margin: 18px 0 10px;
+  border: 2px solid var(--tinta); padding: 10px 12px; background: var(--hoja); }
+.modo { font-size: 15px; }
+.modo b { font-family: var(--titular); font-weight: 400; }
+.botones { display: flex; gap: 8px; flex-wrap: wrap; }
+.palanca { display: inline-flex; align-items: center; gap: 10px; background: var(--tinta); color: var(--papel); border: 0; padding: 10px 16px 10px 12px;
+  font-family: var(--titular); font-size: 16px; box-shadow: 0 4px 0 var(--boleto); }
+.palanca:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--boleto); }
+.palanca svg { width: 22px; height: 30px; overflow: visible; }
+.palanca circle { fill: var(--boleto); }
+.palanca .brazo { transform-origin: 11px 26px; transition: transform .25s ease-in; }
+.palanca.tirando .brazo { transform: rotate(150deg); }
+.volver { background: transparent; border: 2px solid var(--tinta); padding: 8px 12px; }
+.volver[hidden] { display: none; }
+.rodando td.esc { color: var(--boleto-texto); }
+
+/* gráfico (los colores de partido van en línea con var(); el resto, aquí) */
+.grafico { position: relative; margin-top: 8px; }
+.grafico svg { width: 100%; height: auto; display: block; font-family: var(--texto); }
+.grafico svg:focus-visible { outline-offset: 2px; }
+.grafico .rej, .grafico .cursor { stroke: var(--tinta); }
+.grafico .eje { fill: var(--tinta-2); }
+.grafico .etq { fill: var(--tinta); }
+.grafico .proy { fill: var(--boleto); fill-opacity: .06; }
+.grafico .lectura { position: absolute; top: 4px; pointer-events: none; background: var(--papel); border: 2px solid var(--tinta); padding: 6px 8px; font-size: 13px; line-height: 1.35; min-width: 150px; }
+.grafico .lectura[hidden] { display: none; }
+details.datos-grafico { margin-top: 6px; border-top: 0; padding-top: 0; }
+details.datos-grafico summary { font-family: var(--texto); font-weight: 700; font-size: 14px; padding: 4px 0; }
+.datos-grafico table { font-size: 13.5px; }
+.datos-grafico td, .datos-grafico th { padding: 4px 5px; white-space: nowrap; }
+.datos-grafico tbody th { font-family: var(--texto); font-weight: 400; font-size: inherit; text-align: left; border-bottom: 1px solid var(--boleto-suave); }
+.datos-grafico tr.proyeccion td, .datos-grafico tr.proyeccion th { font-style: italic; }
+.datos-grafico .nota { margin: 4px 0 6px; }
+
+/* 1-X-2 */
+.desliza { overflow-x: auto; position: relative; }   /* relative: el texto .mudo de las celdas queda dentro del desplazamiento y no ensancha la página */
+.desliza:focus-visible { outline-offset: 0; }
+.x12 { min-width: 520px; }
+.x12 td.c { text-align: center; width: 9.5em; }
+.marca { display: inline-block; white-space: nowrap; padding: 2px 6px; border: 2px solid var(--tinta); }
+.marca.fav { background: var(--tinta); color: var(--papel); }
+.x-movil { display: none; }
+
+/* escenarios */
+.falla { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 8px; }
+.falla div { border: 2px solid var(--tinta); padding: 10px 12px; font-size: 14px; line-height: 1.45; background: var(--papel); }
+.falla strong { font-family: var(--titular); font-weight: 400; font-size: 28px; display: block; line-height: 1.1; }
+.falla .media { border-width: 4px; }
+
+/* encuestas */
+details { margin-top: 30px; border-top: 3px solid var(--boleto); padding-top: 8px; }
+summary { font-family: var(--titular); font-size: 20px; cursor: pointer; padding: 6px 0; }
+.encuestas { font-size: 13px; }
+.encuestas td, .encuestas th { padding: 4px 4px; white-space: nowrap; }
+
+/* pie */
+.pie { margin-top: 30px; border-top: 1px solid var(--tinta); padding-top: 12px; font-size: 13.5px; line-height: 1.55; color: var(--tinta-2); }
+.pie p { margin: 0 0 8px; max-width: 80ch; }
+.pie nav { display: flex; gap: 8px 18px; flex-wrap: wrap; font-size: 15px; color: var(--tinta); margin-bottom: 10px; }
+.pie nav a[aria-current=page] { font-weight: 700; text-decoration-style: double; text-decoration-thickness: 3px; }
+.pie .datos-pie { display: flex; flex-wrap: wrap; gap: 2px 16px; font-size: 13.5px; }
+.pie .datos-pie a { color: var(--tinta-2); }
+.pie .datos-pie a:hover { color: var(--boleto-texto); }
+
+/* sello de cierre antes de la veda (portada) */
+.sello-cierre { display: block; width: fit-content; max-width: 34ch; margin: 8px 0 2px auto; border: 2px solid var(--boleto); color: var(--boleto-texto);
+  padding: 3px 8px; font-size: 12.5px; line-height: 1.35; font-weight: 700; text-align: left; transform: rotate(-1.5deg); }
+.sello-cierre[hidden] { display: none; }
+@media (min-width: 641px) {
+  .sello-cierre { max-width: 50ch; }
+  .jornada.con-sello { margin-top: 34px; }   /* deja sitio al botón del boleto de noche, que va arriba a la derecha */
+}
+/* enlaces para seguir leyendo */
+.seguir { margin: 14px 0 0; }
+.fuente-encuestas { font-size: 13.5px; margin: 8px 0 8px; color: var(--tinta-2); max-width: 80ch; }
+.encuestas td.fuente { white-space: normal; color: var(--tinta-2); font-size: 12px; line-height: 1.3; }
+.encuestas td:nth-child(2) { white-space: normal; min-width: 6.5em; }   /* el medio puede ir en dos líneas: así cabe la fuente */
+.firma { color: var(--tinta); }
+
+/* veda y errores */
+.veda, .error { border: 3px solid var(--boleto); padding: 16px 18px; margin-top: 18px; }
+.veda h2 { margin-top: 0; }
+
+/* metodología */
+.texto { max-width: 70ch; }
+.texto h2 { margin-top: 30px; }
+.texto table { margin: 10px 0; }
+.texto td, .texto th { text-align: left; vertical-align: top; }
+.texto li { margin-bottom: 4px; }
+
+@media (max-width: 640px) {
+  .tema-fila { position: static; flex-basis: 100%; text-align: right; margin-bottom: -6px; }
+  body { font-size: 15px; }
+  .boleto { margin: 0; box-shadow: none; }
+  .jornada { text-align: left; }
+  .sello-cierre { margin-left: 0; }
+  td, th { padding: 5px 3px; }
+  td.n { width: 1.8em; }
+  .x12 { min-width: 0; }
+  .x12 td.c { width: auto; }
+  .marca { font-size: 12.5px; padding: 1px 3px; }
+  .colx { display: none; }
+  .x-movil { display: inline-block; margin-left: 4px; }
+  .x12 td.izq { font-size: 13.5px; }
+  /* tablas de metodología (cinco columnas): sin esto desbordan por debajo de 390 px */
+  .texto table { font-size: 13px; }
+  .texto th { font-size: 12px; }
+  .texto td, .texto th { padding: 5px 2px; }
+}
+@media (max-width: 359px) { .texto table { font-size: 12px; } .texto th { font-size: 11px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+.texto h1 { font-family: var(--titular); font-weight: 400; font-size: clamp(26px, 4.5vw, 34px); line-height: 1.1; margin: 22px 0 4px; }
+.texto h3 { font-family: var(--titular); font-weight: 400; font-size: 18px; margin: 20px 0 4px; }
+
+/* ---------------------------------------------------------------- porra */
+.opciones-vista { border: 0; padding: 0; margin: 12px 0 6px; font-size: 14px; }
+.opciones-vista input { accent-color: var(--boleto); }
+.tabla-porra td.amb { font-size: 14px; color: var(--tinta-2); white-space: nowrap; }
+.tabla-porra td.partido { line-height: 1.35; }
+.tabla-porra .contra { color: var(--boleto-texto); margin: 0 6px; }
+.tabla-porra .eq { white-space: nowrap; }
+.tabla-porra .corto { display: none; }
+.media-fila { display: block; font-size: 12.5px; color: var(--tinta-2); margin-top: 2px; }
+.media-fila[hidden] { display: none; }
+th.sig, td.sig { text-align: center; width: 2.6em; padding-left: 2px; padding-right: 2px; }
+.casilla { display: inline-block; position: relative; cursor: pointer; }
+.casilla input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.casilla span { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; padding: 0 6px; border: 2px solid var(--boleto); color: var(--boleto-texto); font-weight: 700; background: var(--papel); }
+.casilla input:checked + span { background: var(--tinta); border-color: var(--tinta); color: var(--papel); }
+.casilla input:focus-visible + span { outline: 3px solid var(--boleto); outline-offset: 2px; }
+.casilla input:disabled { cursor: default; }
+.casilla input:disabled:not(:checked) + span { opacity: .45; }
+.casilla.ancha span { min-width: 0; padding: 0 10px; font-weight: 400; }
+td.res { font-size: 13px; white-space: nowrap; text-align: left; width: 5.5em; }
+.bien { color: var(--bien); font-weight: 700; }
+.mal { color: var(--boleto-texto); }
+.pleno-porra { border-top: 3px double var(--tinta); margin-top: 6px; padding-top: 10px; }
+.pleno-titulo { font-family: var(--titular); font-size: 17px; margin: 0 0 8px; }
+.pleno-titulo .n { color: var(--boleto-texto); margin-right: 8px; }
+.pleno-ops { display: flex; flex-wrap: wrap; gap: 8px; }
+.alias { margin: 18px 0 6px; display: flex; flex-direction: column; gap: 4px; max-width: 420px; }
+.alias label { font-family: var(--titular); font-size: 15px; }
+input[type=text], .alias input, .enlace input { font: inherit; padding: 8px 10px; border: 2px solid var(--tinta); background: var(--hoja); color: var(--tinta); }
+.acciones { margin-top: 14px; }
+.enlace { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.enlace input { flex: 1 1 260px; min-width: 0; }
+a.volver { display: inline-flex; align-items: center; text-decoration: none; }
+.tabla-pena { font-size: 14px; }
+.tabla-pena td, .tabla-pena th { padding: 4px 3px; }
+.tabla-pena td.bien { background: var(--bien-fondo); }
+.tabla-pena td.mal { text-decoration: line-through; }
+.tabla-pena .real td { font-weight: 700; border-bottom: 2px solid var(--tinta); }
+.tabla-pena .fila-media td { color: var(--tinta-2); font-style: italic; }
+.tabla-pena td.izq { white-space: nowrap; }
+.tabla-pena td.vacia { white-space: normal; }
+.tabla-pena th.num, .tabla-pena td.num { padding-right: 8px; }
+.llamada { margin: 26px 0 0; border: 3px solid var(--tinta); padding: 14px 16px; display: flex; gap: 12px 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: var(--hoja); }
+.llamada p { margin: 0; max-width: 52ch; }
+.llamada b { font-family: var(--titular); font-weight: 400; font-size: 20px; display: block; }
+a.palanca { text-decoration: none; }
+
+/* juego de escaños */
+.juego-esc { margin-top: 18px; }
+.rejilla-esc { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px 14px; margin: 10px 0 8px; }
+/* label.esc: sin la etiqueta, la regla también convertía en rejilla las celdas td.esc de la portada y las descolocaba */
+label.esc { display: grid; grid-template-columns: 1fr 4.2em; align-items: center; gap: 2px 8px; padding: 4px 0; border-bottom: 1px dotted var(--tinta-2); }
+.esc input { font: inherit; font-weight: 700; width: 100%; padding: 4px 6px; border: 2px solid var(--boleto); background: var(--papel); color: var(--tinta); text-align: right; }
+.esc input:disabled { border-color: var(--tinta); background: transparent; }
+.esc .media-fila, .esc .res-esc { grid-column: 1 / -1; font-size: 12px; color: var(--tinta-2); margin: 0; }
+.esc .res-esc:empty { display: none; }
+.res-esc.bien { color: var(--bien); font-weight: 700; }
+.contador { font-size: 14px; margin-right: auto; align-self: center; }
+.contador.mal { color: var(--boleto-texto); }
+.juego-esc .botones { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.juego-esc .eq { white-space: normal; min-width: 0; }
+.juego-esc .corto { display: none; }
+th.num, td.num { text-align: right; padding-left: 6px; }
+.tabla-esc { font-size: 13px; }
+.tabla-esc th.num, .tabla-esc td.num { padding-left: 3px; padding-right: 5px; }
+.tabla-esc td.num.bien { background: var(--bien-fondo); font-weight: 700; }
+
+/* escenarios con 100 cuadros. El texto habla de cuadros negros y blancos: de noche la cuadrícula va sobre una
+   etiqueta clara para que siga siendo verdad. */
+.cien { display: grid; grid-template-columns: repeat(10, 1fr); gap: 2px; width: 100%; max-width: 150px; margin: 8px 0 8px;
+  background: var(--cien-fondo); padding: var(--cien-relleno); }
+.falla .cien { background: var(--cien-fondo); }   /* gana a «.falla div», que le pone el papel */
+.cien i { aspect-ratio: 1; border: 1.5px solid var(--cien-tinta); background: var(--cien-blanco); }
+.cien i.si { background: var(--cien-tinta); }
+.falla .cifra { font-family: var(--titular); font-size: 20px; line-height: 1.15; display: block; }
+@media (max-width: 640px) {
+  td.res { width: auto; font-size: 12px; }
+  .casilla span { min-width: 28px; height: 28px; }
+  .tabla-porra td.partido { font-size: 14px; }
+  .tabla-porra .eq { display: block; }
+  .tabla-porra .contra, .tabla-porra .largo { display: none; }
+  .tabla-porra .corto { display: inline; }
+  .rejilla-esc { grid-template-columns: 1fr 1fr; gap: 4px 12px; }
+  .juego-esc .largo { display: none; }
+  .juego-esc .corto { display: inline; }
+}

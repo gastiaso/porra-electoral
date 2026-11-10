@@ -1,0 +1,25 @@
+{
+  "title": "Porra Electoral: media de encuestas y simulación de escaños, elecciones generales 2026",
+  "upload_type": "software",
+  "description": "<p>Media de las encuestas publicadas para las elecciones generales españolas del 29 de noviembre de 2026, corregida por el efecto casa de cada empresa (modelo bayesiano en JAGS), simulación de escaños en las 52 circunscripciones con varios escenarios de error de las encuestas, y juego de porra.</p><p>Versión congelada con los datos publicados hasta el 23 de noviembre de 2026. Requiere R 4.3 o posterior y JAGS 4.</p>",
+  "creators": [
+    {
+      "name": "Astiaso, Guillermo"
+    }
+  ],
+  "version": "1.0.0",
+  "language": "spa",
+  "access_right": "open",
+  "license": "mit",
+  "notes": "Código con licencia MIT (LICENSE). Datos propios (agregados, simulaciones, reestimaciones y web/datos/modelo.json) con licencia CC BY 4.0 (LICENCIA-DATOS.md). Las cifras de cada encuesta de datos/encuestas.csv pertenecen a sus autores y medios; los resultados del 23J son datos oficiales (BOE-A-2023-18907); los microdatos del CIS y de More in Common no se redistribuyen.",
+  "keywords": [
+    "elecciones generales",
+    "España",
+    "encuestas electorales",
+    "agregador de encuestas",
+    "efecto casa",
+    "simulación de escaños",
+    "D'Hondt",
+    "JAGS"
+  ]
+}
