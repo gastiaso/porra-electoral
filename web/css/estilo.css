@@ -303,3 +303,36 @@ th.num, td.num { text-align: right; padding-left: 6px; }
   .juego-esc .largo { display: none; }
   .juego-esc .corto { display: inline; }
 }
+
+/* ---------------------------------------------------------------- menú superior (comun.js) */
+.saltar { position: absolute; left: -9999px; top: 8px; background: var(--hoja); color: var(--tinta); padding: 8px 12px; border: 2px solid var(--tinta); z-index: 10; }
+.saltar:focus { left: 12px; }
+.menu-arriba { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 14px; margin: -8px 0 16px; padding: 0 0 8px;
+  border-bottom: 1px dashed var(--tinta-media); font-size: 13.5px; }
+.menu-arriba .secciones { display: contents; }
+.menu-arriba a { color: var(--tinta); text-decoration: none; padding: 5px 0 3px; border-bottom: 2px solid transparent; white-space: nowrap; }
+.menu-arriba a:hover, .menu-arriba a:focus-visible { border-bottom-color: var(--boleto); }
+.menu-arriba a[aria-current=page] { font-weight: 700; border-bottom-color: var(--boleto); }
+.menu-arriba a.dato { color: var(--tinta-2); font-size: 12.5px; }
+.menu-arriba a.dato:first-of-type { margin-left: auto; }
+@media (max-width: 640px) {
+  /* una sola tira que se desliza en horizontal */
+  .menu-arriba { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: -10px -16px 14px; padding: 0 16px 6px;
+    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
+  .menu-arriba::-webkit-scrollbar { display: none; }
+  .menu-arriba a.dato:first-of-type { margin-left: 10px; }
+  .menu-arriba a.dato:last-child { padding-right: 28px; }
+}
+
+/* ---------------------------------------------------------------- presentación de la portada */
+.presentacion { margin: 18px 0 26px; }
+.presentacion > p { font-size: 17px; line-height: 1.55; margin: 0 0 14px; max-width: 70ch; }
+.guia { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); border-top: 2px solid var(--tinta); }
+.guia li { display: grid; grid-template-columns: 2em 1fr; gap: 0 6px; padding: 10px 8px 10px 0; border-bottom: 1px solid var(--boleto-suave); }
+.guia li > div { min-width: 0; }
+.guia .n { color: var(--boleto-texto); font-weight: 700; text-align: center; }
+.guia a { font-family: var(--titular); font-size: 15px; }
+.guia p { margin: 3px 0 0; font-size: 13.5px; line-height: 1.45; color: var(--tinta-2); }
+@media (max-width: 640px) { .presentacion > p { font-size: 16px; } }
+.guia .aqui { font-family: inherit; font-size: 12px; color: var(--boleto-texto); margin-left: 6px; }
+.titulo-media { font-family: var(--titular); font-weight: 400; font-size: 24px; margin: 6px 0 4px; }

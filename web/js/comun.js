@@ -48,6 +48,35 @@ const esOscuro = () => raiz.dataset.tema ? raiz.dataset.tema === 'oscuro' : sist
   cab.prepend(fila);
 })();
 
+// ---------------------------------------------------------------- menú superior
+// Las mismas secciones que el pie, arriba de cada página, con los enlaces de datos de la página. En el móvil es una
+// tira que se desplaza en horizontal. Incluye un enlace oculto «Saltar al contenido» para teclado y lectores de pantalla.
+export const SECCIONES = [['index.html', 'La media de encuestas'], ['porra.html', 'Rellena tu porra'], ['supuestos.html', 'Elige tus supuestos'],
+  ['encuestas.html', 'Las encuestas'], ['casas.html', 'Las encuestadoras'], ['metodologia.html', 'Cómo se calcula'], ['preguntas.html', 'Preguntas frecuentes']];
+(function menuArriba() {
+  const main = document.querySelector('main.boleto');
+  if (!main || main.querySelector('.menu-arriba')) return;
+  const pagina = location.pathname.split('/').pop() || 'index.html';
+  const nav = document.createElement('nav');
+  nav.className = 'menu-arriba'; nav.setAttribute('aria-label', 'Menú principal');
+  const datos = [...document.querySelectorAll('.pie .datos-pie a')]
+    .map(a => `<a class="dato" href="${a.getAttribute('href')}">${a.textContent}</a>`).join('');
+  // todos los enlaces en una misma fila flexible: las secciones a la izquierda, los datos de la página a la derecha
+  nav.innerHTML = `<span class="secciones">${SECCIONES.map(([h, t]) =>
+      `<a href="${h}"${h === pagina ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</span>${datos}`;
+  main.prepend(nav);
+  const destino = document.getElementById('contenido') || main.querySelector('article, .contenido') || main.querySelector('.cabecera');
+  if (destino) {
+    if (!destino.id) destino.id = 'contenido-principal';
+    const salto = document.createElement('a');
+    salto.className = 'saltar'; salto.href = '#' + destino.id; salto.textContent = 'Saltar al contenido';
+    main.prepend(salto);
+  }
+  // en el móvil, que la sección actual quede a la vista dentro de la tira
+  const actual = nav.querySelector('[aria-current]');
+  if (actual && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = Math.max(0, actual.offsetLeft - 16);
+})();
+
 // ---------------------------------------------------------------- menú del pie
 // El mismo en todas las páginas. Marca la página actual y añade «¿En qué acertamos?» solo si ya existe la evaluación
 // (datos/evaluacion.json, que se genera con los resultados): se pregunta en silencio y, si no está, no se enseña nada.
@@ -67,6 +96,10 @@ const esOscuro = () => raiz.dataset.tema ? raiz.dataset.tema === 'oscuro' : sist
       const a = document.createElement('a');
       a.href = 'evaluacion.html'; a.textContent = '¿En qué acertamos?';
       nav.append(a); marcar();
+      const arriba = document.querySelector('.menu-arriba .secciones');
+      if (arriba && !arriba.querySelector('a[href="evaluacion.html"]')) {
+        const b = a.cloneNode(true); if (pagina === 'evaluacion.html') b.setAttribute('aria-current', 'page'); arriba.append(b);
+      }
     } catch (e) { /* sin red o sin fichero: el menú se queda como está */ }
   })();
 })();
