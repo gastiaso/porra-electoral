@@ -55,11 +55,3 @@ La ley electoral (LOREG, art. 69.7) prohíbe publicar, difundir o reproducir son
 - Resultados del 23J: BOE-A-2023-18907.
 - Los microdatos del CIS y de More in Common no se redistribuyen; se descargan de sus webs.
 
-## Mantenimiento
-
-- Metodología: se edita `docs/metodologia.md` y se regenera la página con
-  `LC_ALL=C.UTF-8 pandoc docs/metodologia.md -t html5 --template docs/plantilla.html --metadata pagetitle="Metodología" -o web/metodologia.html`.
-- Preguntas frecuentes: se editan en `docs/preguntas.md` y se regeneran con
-  `LC_ALL=C.UTF-8 pandoc docs/preguntas.md -t html5 --template docs/plantilla.html --metadata pagetitle="Preguntas frecuentes" -o web/preguntas.html && sed -i -E 's#(property="og:url" content="[^"]*)metodologia\.html"#\1preguntas.html"#; s#(property="og:description" content=")[^"]*"#\1Qué es y qué no es la media de encuestas del 29N, cómo se tratan las encuestas, qué pasó en 2019 y 2023 y cómo se juega la porra."#; s#(<div class="jornada"><b>Jornada 29N</b>)Cómo se calcula#\1Preguntas frecuentes#' web/preguntas.html`
-- Vista previa en redes: `web/img/og-*.png` salen de `herramientas/og.html` (`python3 herramientas/og.py`). Cuando se conozca la dirección pública, `bash herramientas/url_publica.sh https://…` pone `og:url` y `og:image` en absoluto, que es lo que exige WhatsApp.
-- Comprobación con 2019 y 2023: `Rscript R/09_backtest.R` (≈8 min).
