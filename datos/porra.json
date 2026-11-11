@@ -22,7 +22,7 @@
       "ambito": "Congreso",
       "nombre_ambito": "Congreso",
       "local": "JUNTS",
-      "visitante": "AC"
+      "visitante": "PNV"
     },
     {
       "id": 4,
@@ -143,7 +143,6 @@
       "BILDU",
       "PNV",
       "JUNTS",
-      "AC",
       "BNG",
       "CC",
       "UPN",

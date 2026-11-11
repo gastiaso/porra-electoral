@@ -52,7 +52,8 @@ cat("\nError del agregador en el 23J (media - resultado):\n"); print(round(err23
 
 # Regionalistas y nuevos: objetivo estatal (% válido) a partir de las encuestas de oct-nov que los publican; sd relativa 20 %
 REG <- c(ERC = 2.4, JUNTS = 1.3, BILDU = 1.35, PNV = 0.95, BNG = 0.95, CC = 0.45, UPN = 0.2)
-AC_NAC <- 1.0                                          # Aliança Catalana: solo Sigma Dos la publica (≈1 %); muy incierto
+# Aliança Catalana no se presenta a las generales (decisión de su dirección, oct-2026): no entra en la simulación.
+# Su voto queda donde lo ponen las encuestas, que en su mayoría ya no la publicaban.
 
 # Calibrado con el backtest (09_backtest.R): en 2019 y 2023 el error común llegó a 3,3 puntos (PSOE 23J) y 2,4
 # (Cs 10N). Con estos valores el resultado cae dentro del intervalo del 90 % en 8 de 9 casos; con los anteriores
@@ -103,7 +104,6 @@ swing <- function(s23, nuevo, viejo, regla) {
 ccaa_id <- as.integer(factor(b$ccaa)); NCCAA <- max(ccaa_id)
 es_cva_can <- b$ccaa %in% c("CVA", "CAN")
 es_cat <- b$ccaa == "CAT"
-junts_cat <- b$s_JUNTS * es_cat; peso_ac <- junts_cat / sum(junts_cat * w)   # AC se reparte como Junts en Cataluña
 
 provincias <- function(v, regla, sd_ccaa = 0.06, sd_prov = 0.06) {
   ruido <- function() exp(rnorm(NCCAA, 0, sd_ccaa))[ccaa_id] * exp(rnorm(nrow(b), 0, sd_prov))
@@ -118,8 +118,7 @@ provincias <- function(v, regla, sd_ccaa = 0.06, sd_prov = 0.06) {
   POD <- ifelse(es_cva_can, 0, pmin(q, 1) * S[, "IZQ"])
   S <- cbind(S[, c("PP", "PSOE", "VOX")], FA = S[, "IZQ"] - POD, POD = POD, SALF = S[, "SALF"])
   reg <- sapply(names(REG), \(p) b[[paste0("s_", p)]] * (REG[[p]] * exp(rnorm(1, 0, 0.2))) / nac23(p) * exp(rnorm(nrow(b), 0, 0.05)))
-  AC <- AC_NAC * exp(rnorm(1, 0, 0.4)) * peso_ac * exp(rnorm(nrow(b), 0, 0.1))
-  S <- cbind(S, reg, AC = AC)
+  S <- cbind(S, reg)
   resto <- pmax(100 - sum(colSums(S * w)), 1)          # otros + blanco, repartido como en 2023
   ob <- (b$s_OTROS + b$s_BLANCO); OB <- ob * resto / sum(ob * w)
   S <- cbind(S, OTROS = OB * b$s_OTROS / ob, BLANCO = OB * b$s_BLANCO / ob)
@@ -159,7 +158,7 @@ resumen <- function(sim, nombre, regla) {
   investidura23 <- E[, "PSOE"] + E[, "FA"] + E[, "POD"] + E[, "ERC"] + E[, "JUNTS"] + E[, "BILDU"] + E[, "PNV"] + E[, "BNG"] + E[, "CC"]
   data.table(escenario = nombre, swing = regla,
     PP = median(E[, "PP"]), PSOE = median(E[, "PSOE"]), VOX = median(E[, "VOX"]), FA = median(E[, "FA"]),
-    POD = median(E[, "POD"]), SALF = median(E[, "SALF"]), AC = median(E[, "AC"]),
+    POD = median(E[, "POD"]), SALF = median(E[, "SALF"]),
     `P(PP+VOX+UPN>=176)` = mean(bloque_der >= 176), `P(PP+VOX>=176)` = mean(E[, "PP"] + E[, "VOX"] >= 176),
     `P(bloque 2023>=176)` = mean(investidura23 >= 176), `P(PSOE>PP esc.)` = mean(E[, "PSOE"] > E[, "PP"]),
     `PP+VOX p05` = quantile(E[, "PP"] + E[, "VOX"], .05), `PP+VOX p95` = quantile(E[, "PP"] + E[, "VOX"], .95))

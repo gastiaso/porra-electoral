@@ -13,8 +13,8 @@ const leer = k => { try { return JSON.parse(localStorage.getItem(k)); } catch (e
 const valido = c => typeof c === 'string' && /^[1X2]{14}[012M]$/.test(c);
 const aT = ms => Math.round(ms / 60000).toString(36);          // minutos desde 1970, en base 36
 const deT = s => parseInt(s, 36) * 60000;
-const validoE = e => typeof e === 'string' && /^\d{1,3}(\.\d{1,3}){14}$/.test(e) && e.split('.').reduce((a, x) => a + +x, 0) === 350;
-const limpiaE = e => validoE(e) ? e : '';                       // escaños: 15 cifras separadas por puntos, o nada
+const validoE = e => typeof e === 'string' && /^\d{1,3}(\.\d{1,3})*$/.test(e) && e.split('.').length === PARTIDOS.length && e.split('.').reduce((a, x) => a + +x, 0) === 350;
+const limpiaE = e => validoE(e) ? e : '';                       // escaños: una cifra por partido de la tabla, separadas por puntos, o nada
 const enlaceDe = b => `${location.origin}${location.pathname}#p=${b.c}${b.e ? '&e=' + b.e : ''}&t=${b.t}${b.n ? '&n=' + encodeURIComponent(b.n) : ''}`;
 function leerHash(h) {
   const q = new URLSearchParams(h.replace(/^#/, ''));
@@ -72,7 +72,7 @@ const porraMedia = media ? reglas.filas.map((f, i) => { const m = media.filas[i]
 
 // ---------------------------------------------------------------- boleto
 const filas = $('filas');
-const CORTO = { FA: 'FA', AC: 'AC', BILDU: 'Bildu', POD: 'Podemos' };
+const CORTO = { FA: 'FA', BILDU: 'Bildu', POD: 'Podemos' };
 const nombre = (k) => CORTO[k] ? `<span class="largo">${NOMBRES[k]}</span><span class="corto">${CORTO[k]}</span>` : NOMBRES[k];
 const cuadro = (k) => `<span class="cuadro" style="background:${colorCss(k)}"></span>`;
 // Nombre accesible de cada casilla: qué fila es y qué significa la marca

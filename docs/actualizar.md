@@ -68,7 +68,7 @@ La última actualización es la del **23 de noviembre, antes de las 23:59**, con
 ## 6. Noche del 29N: resultados de la porra
 
 1. Copia `datos/resultados_29N_plantilla.csv` como `datos/resultados_29N.csv`.
-2. Rellena una fila por circunscripción y candidatura con escaño: `provincia,partido,escanos` (si una provincia reparte escaños entre varios partidos, repite la fila con cada uno). La provincia, tal como viene en la plantilla. Códigos de partido: `PP`, `PSOE`, `VOX`, `FA`, `POD`, `SALF`, `ERC`, `JUNTS`, `BILDU`, `PNV`, `BNG`, `CC`, `UPN`, `AC` y `OTROS`. Las cifras, de la web oficial de resultados del Ministerio del Interior. **Borra las filas que sigan vacías** (provincias aún sin resultado): si se quedan, la porra da esas provincias por escrutadas con 0 escaños.
+2. Rellena una fila por circunscripción y candidatura con escaño: `provincia,partido,escanos` (si una provincia reparte escaños entre varios partidos, repite la fila con cada uno). La provincia, tal como viene en la plantilla. Códigos de partido: `PP`, `PSOE`, `VOX`, `FA`, `POD`, `SALF`, `ERC`, `JUNTS`, `BILDU`, `PNV`, `BNG`, `CC`, `UPN` y `OTROS`. Las cifras, de la web oficial de resultados del Ministerio del Interior. **Borra las filas que sigan vacías** (provincias aún sin resultado): si se quedan, la porra da esas provincias por escrutadas con 0 escaños.
 3. `Rscript R/08_resultados.R provisional` genera `web/datos/resultados.json`. Publícalo: la porra corrige sola los boletos. Repite a medida que avance el escrutinio; mientras falten circunscripciones lo dice al final.
 4. Con los 350 escaños asignados se calcula también el juego de escaños. Al cerrar el escrutinio: `Rscript R/08_resultados.R definitivo`.
 

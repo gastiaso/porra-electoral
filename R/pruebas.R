@@ -30,7 +30,7 @@ de_js <- function(patron, defecto) {
   if (length(x)) gsub("'", "", x) else defecto
 }
 ORDEN <- de_js("export const ORDEN = \\[([^]]*)\\]",
-               c("PP", "PSOE", "VOX", "FA", "ERC", "BILDU", "PNV", "JUNTS", "AC", "BNG", "CC", "UPN", "POD", "SALF"))
+               c("PP", "PSOE", "VOX", "FA", "ERC", "BILDU", "PNV", "JUNTS", "BNG", "CC", "UPN", "POD", "SALF"))
 bloque <- regmatches(js, regexec("export const ESCENARIOS = \\[(.*?)\\];", js))[[1]][2]
 ids <- if (is.na(bloque)) character() else regmatches(bloque, gregexpr("id: '[^']+'", bloque))[[1]]
 ESCENARIOS <- if (length(ids)) sub("id: '([^']+)'", "\\1", ids) else c("A_media_privadas", "B_correccion_23J", "F_ancla_microdatos", "E_ancla_SW")

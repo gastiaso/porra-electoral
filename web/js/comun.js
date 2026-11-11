@@ -1,11 +1,11 @@
 // Utilidades comunes a todas las páginas. La web no calcula nada: solo lee datos/modelo.json.
 export const COLOR = { PP: '#1D5FA8', PSOE: '#D7263D', VOX: '#5A9E2F', FA: '#C2407D', POD: '#6B3FA0', SALF: '#A0522D',
-  ERC: '#E0A030', JUNTS: '#2BA6A3', BILDU: '#9AA53B', PNV: '#4F7A5A', BNG: '#78AEDB', CC: '#E6C84A', UPN: '#6C88AE', AC: '#3E5656' };
+  ERC: '#E0A030', JUNTS: '#2BA6A3', BILDU: '#9AA53B', PNV: '#4F7A5A', BNG: '#78AEDB', CC: '#E6C84A', UPN: '#6C88AE' };
 // Color de partido para usar en style="": la variable de estilo.css (que cambia en el boleto de noche) con el hexadecimal de reserva.
 export const colorCss = k => COLOR[k] ? `var(--${k.toLowerCase()}, ${COLOR[k]})` : '#9a948a';
 export const NOMBRES = { PP: 'PP', PSOE: 'PSOE', VOX: 'Vox', FA: 'Frente Amplio', POD: 'Podemos', SALF: 'SALF', ERC: 'ERC',
-  JUNTS: 'Junts', BILDU: 'EH Bildu', PNV: 'PNV', BNG: 'BNG', CC: 'CC', UPN: 'UPN', AC: 'Aliança Catalana' };
-export const ORDEN = ['PP', 'PSOE', 'VOX', 'FA', 'ERC', 'BILDU', 'PNV', 'JUNTS', 'AC', 'BNG', 'CC', 'UPN', 'POD', 'SALF'];
+  JUNTS: 'Junts', BILDU: 'EH Bildu', PNV: 'PNV', BNG: 'BNG', CC: 'CC', UPN: 'UPN' };
+export const ORDEN = ['PP', 'PSOE', 'VOX', 'FA', 'ERC', 'BILDU', 'PNV', 'JUNTS', 'BNG', 'CC', 'UPN', 'POD', 'SALF'];
 export const ESCENARIOS = [
   { id: 'A_media_privadas', corto: 'Si aciertan de media', largo: 'Si las encuestas aciertan de media' },
   { id: 'B_correccion_23J', corto: 'Si fallan como en 2023', largo: 'Si la media falla como en 2023 (1 punto de más al PP, 3 de menos al PSOE)' },

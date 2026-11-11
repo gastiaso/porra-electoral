@@ -134,7 +134,7 @@ function pintar(D) {
 
   // ---------------------------------------------------------------- 1-X-2
   const x12 = document.getElementById('x12');
-  const nc = k => ({ FA: 'F. Amplio', BILDU: 'Bildu', AC: 'Aliança' })[k] || N[k];
+  const nc = k => ({ FA: 'F. Amplio', BILDU: 'Bildu' })[k] || N[k];
   D.en_juego.slice(0, 8).forEach((x, j) => {
     const empate = (x.q1 - x.q2) < 0.05;
     x12.insertAdjacentHTML('beforeend', `<tr><td class="n">${j + 1}</td><td class="izq">${x.provincia} (${x.escanos})</td>
