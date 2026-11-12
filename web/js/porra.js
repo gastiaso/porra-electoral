@@ -17,9 +17,12 @@ const validoE = e => typeof e === 'string' && /^\d{1,3}(\.\d{1,3})*$/.test(e) &&
 const limpiaE = e => validoE(e) ? e : '';                       // escaños: una cifra por partido de la tabla, separadas por puntos, o nada
 const enlaceDe = b => `${location.origin}${location.pathname}#p=${b.c}${b.e ? '&e=' + b.e : ''}&t=${b.t}${b.n ? '&n=' + encodeURIComponent(b.n) : ''}`;
 function leerHash(h) {
-  const q = new URLSearchParams(h.replace(/^#/, ''));
-  if (q.get('pena')) {
-    const miembros = q.get('pena').split(';').map(m => { const [c, t, n, e] = m.split(','); return { c, t, n: n ? decodeURIComponent(n) : '', e: limpiaE(e) }; }).filter(m => valido(m.c));
+  const crudo = h.replace(/^#/, ''), q = new URLSearchParams(crudo);
+  // La peña se lee sin descodificar antes de trocear: un nombre puede llevar comas, punto y coma o «%»
+  const mp = crudo.match(/(?:^|&)pena=([^&]*)/);
+  if (mp && mp[1]) {
+    const texto = x => { try { return decodeURIComponent(x || ''); } catch (e) { return x || ''; } };
+    const miembros = mp[1].split(';').map(m => { const [c, t, n, e] = m.split(','); return { c, t, n: texto(n).slice(0, 30), e: limpiaE(e) }; }).filter(m => valido(m.c));
     return { pena: miembros };
   }
   if (valido(q.get('p'))) return { boleto: { c: q.get('p'), t: q.get('t') || '', n: q.get('n') || '', e: limpiaE(q.get('e')) } };
@@ -72,7 +75,7 @@ const porraMedia = media ? reglas.filas.map((f, i) => { const m = media.filas[i]
 
 // ---------------------------------------------------------------- boleto
 const filas = $('filas');
-const CORTO = { FA: 'FA', BILDU: 'Bildu', POD: 'Podemos' };
+const CORTO = { FA: 'FA', AA: 'Adelante', BILDU: 'Bildu', POD: 'Podemos' };
 const nombre = (k) => CORTO[k] ? `<span class="largo">${NOMBRES[k]}</span><span class="corto">${CORTO[k]}</span>` : NOMBRES[k];
 const cuadro = (k) => `<span class="cuadro" style="background:${colorCss(k)}"></span>`;
 // Nombre accesible de cada casilla: qué fila es y qué significa la marca
@@ -154,9 +157,11 @@ function corregir(c, e) {
 
 // ---------------------------------------------------------------- estado y acciones
 const estado = $('estado');
-const fechaHora = ms => { const d = new Date(ms); return `${d.toLocaleDateString('es-ES', { day: 'numeric', month: 'long' })} a las ${d.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}`; };
+// Siempre en hora peninsular, esté donde esté el navegador: el cierre es a las 9.00 de la Península
+const HUSO = 'Europe/Madrid';
+const fechaHora = ms => { const d = new Date(ms); return `${d.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', timeZone: HUSO })} a las ${d.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: HUSO })}`; };
 const textoResultados = (c, e) => {
-  if (!resultados) return cerrada ? 'Los resultados se publicarán aquí la noche electoral.' : `La porra se cierra el ${fechaHora(cierre)}. Los resultados se publicarán aquí la noche electoral.`;
+  if (!resultados) return cerrada ? 'Los resultados se publicarán aquí la noche electoral.' : `La porra se cierra el ${fechaHora(cierre)} (hora peninsular). Los resultados se publicarán aquí la noche electoral.`;
   const a = aciertos(c), prov = resultados.estado !== 'definitivo' ? ' (provisional)' : '';
   const m = porraMedia ? ` La porra de la media de encuestas lleva ${aciertos(porraMedia).n}.` : '';
   const d = desvio(e), dm = desvio(mediaE);
@@ -177,7 +182,7 @@ function mostrarMia() {
   } else {
     desbloquear(); ponerE('', false); $('alias').disabled = false; $('sellar').hidden = cerrada;
     estado.innerHTML = cerrada ? '<p class="modo"><b>La porra está cerrada.</b> Ya no se pueden sellar porras nuevas; puedes consultar las de tu peña.</p>'
-      : `<p class="modo"><b>Sin sellar.</b> Marca las 15 filas, reparte los escaños si quieres y pulsa «Sellar la porra». Se cierra el ${fechaHora(cierre)}.</p>`;
+      : `<p class="modo"><b>Sin sellar.</b> Marca las 15 filas, reparte los escaños si quieres y pulsa «Sellar la porra». Se cierra el ${fechaHora(cierre)} (hora peninsular).</p>`;
   }
 }
 function mostrarAjena(b) {
@@ -284,6 +289,8 @@ function pintarPena(ms) {
 
 // ---------------------------------------------------------------- arranque
 const h = leerHash(location.hash);
+// Abrir otro enlace de porra o de peña en esta misma pestaña solo cambia el final de la dirección: se recarga para leerlo
+addEventListener('hashchange', () => { if (location.hash.length > 1) location.reload(); });
 if (h.pena) { h.pena.forEach(m => anadirPena(m, true)); $('pena-aviso').textContent = 'Has abierto una peña: ya está guardada en este navegador.'; mostrarMia(); $('pena').scrollIntoView(); }
 else if (h.boleto) mostrarAjena(h.boleto);
 else mostrarMia();

@@ -1,6 +1,6 @@
 # Preguntas frecuentes
 
-*Versión del 10 de noviembre de 2026. El detalle del método está en la [metodología](metodologia.html).*
+*Versión del 11 de noviembre de 2026. El detalle del método está en la [metodología](metodologia.html).*
 
 ## La media de encuestas {#media}
 
@@ -37,7 +37,7 @@ Se ha repetido el cálculo con las encuestas publicadas hasta el último día pe
 
 ### ¿Por qué deja de actualizarse el 23 de noviembre? {#veda}
 
-Porque la ley electoral prohíbe publicar, difundir o reproducir sondeos durante los cinco días anteriores a la votación (LOREG, art. 69.7): del martes 24 al sábado 28 de noviembre. La última actualización es la del lunes 23. Del 24 al 28 la web sigue en línea, pero sin cifras, y la porra se puede rellenar sin la ayuda de la media. Tras el cierre de los colegios electorales, el 29, vuelven las cifras de la última actualización, sin cambios, para compararlas con el resultado.
+Porque la ley electoral prohíbe publicar, difundir o reproducir sondeos durante los cinco días anteriores a la votación (LOREG, art. 69.7): del martes 24 al sábado 28 de noviembre. La última actualización es la del lunes 23. Desde entonces la web sigue en línea tal como quedó ese día: no se añade ninguna encuesta ni se cambia ninguna cifra, y la porra se puede seguir rellenando. La noche del 29 esas mismas cifras se comparan con el resultado.
 
 ## La porra {#porra}
 

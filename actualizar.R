@@ -13,7 +13,7 @@ if (!file.exists("R/02_agregador.R")) stop("Ejecuta actualizar.R desde la carpet
 ULTIMO_CORTE <- as.Date("2026-11-23")
 CONGELACION <- as.POSIXct("2026-11-23 23:59:59", tz = "Europe/Madrid")
 PARTIDOS <- c("PP", "PSOE", "VOX", "FA", "POD", "SALF")
-ORDEN <- c("PP", "PSOE", "VOX", "FA", "ERC", "BILDU", "PNV", "JUNTS", "AC", "BNG", "CC", "UPN", "POD", "SALF")
+ORDEN <- c("PP", "PSOE", "VOX", "FA", "ERC", "BILDU", "PNV", "JUNTS", "AA", "BNG", "CC", "UPN", "POD", "SALF")
 ESCENARIO <- c(A_media_privadas = "Si aciertan de media", B_correccion_23J = "Si fallan como en 2023",
                C_ancla_CIS_M3 = "Si acierta el CIS (M3)", D_ancla_MiC = "Si acierta More in Common",
                D2_ancla_MiC_M3 = "Si acierta MiC (M3)", F_ancla_microdatos = "Si aciertan las de microdatos",

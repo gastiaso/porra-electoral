@@ -49,9 +49,10 @@ Z90 <- qnorm(0.95)
 l03 <- readLines("R/03_escanos.R", encoding = "UTF-8")
 if (!any(grepl("c(PP = 2.0, PSOE = 2.0, VOX = 1.5, FA = 1.0, POD = 0.7, SALF = 0.7)", l03, fixed = TRUE)))
   warning("El error común de R/03_escanos.R no coincide con SD_SIST de este script: actualízalo antes de publicar.")
-# Partidos que no entran en el agregador: objetivo fijo de R/03 (desviación relativa del 20 %)
+# Partidos que no entran en el agregador: objetivo fijo de R/03 (desviación relativa del 20 %; Adelante Andalucía, 30 %)
 eval(parse(text = grep("^REG <- c\\(", l03, value = TRUE)[1]))
-SUP <- REG; SD_REL <- setNames(rep(0.2, length(REG)), names(REG))
+eval(parse(text = grep("^AA_NAC <- ", l03, value = TRUE)[1])); eval(parse(text = grep("^AA_SD <- ", l03, value = TRUE)[1]))
+SUP <- c(REG, AA = AA_NAC); SD_REL <- c(setNames(rep(0.2, length(REG)), names(REG)), AA = AA_SD)
 ESCENARIOS <- c(A_media_privadas = "Si las encuestas aciertan de media",
                 B_correccion_23J = "Si fallan como en 2023",
                 F_ancla_microdatos = "Si aciertan el CIS y More in Common, recalculados con sus microdatos",
@@ -72,7 +73,7 @@ A <- readRDS("salidas/escanos_provincia_central.rds")                    # [sort
 stopifnot(identical(dimnames(A)[[2]], b$district), identical(dimnames(A)[[3]], colnames(E)))
 PARTIDOS <- colnames(E)                                                  # 14 candidaturas + OTROS y BLANCO (sin escaños)
 TODOS <- setdiff(PARTIDOS, "BLANCO")
-ORDEN <- c("PP", "PSOE", "VOX", "FA", "ERC", "BILDU", "PNV", "JUNTS", "BNG", "CC", "UPN", "POD", "SALF")
+ORDEN <- c("PP", "PSOE", "VOX", "FA", "ERC", "BILDU", "PNV", "JUNTS", "AA", "BNG", "CC", "UPN", "POD", "SALF")
 esc_sc <- fread("salidas/escanos_escenarios.csv")[swing == "mixto"]
 ult_esc <- fread("salidas/ultimo_escano.csv", encoding = "UTF-8")
 der <- E[, "PP"] + E[, "VOX"]

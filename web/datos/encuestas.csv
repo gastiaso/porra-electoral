@@ -12,6 +12,7 @@ IMOP,El Confidencial,2026-10-05,2026-10-07,900,"",30.4,26.5,19,7.6,2.3,1.9,Wikip
 GAD3,ABC,2026-10-05,2026-10-08,1077,tel,31.4,26.4,18.2,7.4,2.3,1.8,eleccionesEspaña.com,inicio de campo supuesto
 Hamalgama,Vozpopuli,2026-10-05,2026-10-08,1000,"",33.4,25.3,19.6,5.4,3.3,1.8,Wikipedia (en),""
 InvyMark,laSexta,2026-10-05,2026-10-08,1200,tel,32.8,28,18.8,6.3,3.2,1.8,Wikipedia (en),n no publicada: se usa la de su oleada anterior
+GESOP,Prensa Iberica,2026-10-06,2026-10-08,1000,"",28.7,26.1,18.9,8,2.6,2,Demócrata / mapaelectoral.es,publicada el 12-oct; campo y muestra según recopilaciones
 EMAnalytics,Electomania,2026-10-05,2026-10-09,4125,online,31.5,26.9,19.1,6,3.4,1.7,Wikipedia (en),""
 TargetPoint,El Debate,2026-10-06,2026-10-09,1002,"",32,25.9,18.7,6.9,3.4,1.3,Wikipedia (en),""
 IMOP,El Confidencial,2026-10-13,2026-10-16,1000,"",28.5,27.1,20,8.9,1.9,1.2,Demócrata (base de sondeos),""
@@ -32,7 +33,7 @@ Data10,Okdiario,2026-11-02,2026-11-03,1500,"",32.4,24.7,19.8,6.9,3.1,1.5,Demócr
 40dB,El Pais-SER,2026-11-02,2026-11-04,2000,online,31.9,29.9,18,3.9,1.2,2,Demócrata (base de sondeos),"FA 5,0 según Infobae/Electomanía"
 Sondaxe,La Voz de Galicia,2026-11-02,2026-11-04,1200,"",29.7,27.3,18.6,7.1,2.2,1.6,eleccionesEspaña.com,fechas según ficha (Demócrata)
 AteneoDato,elDiario.es,2026-11-02,2026-11-05,2000,mixto,31.5,28.6,18.6,6.1,1.5,,Democrata / eleccionesEspaña.com,""
-GAD3,ABC (Vocento),2026-11-03,2026-11-05,1502,tel,31.9,25.9,18.6,6,1.4,1.3,Infobae / eleccionesEspaña.com,""
+GAD3,ABC (Vocento),2026-11-03,2026-11-05,1502,tel,31.9,25.9,18.6,7.5,1.4,1.3,Demócrata (tabla de ABC) / eleccionesEspaña.com,"FA 7,5 con sus coaliciones territoriales, como en la entrega de octubre (7,4); Infobae da 6,0 sin ellas"
 NCReport,La Razon,2026-11-02,2026-11-05,1000,tel,33,25.6,19.3,6.9,2.4,,Demócrata (base de sondeos),"PP 32,6 en algunas recopilaciones"
 DYM,Henneo,2026-11-04,2026-11-06,1025,mixto,33.1,27.3,18.6,5.6,1.9,,Demócrata (base de sondeos),""
 EMAnalytics,Electomania,2026-11-01,2026-11-06,1860,online,31.1,25.3,19.2,6.1,1.8,1.9,Demócrata (base de sondeos),panel online

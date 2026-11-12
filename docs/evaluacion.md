@@ -20,7 +20,7 @@ Antes de ejecutarlo, `salidas/` debe contener las salidas de la última versión
 
 ## Ficheros de entrada
 
-**`datos/resultados_29N.csv`** (el mismo de la porra): `provincia,partido,escanos`, una fila por circunscripción y candidatura con escaño. Los nombres de circunscripción son los de `datos/base_23J.csv`; los códigos, `PP, PSOE, VOX, FA, POD, SALF, ERC, JUNTS, BILDU, PNV, BNG, CC, UPN, OTROS` (cualquier otro código cuenta como `OTROS`).
+**`datos/resultados_29N.csv`** (el mismo de la porra): `provincia,partido,escanos`, una fila por circunscripción y candidatura con escaño. Los nombres de circunscripción son los de `datos/base_23J.csv`; los códigos, `PP, PSOE, VOX, FA, POD, SALF, ERC, JUNTS, BILDU, PNV, BNG, CC, UPN, AA, OTROS` (cualquier otro código cuenta como `OTROS`).
 
 **`datos/resultados_29N_votos.csv`**: `ambito,partido,pct`, en porcentaje sobre voto válido (candidaturas más blanco) y con dos decimales.
 

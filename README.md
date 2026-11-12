@@ -45,6 +45,7 @@ No es una encuesta propia ni una casa de apuestas. Es un modelo hecho con las en
 | CIS | Microdatos del barómetro de octubre (estudio 3582), recalculados; el preelectoral entrará cuando se publique |
 | More in Common | Microdatos del *Pulso electoral*, recalculados |
 | Resultados de 2023 | Ministerio del Interior (escrutinio del 23J, BOE-A-2023-18907) |
+| Reparto provincial de Adelante Andalucía | Resultados de las elecciones andaluzas del 17 de mayo de 2026 |
 | Comprobación con 2019 y 2023 | Encuestas de esas campañas recopiladas en Wikipedia |
 
 ## Calendario

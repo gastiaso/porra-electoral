@@ -30,7 +30,7 @@
   --cien-fondo: transparent; --cien-tinta: var(--tinta); --cien-blanco: transparent; --cien-relleno: 0;
   --tinta-tenue: rgba(28,28,28,.16); --tinta-media: rgba(28,28,28,.35); --boleto-tenue: rgba(217,72,15,.06); --boleto-fondo: rgba(217,72,15,.1);
   --pp: #1D5FA8; --psoe: #D7263D; --vox: #5A9E2F; --fa: #C2407D; --pod: #6B3FA0; --salf: #A0522D;
-  --erc: #E0A030; --junts: #2BA6A3; --bildu: #9AA53B; --pnv: #4F7A5A; --bng: #78AEDB; --cc: #E6C84A; --upn: #6C88AE; --ac: #3E5656;
+  --erc: #E0A030; --junts: #2BA6A3; --bildu: #9AA53B; --pnv: #4F7A5A; --bng: #78AEDB; --cc: #E6C84A; --upn: #6C88AE; --aa: #0B6E4F;
   --titular: 'Archivo Black', 'Arial Black', sans-serif; --texto: 'Courier Prime', 'Courier New', monospace;
 }
 /* Boleto de noche. Solo en las páginas que lo admiten (<html class="con-noche">): sigue al sistema salvo que se haya
@@ -45,7 +45,7 @@
     --bien: #7cc47c; --bien-fondo: rgba(124,196,124,.16); --cuadro-borde: rgba(239,232,216,.4);
     --cien-fondo: #f3eee2; --cien-tinta: #1c1c1c; --cien-blanco: #fff; --cien-relleno: 5px;
   --tinta-tenue: rgba(239,232,216,.2); --tinta-media: rgba(239,232,216,.42); --boleto-tenue: rgba(239,108,57,.1); --boleto-fondo: rgba(239,108,57,.16);
-    --pp: #6191e0; --psoe: #da293f; --vox: #84c857; --fa: #c94683; --pod: #8a5bc0; --salf: #d07b53;
+    --pp: #6191e0; --psoe: #da293f; --vox: #84c857; --fa: #c94683; --pod: #8a5bc0; --salf: #d07b53; --aa: #2fa37c;
   }
 }
 :root.con-noche[data-tema=oscuro] {
@@ -55,7 +55,7 @@
   --bien: #7cc47c; --bien-fondo: rgba(124,196,124,.16); --cuadro-borde: rgba(239,232,216,.4);
   --cien-fondo: #f3eee2; --cien-tinta: #1c1c1c; --cien-blanco: #fff; --cien-relleno: 5px;
   --tinta-tenue: rgba(239,232,216,.2); --tinta-media: rgba(239,232,216,.42); --boleto-tenue: rgba(239,108,57,.1); --boleto-fondo: rgba(239,108,57,.16);
-  --pp: #6191e0; --psoe: #da293f; --vox: #84c857; --fa: #c94683; --pod: #8a5bc0; --salf: #d07b53;
+  --pp: #6191e0; --psoe: #da293f; --vox: #84c857; --fa: #c94683; --pod: #8a5bc0; --salf: #d07b53; --aa: #2fa37c;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }

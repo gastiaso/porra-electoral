@@ -16,7 +16,7 @@ const pct = x => `${f1(x)}${NBSP}%`;
 const signo = (x, d = 1) => { const r = +(+x).toFixed(d); return (r > 0 ? '+' : r < 0 ? '−' : '') + dec(Math.abs(r), d); };
 const prob = p => p == null ? '–' : p > 0.99 ? `>99${NBSP}%` : p < 0.01 ? `<1${NBSP}%` : `${Math.round(p * 100)}${NBSP}%`;
 const nombre = k => k === 'OTROS' ? 'Otros' : NOMBRES[k] || k;
-const corto = k => ({ FA: 'FA', BILDU: 'Bildu', OTROS: 'Otros' })[k] || NOMBRES[k] || k;
+const corto = k => ({ FA: 'FA', BILDU: 'Bildu', AA: 'Adelante', OTROS: 'Otros' })[k] || NOMBRES[k] || k;
 const partido = k => `<span class="cuadro" style="background:${color(k)}"></span>${nombre(k) === corto(k) ? nombre(k) : `<span class="n-largo">${nombre(k)}</span><span class="n-corto">${corto(k)}</span>`}`;
 const reparto = r => Object.entries(r || {}).map(([k, v]) => `${corto(k)}${NBSP}${v}`).join(' · ');
 const fCorta = s => { const [, m, d] = s.split('-'); return `${+d}${NBSP}${MES[+m - 1]}`; };
@@ -106,7 +106,7 @@ function seccionVoto(V, M) {
     <td>${intervalo(x.p05, x.p95)} ${marcaDentro(x.dentro)}</td><td>${intervalo(x.p05_comun, x.p95_comun)} ${marcaDentro(x.dentro_comun)}</td>
     <td>${f1(x.promedio_simple)}</td><td>${signo(x.error_simple)}</td></tr>`).join('');
   const otros = V.otros?.length ? `<h3>Partidos fuera de la media</h3>
-    <p class="nota">No entran en la media de encuestas: el modelo les asignaba un voto fijo, tomado de las encuestas que los publican, con un margen del 20${NBSP}% hacia arriba o hacia abajo.</p>
+    <p class="nota">No entran en la media de encuestas: el modelo les asignaba un voto fijo, tomado de las encuestas que los publican, con un margen del 20${NBSP}% hacia arriba o hacia abajo (30${NBSP}% en Adelante Andalucía).</p>
     <div class="desliza"><table class="tabla-eval"><thead><tr><th class="izq">Partido</th><th>Resultado</th><th>Supuesto</th><th>Diferencia</th><th>9 de cada 10</th></tr></thead><tbody>
     ${V.otros.map(x => `<tr><td class="izq">${partido(x.partido)}</td><td><b>${dec(x.resultado, 2)}</b></td>
       <td>${dec(x.supuesto, 2)}</td><td><b>${signo(x.error, 2)}</b></td><td>${intervalo(x.p05, x.p95, 2)} ${marcaDentro(x.dentro)}</td></tr>`).join('')}</tbody></table></div>` : '';

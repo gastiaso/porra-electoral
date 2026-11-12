@@ -54,6 +54,16 @@ cat("\nError del agregador en el 23J (media - resultado):\n"); print(round(err23
 REG <- c(ERC = 2.4, JUNTS = 1.3, BILDU = 1.35, PNV = 0.95, BNG = 0.95, CC = 0.45, UPN = 0.2)
 # Aliança Catalana no se presenta a las generales (decisión de su dirección, oct-2026): no entra en la simulación.
 # Su voto queda donde lo ponen las encuestas, que en su mayoría ya no la publicaban.
+# Adelante Andalucía: en el 23J solo se presentó en Cádiz, así que no hay patrón propio que trasladar. Objetivo estatal
+# de las encuestas de noviembre que la publican (Sigma Dos 1,6; Data10 1,3) y reparto por provincias como en las
+# andaluzas del 17 de mayo de 2026 (datos/andaluzas_2026_adelante.csv). Sd relativa del 30 %: es más incierta que el
+# resto, porque el patrón viene de unas autonómicas.
+AA_NAC <- 1.45
+AA_SD <- 0.3
+aa26 <- fread("datos/andaluzas_2026_adelante.csv", encoding = "UTF-8")
+stopifnot(all(aa26$provincia %in% b$district))
+AA_PATRON <- setNames(numeric(nrow(b)), b$district); AA_PATRON[aa26$provincia] <- aa26$pct_adelante
+AA_PATRON <- AA_PATRON / sum(AA_PATRON * w)            # % en cada provincia por cada punto estatal
 
 # Calibrado con el backtest (09_backtest.R): en 2019 y 2023 el error común llegó a 3,3 puntos (PSOE 23J) y 2,4
 # (Cs 10N). Con estos valores el resultado cae dentro del intervalo del 90 % en 8 de 9 casos; con los anteriores
@@ -119,9 +129,12 @@ provincias <- function(v, regla, sd_ccaa = 0.06, sd_prov = 0.06) {
   S <- cbind(S[, c("PP", "PSOE", "VOX")], FA = S[, "IZQ"] - POD, POD = POD, SALF = S[, "SALF"])
   reg <- sapply(names(REG), \(p) b[[paste0("s_", p)]] * (REG[[p]] * exp(rnorm(1, 0, 0.2))) / nac23(p) * exp(rnorm(nrow(b), 0, 0.05)))
   S <- cbind(S, reg)
-  resto <- pmax(100 - sum(colSums(S * w)), 1)          # otros + blanco, repartido como en 2023
+  # Adelante Andalucía: su % final en cada provincia; lo cede el resto de candidaturas de esa provincia, en proporción
+  aa <- pmin(AA_PATRON * AA_NAC * exp(rnorm(1, 0, AA_SD)) * exp(rnorm(nrow(b), 0, 0.1)), 40)
+  resto <- pmax(100 - sum(colSums(S * w)) - sum(aa * w), 1)   # otros + blanco, repartido como en 2023
   ob <- (b$s_OTROS + b$s_BLANCO); OB <- ob * resto / sum(ob * w)
   S <- cbind(S, OTROS = OB * b$s_OTROS / ob, BLANCO = OB * b$s_BLANCO / ob)
+  S <- cbind(S, AA = aa * rowSums(S) / (100 - aa))[, c(colnames(S)[seq_len(ncol(S) - 2)], "AA", "OTROS", "BLANCO")]
   S <- 100 * S / rowSums(S)
   # rastrillo: que el agregado estatal de los partidos estatales coincida con el draw
   for (it in 1:3) {

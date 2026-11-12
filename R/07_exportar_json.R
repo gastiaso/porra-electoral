@@ -4,8 +4,8 @@ set.seed(13112026)
 CORTE <- Sys.getenv("CORTE", "2026-11-08")
 VEDA <- Sys.getenv("VEDA", "0") == "1"                   # interruptor manual: 24-28 nov
 NOM <- c(PP = "PP", PSOE = "PSOE", VOX = "Vox", FA = "Frente Amplio", POD = "Podemos", SALF = "SALF", ERC = "ERC",
-         JUNTS = "Junts", BILDU = "EH Bildu", PNV = "PNV", BNG = "BNG", CC = "CC", UPN = "UPN")
-ORDEN_HEMI <- c("BILDU", "ERC", "POD", "FA", "BNG", "PSOE", "PNV", "CC", "JUNTS", "UPN", "PP", "VOX", "SALF")
+         JUNTS = "Junts", BILDU = "EH Bildu", PNV = "PNV", BNG = "BNG", CC = "CC", UPN = "UPN", AA = "Adelante Andalucía")
+ORDEN_HEMI <- c("BILDU", "ERC", "AA", "POD", "FA", "BNG", "PSOE", "PNV", "CC", "JUNTS", "UPN", "PP", "VOX", "SALF")
 
 r <- fread("salidas/agregador_resumen.csv"); s <- fread("salidas/agregador_serie.csv")
 e <- fread("datos/encuestas.csv", encoding = "UTF-8")
@@ -21,7 +21,7 @@ der <- E[, "PP"] + E[, "VOX"]
 # un reparto representativo (el sorteo más cercano a las medianas) para dibujar el hemiciclo
 med <- apply(E, 2, median); rep_i <- which.min(rowSums(abs(sweep(E, 2, med))))
 hemi <- E[rep_i, ORDEN_HEMI]; hemi <- hemi[hemi > 0]
-ORDEN_TABLA <- c("PP", "PSOE", "VOX", "FA", "ERC", "BILDU", "PNV", "JUNTS", "BNG", "CC", "UPN", "POD", "SALF")
+ORDEN_TABLA <- c("PP", "PSOE", "VOX", "FA", "ERC", "BILDU", "PNV", "JUNTS", "AA", "BNG", "CC", "UPN", "POD", "SALF")
 id_tiradas <- sample.int(nrow(E), 200)
 tiradas <- cbind(n = id_tiradas, E[id_tiradas, ORDEN_TABLA])
 en_juego <- u[order(-p)][, .(p1 = partido[1], q1 = p[1], p2 = partido[2], q2 = p[2], escanos = escanos[1]), by = provincia][order(q1)][1:12]

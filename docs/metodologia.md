@@ -1,8 +1,10 @@
 # Metodología
 
-*Versión del 10 de noviembre de 2026. El método puede cambiar hasta el lanzamiento; los cambios posteriores quedarán registrados aquí con su fecha.*
+*Versión del 11 de noviembre de 2026. El método puede cambiar hasta el lanzamiento; los cambios posteriores quedarán registrados aquí con su fecha.*
 
 *10-nov: error común ampliado y escenario «si fallan como en 2023» recalculado, ambos a partir de la comprobación con 2019 y 2023 (sección 6).*
+
+*11-nov: sale Aliança Catalana, que no concurre, y entra Adelante Andalucía (sección 4).*
 
 ## 1. Qué es y qué no es
 
@@ -31,8 +33,9 @@ Es una **media de encuestas publicadas**, corregida por el sesgo de cada empresa
 2. El cambio estatal de cada partido se traslada a cada provincia como mezcla de dos reglas: proporcional y aditiva. Se añade una variación aleatoria por comunidad y por provincia.
 3. El espacio de Sumar en 2023 se reparte entre Frente Amplio y Podemos, salvo en la Comunitat Valenciana y Canarias, donde concurren juntos.
 4. Partidos de ámbito autonómico: su peso estatal se toma de las encuestas que los publican, con un 20 % de incertidumbre. Aliança Catalana no concurre a estas generales y no entra en el modelo.
-5. Se suma un **error común de todas las encuestas** el día de la votación, de tamaño desconocido: desviación típica de 2 puntos en PP y PSOE, 1,5 en Vox, 1 en Frente Amplio y 0,7 en Podemos y SALF, calibrada con 2019 y 2023 (sección 6). PP y PSOE tienden a fallar en sentido contrario, y PP y Vox comparten votantes.
-6. Ley D'Hondt con umbral del 3 % en cada circunscripción, 4.000 veces.
+5. **Adelante Andalucía** no tiene patrón propio de 2023, porque entonces solo se presentó en Cádiz. Su peso estatal (1,45 %) sale de las encuestas de noviembre que la publican y se reparte por provincias como en las elecciones andaluzas de mayo de 2026, con un 30 % de incertidumbre. Ese voto lo ceden las demás candidaturas de cada provincia andaluza, en proporción a su tamaño.
+6. Se suma un **error común de todas las encuestas** el día de la votación, de tamaño desconocido: desviación típica de 2 puntos en PP y PSOE, 1,5 en Vox, 1 en Frente Amplio y 0,7 en Podemos y SALF, calibrada con 2019 y 2023 (sección 6). PP y PSOE tienden a fallar en sentido contrario, y PP y Vox comparten votantes.
+7. Ley D'Hondt con umbral del 3 % en cada circunscripción, 4.000 veces.
 
 ## 5. Escenarios
 
@@ -67,6 +70,7 @@ El mismo agregador, alimentado solo con las encuestas publicadas hasta el últim
 
 - Las reglas de traslado a provincias no recogen realineamientos territoriales nuevos.
 - Los partidos autonómicos son muy inciertos, y el voto que deja libre Aliança Catalana en Cataluña solo está recogido en la medida en que ya lo reflejan las encuestas.
+- El reparto provincial de Adelante Andalucía viene de unas autonómicas: en unas generales puede concentrarse de otra manera, y eso decide si saca dos escaños o cuatro.
 - La concurrencia de Podemos en las listas de ERC en Cataluña no está modelizada.
 - El error común está calibrado con pocas elecciones (sección 6).
 

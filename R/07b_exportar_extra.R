@@ -15,10 +15,10 @@ NOMBRE_CASA <- c(AteneoDato = "Ateneo del Dato", SigmaDos = "Sigma Dos", Winston
   EMAnalytics = "EM-Analytics", SocioMetrica = "SocioMétrica", NCReport = "NC Report", DYM = "DYM", IMOP = "IMOP",
   `40dB` = "40dB", GAD3 = "GAD3", Hamalgama = "Hamalgama Métrica", InvyMark = "InvyMark", TargetPoint = "Target Point",
   MoreInCommon = "More in Common", Sondaxe = "Sondaxe", CelesteTel = "Celeste-Tel", SW = "SW Demoscopia",
-  CIS_M3 = "CIS (reestimación propia)")
+  GESOP = "GESOP", CIS_M3 = "CIS (reestimación propia)")
 CLIENTE <- c(`El Pais-SER` = "El País-SER", `El Espanol` = "El Español", Articulo14 = "Artículo14", Vozpopuli = "Vozpópuli",
   `La Razon` = "La Razón", Electomania = "Electomanía", `ABC (Vocento)` = "ABC", propia = "publicación propia",
-  `La Septima` = "La Séptima", `CIS 3582 reestimado` = "CIS, estudio 3582 (microdatos)")
+  `La Septima` = "La Séptima", `Prensa Iberica` = "Prensa Ibérica", `CIS 3582 reestimado` = "CIS, estudio 3582 (microdatos)")
 MODO <- c(tel = "telefónica", online = "por internet", mixto = "mixta (combina varios modos)", IVR = "llamadas automáticas (IVR)")
 # Enlaces conocidos (los mismos que cita la metodología). Si encuestas.csv trae una columna `url`, manda esa.
 URL_FUENTE <- list(c("Dem[oó]crata", "https://www.democrata.es/elecciones-generales-espana/herramientas/encuestas"),

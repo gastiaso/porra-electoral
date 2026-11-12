@@ -1,7 +1,7 @@
 # Resultados del 29N para comprobar las quinielas.
 # Entrada: datos/resultados_29N.csv con una fila por circunscripción y candidatura que obtenga escaño:
 #   provincia, partido, escanos      (partido con los códigos de la web: PP, PSOE, VOX, FA, POD, SALF, ERC, JUNTS,
-#                                     BILDU, PNV, BNG, CC, UPN, OTROS)
+#                                     BILDU, PNV, BNG, CC, UPN, AA, OTROS)
 #   y, opcionalmente, una fila por circunscripción con partido = "_ESTADO" y escanos = 1 si el escrutinio está cerrado.
 # Salida: web/datos/resultados.json (la quiniela lo detecta solo y corrige los boletos).
 # Uso: Rscript R/08_resultados.R [provisional|definitivo]
