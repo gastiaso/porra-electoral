@@ -28,7 +28,7 @@
   </header>
   <article class="texto">
 <h1 id="metodología">Metodología</h1>
-<p><em>Versión del 11 de noviembre de 2026. El método puede cambiar
+<p><em>Versión del 18 de noviembre de 2026. El método puede cambiar
 hasta el lanzamiento; los cambios posteriores quedarán registrados aquí
 con su fecha.</em></p>
 <p><em>10-nov: error común ampliado y escenario «si fallan como en 2023»
@@ -36,6 +36,9 @@ recalculado, ambos a partir de la comprobación con 2019 y 2023 (sección
 6).</em></p>
 <p><em>11-nov: sale Aliança Catalana, que no concurre, y entra Adelante
 Andalucía (sección 4).</em></p>
+<p><em>18-nov: entra el preelectoral del CIS con su estimación publicada;
+el Frente Amplio suma sus candidaturas territoriales; los seguimientos
+diarios entran por ventanas sin solape (sección 2).</em></p>
 <h2 id="qué-es-y-qué-no-es">1. Qué es y qué no es</h2>
 <p>Es una <strong>media de encuestas publicadas</strong>, corregida por
 el sesgo de cada empresa y convertida en escaños mediante simulación. No
@@ -48,9 +51,17 @@ con otros supuestos.</p>
 <li>Entran las estimaciones de voto publicadas desde finales de
 septiembre de 2026, con su empresa, cliente, fechas de campo, muestra y
 fuente (<code>datos/encuestas.csv</code>).</li>
-<li>Una empresa que publica un seguimiento diario acumulado entra
-<strong>una sola vez</strong>, con su última entrega, para no contar
-varias veces las mismas entrevistas.</li>
+<li><strong>Seguimientos diarios (trackings):</strong> cada entrega
+repite casi todas las entrevistas de la anterior. Por eso entra una fila
+por ventana de campo que no se solape con la anterior de esa empresa. Si
+la muestra es acumulada desde el primer día (SW Demoscopia,
+SocioMétrica), entra solo la última entrega.</li>
+<li><strong>Frente Amplio</strong> incluye las candidaturas
+territoriales de su mismo espacio (Compromís–Front Valencià y las de
+Canarias, Baleares y Aragón) cuando la encuesta las publica aparte,
+porque el reparto de escaños las cuenta juntas. Se aplica desde mediados
+de octubre, cuando se conocieron las listas; las empresas que no las
+desglosan quedan como las publican.</li>
 <li><strong>SW Demoscopia</strong> entra con una muestra efectiva de
 1.000 entrevistas, menor que la declarada, por dos razones: acumula
 entrevistas día a día y hay dudas publicadas sobre su modo de entrevista
@@ -61,9 +72,13 @@ de sondeos de Demócrata</a>, que enlaza cada estudio con su publicación
 original. Las pocas que no figuran allí salen de otras recopilaciones,
 citadas fila a fila; las discrepancias se anotan en la columna
 <code>nota</code>.</li>
-<li><strong>CIS:</strong> no se usa su estimación publicada. Se usa una
-<strong>reestimación propia sobre sus microdatos</strong> (votantes
-probables más reparto de indecisos, modelo M3).</li>
+<li><strong>CIS:</strong> aparece de dos formas. Su <strong>encuesta
+preelectoral entra con la estimación que publicó</strong>; y su
+barómetro de octubre, con una <strong>reestimación propia sobre sus
+microdatos</strong> (votantes probables más reparto de indecisos, modelo
+M3). El preelectoral se recalculará igual cuando se publiquen sus
+microdatos. En los dos casos su sesgo se estima aparte y no cuenta para
+la referencia de las privadas.</li>
 </ul>
 <h2 id="agregador">3. Agregador</h2>
 <ul>
@@ -76,7 +91,7 @@ estima con los datos.</li>
 <li>Los sesgos de empresa se suponen de <strong>media cero entre las
 empresas privadas</strong>, y en esa media cada empresa pesa lo mismo,
 publique mucho o poco. Es el supuesto que más pesa en el resultado.</li>
-<li><strong>SW Demoscopia y el CIS recalculado quedan fuera de esa
+<li><strong>SW Demoscopia y el CIS (publicado y recalculado) quedan fuera de esa
 referencia:</strong> su sesgo se estima libremente, sin obligarlo a
 compensarse con el de las demás. Los paneles de Electomanía entran como
 una empresa privada más.</li>

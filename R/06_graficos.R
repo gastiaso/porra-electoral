@@ -13,7 +13,7 @@ s <- fread("salidas/agregador_serie.csv"); s[, fecha := as.Date(fecha)]
 e <- fread("datos/encuestas.csv", encoding = "UTF-8")
 e[, medio := as.Date(inicio) + round((as.Date(fin) - as.Date(inicio)) / 2)]
 el <- melt(e, id.vars = c("casa", "medio"), measure.vars = names(COL), variable.name = "partido", value.name = "v")[!is.na(v)]
-el[, tipo := fifelse(casa %in% c("SW", "CIS_M3", "MoreInCommon"), casa, "otras")]
+el[, tipo := fifelse(casa %in% c("SW", "CIS_M3", "MoreInCommon"), casa, fifelse(casa == "CIS", "CIS_M3", "otras"))]
 for (d in list(s, el)) d[, partido := factor(NOMBRE[as.character(partido)], levels = NOMBRE)]
 s[, fase := fifelse(fecha <= as.Date(Sys.getenv("CORTE", "2026-11-08")), "datos", "proyección")]
 

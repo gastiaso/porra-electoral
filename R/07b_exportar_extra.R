@@ -4,7 +4,7 @@
 suppressPackageStartupMessages({ library(data.table); library(jsonlite) })
 CORTE <- Sys.getenv("CORTE", "2026-11-08")
 GENERADO <- format(Sys.time(), "%Y-%m-%d %H:%M")
-LIBRES <- c("SW", "CIS_M3")                       # fuera de la restricción «media de las privadas = 0» (R/02)
+LIBRES <- c("SW", "CIS", "CIS_M3")                     # fuera de la restricción «media de las privadas = 0» (R/02)
 P4 <- c("PP", "PSOE", "VOX", "FA")
 
 e <- fread("datos/encuestas.csv", encoding = "UTF-8", colClasses = list(character = c("inicio", "fin")))
@@ -15,10 +15,10 @@ NOMBRE_CASA <- c(AteneoDato = "Ateneo del Dato", SigmaDos = "Sigma Dos", Winston
   EMAnalytics = "EM-Analytics", SocioMetrica = "SocioMétrica", NCReport = "NC Report", DYM = "DYM", IMOP = "IMOP",
   `40dB` = "40dB", GAD3 = "GAD3", Hamalgama = "Hamalgama Métrica", InvyMark = "InvyMark", TargetPoint = "Target Point",
   MoreInCommon = "More in Common", Sondaxe = "Sondaxe", CelesteTel = "Celeste-Tel", SW = "SW Demoscopia",
-  GESOP = "GESOP", CIS_M3 = "CIS (reestimación propia)")
+  GESOP = "GESOP", YouGov = "YouGov", CIS = "CIS", CIS_M3 = "CIS (reestimación propia)")
 CLIENTE <- c(`El Pais-SER` = "El País-SER", `El Espanol` = "El Español", Articulo14 = "Artículo14", Vozpopuli = "Vozpópuli",
   `La Razon` = "La Razón", Electomania = "Electomanía", `ABC (Vocento)` = "ABC", propia = "publicación propia",
-  `La Septima` = "La Séptima", `Prensa Iberica` = "Prensa Ibérica", `CIS 3582 reestimado` = "CIS, estudio 3582 (microdatos)")
+  `La Septima` = "La Séptima", `Prensa Iberica` = "Prensa Ibérica", `CIS 3582 reestimado` = "CIS, estudio 3582 (microdatos)", preelectoral = "encuesta preelectoral")
 MODO <- c(tel = "telefónica", online = "por internet", mixto = "mixta (combina varios modos)", IVR = "llamadas automáticas (IVR)")
 # Enlaces conocidos (los mismos que cita la metodología). Si encuestas.csv trae una columna `url`, manda esa.
 URL_FUENTE <- list(c("Dem[oó]crata", "https://www.democrata.es/elecciones-generales-espana/herramientas/encuestas"),
@@ -80,7 +80,7 @@ enc[, medio := as.Date(inicio) + round((as.Date(fin) - as.Date(inicio)) / 2)]
 serie <- fread("salidas/agregador_serie.csv"); serie[, fecha := as.Date(fecha)]
 desv <- function(cs) { ec <- enc[casa == cs][.N]; mt <- serie[fecha == ec$medio, setNames(med, partido)]
   sapply(P4, \(p) ec[[p]] - mt[[p]]) }
-ANCLAS <- list(C_ancla_CIS_M3 = "CIS_M3", D_ancla_MiC = "MoreInCommon", D2_ancla_MiC_M3 = "MiC_M3", E_ancla_SW = "SW",
+ANCLAS <- list(C0_ancla_CIS = "CIS", C_ancla_CIS_M3 = "CIS_M3", D_ancla_MiC = "MoreInCommon", D2_ancla_MiC_M3 = "MiC_M3", E_ancla_SW = "SW",
                F_ancla_microdatos = c("CIS_M3", "MiC_M3"))
 anclas <- lapply(ANCLAS, \(cs) {
   d <- Reduce(`+`, lapply(cs, desv)) / length(cs)

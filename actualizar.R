@@ -15,7 +15,7 @@ CONGELACION <- as.POSIXct("2026-11-23 23:59:59", tz = "Europe/Madrid")
 PARTIDOS <- c("PP", "PSOE", "VOX", "FA", "POD", "SALF")
 ORDEN <- c("PP", "PSOE", "VOX", "FA", "ERC", "BILDU", "PNV", "JUNTS", "AA", "BNG", "CC", "UPN", "POD", "SALF")
 ESCENARIO <- c(A_media_privadas = "Si aciertan de media", B_correccion_23J = "Si fallan como en 2023",
-               C_ancla_CIS_M3 = "Si acierta el CIS (M3)", D_ancla_MiC = "Si acierta More in Common",
+               C0_ancla_CIS = "Si acierta el CIS (publicado)", C_ancla_CIS_M3 = "Si acierta el CIS (M3)", D_ancla_MiC = "Si acierta More in Common",
                D2_ancla_MiC_M3 = "Si acierta MiC (M3)", F_ancla_microdatos = "Si aciertan las de microdatos",
                E_ancla_SW = "Si acierta SW")
 t_inicio <- Sys.time()

@@ -87,7 +87,7 @@ escenario <- function(nombre) {
   # Anclas: "si esta casa tuviera razón". Se usa su desviación bruta respecto a la tendencia en su fecha de campo
   # (no el efecto casa encogido del modelo, que con una sola encuesta apenas se separa del ruido), más su error muestral.
   # F: media de las dos fuentes con microdatos abiertos reestimadas con el mismo modelo (CIS-M3 y MiC-M3).
-  ancla <- list(C_ancla_CIS_M3 = "CIS_M3", D_ancla_MiC = "MoreInCommon", D2_ancla_MiC_M3 = "MiC_M3", E_ancla_SW = "SW",
+  ancla <- list(C0_ancla_CIS = "CIS", C_ancla_CIS_M3 = "CIS_M3", D_ancla_MiC = "MoreInCommon", D2_ancla_MiC_M3 = "MiC_M3", E_ancla_SW = "SW",
                 F_ancla_microdatos = c("CIS_M3", "MiC_M3"))
   if (nombre %in% names(ancla)) {
     desv <- lapply(ancla[[nombre]], \(cs) {
@@ -177,7 +177,7 @@ resumen <- function(sim, nombre, regla) {
     `PP+VOX p05` = quantile(E[, "PP"] + E[, "VOX"], .05), `PP+VOX p95` = quantile(E[, "PP"] + E[, "VOX"], .95))
 }
 
-ESCENARIOS <- c("A_media_privadas", "B_correccion_23J", "C_ancla_CIS_M3", "D_ancla_MiC", "D2_ancla_MiC_M3", "F_ancla_microdatos", "E_ancla_SW")
+ESCENARIOS <- c("A_media_privadas", "B_correccion_23J", "C0_ancla_CIS", "C_ancla_CIS_M3", "D_ancla_MiC", "D2_ancla_MiC_M3", "F_ancla_microdatos", "E_ancla_SW")
 REGLAS <- c("mixto", "proporcional", "aditivo")
 tabla <- list(); central <- NULL
 for (sc in ESCENARIOS) for (rg in REGLAS) {

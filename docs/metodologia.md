@@ -1,10 +1,12 @@
 # Metodología
 
-*Versión del 11 de noviembre de 2026. El método puede cambiar hasta el lanzamiento; los cambios posteriores quedarán registrados aquí con su fecha.*
+*Versión del 18 de noviembre de 2026. El método puede cambiar hasta el lanzamiento; los cambios posteriores quedarán registrados aquí con su fecha.*
 
 *10-nov: error común ampliado y escenario «si fallan como en 2023» recalculado, ambos a partir de la comprobación con 2019 y 2023 (sección 6).*
 
 *11-nov: sale Aliança Catalana, que no concurre, y entra Adelante Andalucía (sección 4).*
+
+*18-nov: entra el preelectoral del CIS con su estimación publicada; el Frente Amplio suma sus candidaturas territoriales; los seguimientos diarios entran por ventanas sin solape (sección 2).*
 
 ## 1. Qué es y qué no es
 
@@ -13,17 +15,18 @@ Es una **media de encuestas publicadas**, corregida por el sesgo de cada empresa
 ## 2. Encuestas
 
 - Entran las estimaciones de voto publicadas desde finales de septiembre de 2026, con su empresa, cliente, fechas de campo, muestra y fuente (`datos/encuestas.csv`).
-- Una empresa que publica un seguimiento diario acumulado entra **una sola vez**, con su última entrega, para no contar varias veces las mismas entrevistas.
+- **Seguimientos diarios (trackings):** cada entrega repite casi todas las entrevistas de la anterior. Por eso entra una fila por ventana de campo que no se solape con la anterior de esa empresa. Si la muestra es acumulada desde el primer día (SW Demoscopia, SocioMétrica), entra solo la última entrega.
+- **Frente Amplio** incluye las candidaturas territoriales de su mismo espacio (Compromís–Front Valencià y las de Canarias, Baleares y Aragón) cuando la encuesta las publica aparte, porque el reparto de escaños las cuenta juntas. Se aplica desde mediados de octubre, cuando se conocieron las listas; las empresas que no las desglosan quedan como las publican.
 - **SW Demoscopia** entra con una muestra efectiva de 1.000 entrevistas, menor que la declarada, por dos razones: acumula entrevistas día a día y hay dudas publicadas sobre su modo de entrevista (llamadas automáticas).
 - Cifras, fechas de campo y muestras se toman de la [base de sondeos de Demócrata](https://www.democrata.es/elecciones-generales-espana/herramientas/encuestas), que enlaza cada estudio con su publicación original. Las pocas que no figuran allí salen de otras recopilaciones, citadas fila a fila; las discrepancias se anotan en la columna `nota`.
-- **CIS:** no se usa su estimación publicada. Se usa una **reestimación propia sobre sus microdatos** (votantes probables más reparto de indecisos, modelo M3).
+- **CIS:** aparece de dos formas. Su **encuesta preelectoral entra con la estimación que publicó**; y su barómetro de octubre, con una **reestimación propia sobre sus microdatos** (votantes probables más reparto de indecisos, modelo M3). El preelectoral se recalculará igual cuando se publiquen sus microdatos. En los dos casos su sesgo se estima aparte y no cuenta para la referencia de las privadas.
 
 ## 3. Agregador
 
 - Cada partido (PP, PSOE, Vox, Frente Amplio, Podemos y SALF) tiene una tendencia diaria que puede cambiar de un día para otro (paseo aleatorio).
 - Cada encuesta se descompone en cuatro partes: tendencia del día, sesgo de su empresa, error de muestreo y un error adicional que se estima con los datos.
 - Los sesgos de empresa se suponen de **media cero entre las empresas privadas**, y en esa media cada empresa pesa lo mismo, publique mucho o poco. Es el supuesto que más pesa en el resultado.
-- **SW Demoscopia y el CIS recalculado quedan fuera de esa referencia:** su sesgo se estima libremente, sin obligarlo a compensarse con el de las demás. Los paneles de Electomanía entran como una empresa privada más.
+- **SW Demoscopia y el CIS (publicado y recalculado) quedan fuera de esa referencia:** su sesgo se estima libremente, sin obligarlo a compensarse con el de las demás. Los paneles de Electomanía entran como una empresa privada más.
 - Los sesgos pueden ser grandes en una empresa concreta sin arrastrar al resto (distribución de colas anchas).
 - Se estima por MCMC (JAGS) y se proyecta hasta el 29 de noviembre: la incertidumbre crece con los días que faltan.
 

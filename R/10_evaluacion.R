@@ -57,6 +57,7 @@ ESCENARIOS <- c(A_media_privadas = "Si las encuestas aciertan de media",
                 B_correccion_23J = "Si fallan como en 2023",
                 F_ancla_microdatos = "Si aciertan el CIS y More in Common, recalculados con sus microdatos",
                 E_ancla_SW = "Si acierta SW Demoscopia",
+                C0_ancla_CIS = "Si acierta el CIS (estimación publicada)",
                 C_ancla_CIS_M3 = "Si acierta el CIS, recalculado con sus microdatos",
                 D_ancla_MiC = "Si acierta More in Common (estimación publicada)",
                 D2_ancla_MiC_M3 = "Si acierta More in Common, recalculada con sus microdatos")

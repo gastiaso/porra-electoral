@@ -1,6 +1,6 @@
 # Preguntas frecuentes
 
-*Versión del 11 de noviembre de 2026. El detalle del método está en la [metodología](metodologia.html).*
+*Versión del 18 de noviembre de 2026. El detalle del método está en la [metodología](metodologia.html).*
 
 ## La media de encuestas {#media}
 
@@ -16,9 +16,9 @@ Porque la cifra central depende de un supuesto: que las empresas, en conjunto, a
 
 Es la tendencia de una empresa a dar sistemáticamente más o menos a un partido que las demás, por su forma de trabajar: cómo entrevista, cómo pondera, qué hace con los indecisos. El modelo lo estima con todas las entregas de cada empresa y lo descuenta. Para fijar desde dónde se mide, supone que el efecto medio de las empresas privadas es cero, y en esa referencia cada empresa pesa lo mismo, publique una encuesta o diez. Es el supuesto que más pesa en el resultado: si todas se equivocan hacia el mismo lado, la corrección no lo arregla.
 
-### ¿Por qué el CIS entra recalculado con sus microdatos y no con su estimación? {#cis}
+### ¿Cómo entra el CIS? {#cis}
 
-Porque el CIS publica las respuestas de cada entrevistado (microdatos), y eso permite calcular su estimación con un procedimiento explícito y repetible: quedarse con quienes probablemente votarán y repartir a los indecisos. Es el mismo procedimiento que se aplica a los microdatos de More in Common en el escenario «si aciertan las de microdatos abiertos». Así el CIS entra con un criterio documentado y no con la cifra que publica el propio organismo. Su efecto casa se estima, pero no cuenta para la referencia de las privadas. El preelectoral del CIS se incorporará igual cuando se publiquen sus microdatos.
+De dos formas. La primera es su propia estimación: la encuesta preelectoral aparece con las cifras que publicó el CIS. La segunda es un recálculo: el CIS publica las respuestas de cada entrevistado (microdatos), y eso permite estimar el voto con un procedimiento explícito y repetible, que consiste en quedarse con quienes probablemente votarán y repartir a los indecisos. Es el mismo que se aplica a los microdatos de More in Common. Hoy ese recálculo solo existe para el barómetro de octubre; el del preelectoral se hará cuando el CIS publique sus microdatos. En los dos casos el sesgo del CIS se estima aparte y no cuenta para la referencia de las empresas privadas, así que no mueve la media.
 
 ### ¿Qué se hace con SW Demoscopia y con los paneles de Electomanía? {#sw-electomania}
 

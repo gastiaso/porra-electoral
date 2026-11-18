@@ -1,7 +1,7 @@
 # Agregador de encuestas con efectos casa (JAGS).
 #   y[i,k] = mu[t_i,k] + h[casa_i,k] + error muestral + error no muestral (tau_k)
 #   mu[.,k]: paseo aleatorio diario, del 25-sep al 29-nov (el tramo sin encuestas proyecta la incertidumbre hasta el 29N)
-#   Identificación: la media de los efectos casa de las privadas es cero (SW y CIS_M3 quedan fuera de la restricción,
+#   Identificación: la media de los efectos casa de las privadas es cero (SW, el CIS publicado y CIS_M3 quedan fuera de la restricción,
 #   con efecto casa libre pero encogido hacia cero por la misma distribución jerárquica, t de Student con 3 g.l.).
 # Salida: salidas/agregador_draws.rds, salidas/agregador_resumen.csv, salidas/efectos_casa.csv
 suppressPackageStartupMessages({ library(data.table); library(rjags) })
@@ -10,7 +10,7 @@ set.seed(29112026)
 
 PARTIDOS <- c("PP", "PSOE", "VOX", "FA", "POD", "SALF")
 DIA0 <- as.Date("2026-09-25"); ELECCION <- as.Date("2026-11-29"); HOY <- as.Date(Sys.getenv("CORTE", "2026-11-08"))
-FUERA_DE_LA_RESTRICCION <- c("SW", "CIS_M3")
+FUERA_DE_LA_RESTRICCION <- c("SW", "CIS", "CIS_M3")
 excluir <- strsplit(Sys.getenv("EXCLUIR", ""), ",")[[1]]   # p. ej. EXCLUIR=SW para la variante sin SW
 
 e <- fread("datos/encuestas.csv", encoding = "UTF-8")

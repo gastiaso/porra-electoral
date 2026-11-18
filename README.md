@@ -32,7 +32,7 @@ No es una encuesta propia ni una casa de apuestas. Es un modelo hecho con las en
 ## En qué se diferencia de otras medias
 
 - **Corrige el sesgo de cada empresa** en lugar de promediar sin más, así que una empresa que publica muy a menudo no arrastra la media.
-- **Recalcula el CIS y More in Common desde sus microdatos**, con el mismo método para las dos, en vez de usar la estimación que publican.
+- **Recalcula el CIS y More in Common desde sus microdatos**, con el mismo método para las dos, y lo enseña junto a la estimación que publican.
 - **Convierte votos en escaños provincia a provincia**, con la ley D'Hondt y el umbral del 3 %, partiendo del resultado del 23J.
 - **Está comprobada con elecciones pasadas.** Con las encuestas publicadas antes de las generales de noviembre de 2019 y de julio de 2023, el mismo método se desvió de media 1,1 y 1,5 puntos por partido. El margen de error se ajustó con esa comprobación.
 - **Todo está a la vista**: las encuestas, los resultados del modelo y el código se pueden descargar y revisar.
@@ -42,7 +42,7 @@ No es una encuesta propia ni una casa de apuestas. Es un modelo hecho con las en
 | Qué | Fuente |
 |---|---|
 | Encuestas publicadas | [Base de sondeos de Demócrata](https://www.democrata.es/elecciones-generales-espana/herramientas/encuestas), que enlaza cada estudio con su publicación original; las que no figuran allí, de la fuente que cita cada fila |
-| CIS | Microdatos del barómetro de octubre (estudio 3582), recalculados; el preelectoral entrará cuando se publique |
+| CIS | Encuesta preelectoral, con su estimación publicada, y microdatos del barómetro de octubre (estudio 3582), recalculados |
 | More in Common | Microdatos del *Pulso electoral*, recalculados |
 | Resultados de 2023 | Ministerio del Interior (escrutinio del 23J, BOE-A-2023-18907) |
 | Reparto provincial de Adelante Andalucía | Resultados de las elecciones andaluzas del 17 de mayo de 2026 |
