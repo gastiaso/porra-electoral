@@ -40,7 +40,7 @@ D <- ag$d29n[sample.int(nrow(ag$d29n), NSIM, replace = TRUE), ]
 idx_h <- sample.int(nrow(ag$h[[1]]), NSIM, replace = TRUE)
 
 enc <- rbind(fread("datos/encuestas.csv", encoding = "UTF-8", colClasses = list(character = c("inicio", "fin"))),
-             fread("datos/anclas_microdatos.csv", encoding = "UTF-8", colClasses = list(character = c("inicio", "fin")))[casa != "CIS_M3"])
+             fread("datos/anclas_microdatos.csv", encoding = "UTF-8", colClasses = list(character = c("inicio", "fin")))[casa != "CIS_M3"], fill = TRUE)
 enc[, medio := as.Date(inicio) + round((as.Date(fin) - as.Date(inicio)) / 2)]
 serie <- fread("salidas/agregador_serie.csv"); serie[, fecha := as.Date(fecha)]
 # Escenario B: «si esta media falla como falló en 2023». Error del mismo agregador en el 23J (09_backtest.R),
