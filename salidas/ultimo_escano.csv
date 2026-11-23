@@ -1,208 +1,207 @@
 provincia,ccaa,escanos,partido,p
-Albacete,CLM,4,PP,0.80525
-Albacete,CLM,4,PSOE,0.10875
-Albacete,CLM,4,VOX,0.086
-Alicante/Alacant,CVA,12,FA,0.08975
-Alicante/Alacant,CVA,12,PP,0.36425
-Alicante/Alacant,CVA,12,PSOE,0.3085
-Alicante/Alacant,CVA,12,VOX,0.2375
-Almería,AND,6,PP,0.4105
-Almería,AND,6,PSOE,0.3445
-Almería,AND,6,VOX,0.245
-Araba/Álava,PVA,4,BILDU,0.1235
-Araba/Álava,PVA,4,PNV,0.40875
-Araba/Álava,PVA,4,PP,0.21025
-Araba/Álava,PVA,4,PSOE,0.25575
-Araba/Álava,PVA,4,VOX,0.00175
-Asturias,AST,7,FA,0.088
-Asturias,AST,7,PP,0.3035
-Asturias,AST,7,PSOE,0.39825
-Asturias,AST,7,VOX,0.21025
-Badajoz,EXT,5,PP,0.40425
-Badajoz,EXT,5,PSOE,0.49825
-Badajoz,EXT,5,VOX,0.0975
-Balears (Illes),BAL,8,FA,0.2735
-Balears (Illes),BAL,8,POD,0.00025
-Balears (Illes),BAL,8,PP,0.29775
-Balears (Illes),BAL,8,PSOE,0.25375
-Balears (Illes),BAL,8,VOX,0.17475
-Barcelona,CAT,32,ERC,0.17225
-Barcelona,CAT,32,FA,0.09225
-Barcelona,CAT,32,JUNTS,0.09625
-Barcelona,CAT,32,POD,0.00225
-Barcelona,CAT,32,PP,0.138
-Barcelona,CAT,32,PSOE,0.35
-Barcelona,CAT,32,VOX,0.149
-Bizkaia,PVA,8,BILDU,0.2445
-Bizkaia,PVA,8,FA,0.029
-Bizkaia,PVA,8,PNV,0.2765
-Bizkaia,PVA,8,PP,0.09425
-Bizkaia,PVA,8,PSOE,0.28875
-Bizkaia,PVA,8,VOX,0.067
-Burgos,CYL,4,PP,0.41225
-Burgos,CYL,4,PSOE,0.11875
-Burgos,CYL,4,VOX,0.469
-Cantabria,CANT,5,PP,0.3175
-Cantabria,CANT,5,PSOE,0.65675
-Cantabria,CANT,5,VOX,0.02575
-Castellón/Castelló,CVA,5,FA,0.02125
-Castellón/Castelló,CVA,5,PP,0.23775
-Castellón/Castelló,CVA,5,PSOE,0.672
-Castellón/Castelló,CVA,5,VOX,0.069
-Ceuta,CEU,1,PP,0.74025
-Ceuta,CEU,1,PSOE,0.08825
-Ceuta,CEU,1,VOX,0.1715
-Ciudad Real,CLM,5,PP,0.22425
-Ciudad Real,CLM,5,PSOE,0.746
-Ciudad Real,CLM,5,VOX,0.02975
-Coruña (A),GAL,8,BNG,0.09675
-Coruña (A),GAL,8,FA,0.01925
-Coruña (A),GAL,8,PP,0.40775
-Coruña (A),GAL,8,PSOE,0.18425
-Coruña (A),GAL,8,VOX,0.292
-Cuenca,CLM,3,PP,0.13875
-Cuenca,CLM,3,PSOE,0.0275
-Cuenca,CLM,3,VOX,0.83375
-Cáceres,EXT,4,PP,0.415
-Cáceres,EXT,4,PSOE,0.335
-Cáceres,EXT,4,VOX,0.25
-Cádiz,AND,8,AA,0.13825
-Cádiz,AND,8,FA,0.01
-Cádiz,AND,8,PP,0.3285
-Cádiz,AND,8,PSOE,0.24375
-Cádiz,AND,8,VOX,0.2795
-Córdoba,AND,6,AA,0.05075
-Córdoba,AND,6,FA,0.00375
-Córdoba,AND,6,PP,0.6095
-Córdoba,AND,6,PSOE,0.20375
-Córdoba,AND,6,VOX,0.13225
-Gipuzkoa,PVA,6,BILDU,0.35925
-Gipuzkoa,PVA,6,FA,5e-04
-Gipuzkoa,PVA,6,PNV,0.23475
-Gipuzkoa,PVA,6,PP,0.07125
-Gipuzkoa,PVA,6,PSOE,0.33175
-Gipuzkoa,PVA,6,VOX,0.0025
-Girona,CAT,6,ERC,0.28
-Girona,CAT,6,FA,0.002
-Girona,CAT,6,JUNTS,0.135
-Girona,CAT,6,PP,0.195
-Girona,CAT,6,PSOE,0.2405
-Girona,CAT,6,VOX,0.1475
-Granada,AND,7,AA,0.01975
-Granada,AND,7,FA,0.001
-Granada,AND,7,PP,0.39475
-Granada,AND,7,PSOE,0.19375
-Granada,AND,7,VOX,0.39075
-Guadalajara,CLM,3,PP,0.043
-Guadalajara,CLM,3,PSOE,0.30275
-Guadalajara,CLM,3,VOX,0.65425
-Huelva,AND,5,AA,0.011
-Huelva,AND,5,PP,0.32975
-Huelva,AND,5,PSOE,0.637
-Huelva,AND,5,VOX,0.02225
-Huesca,ARA,3,PP,0.4005
-Huesca,ARA,3,PSOE,0.03875
-Huesca,ARA,3,VOX,0.56075
-Jaén,AND,5,PP,0.31525
-Jaén,AND,5,PSOE,0.66375
-Jaén,AND,5,VOX,0.021
-León,CYL,4,PP,0.55125
-León,CYL,4,PSOE,0.174
-León,CYL,4,VOX,0.27475
-Lleida,CAT,4,ERC,0.17075
-Lleida,CAT,4,JUNTS,0.195
-Lleida,CAT,4,PP,0.156
-Lleida,CAT,4,PSOE,0.32475
-Lleida,CAT,4,VOX,0.1535
-Lugo,GAL,4,BNG,0.165
-Lugo,GAL,4,PP,0.71575
-Lugo,GAL,4,PSOE,0.11925
-Madrid,MAD,38,FA,0.09575
+Albacete,CLM,4,PP,0.788
+Albacete,CLM,4,PSOE,0.11375
+Albacete,CLM,4,VOX,0.09825
+Alicante/Alacant,CVA,12,FA,0.08525
+Alicante/Alacant,CVA,12,PP,0.36875
+Alicante/Alacant,CVA,12,PSOE,0.30725
+Alicante/Alacant,CVA,12,VOX,0.23875
+Almería,AND,6,PP,0.3955
+Almería,AND,6,PSOE,0.34975
+Almería,AND,6,VOX,0.25475
+Araba/Álava,PVA,4,BILDU,0.12225
+Araba/Álava,PVA,4,PNV,0.40525
+Araba/Álava,PVA,4,PP,0.2125
+Araba/Álava,PVA,4,PSOE,0.25925
+Araba/Álava,PVA,4,VOX,0.00075
+Asturias,AST,7,FA,0.103
+Asturias,AST,7,PP,0.3105
+Asturias,AST,7,PSOE,0.39925
+Asturias,AST,7,VOX,0.18725
+Badajoz,EXT,5,PP,0.39975
+Badajoz,EXT,5,PSOE,0.4785
+Badajoz,EXT,5,VOX,0.12175
+Balears (Illes),BAL,8,FA,0.2565
+Balears (Illes),BAL,8,PP,0.294
+Balears (Illes),BAL,8,PSOE,0.244
+Balears (Illes),BAL,8,VOX,0.2055
+Barcelona,CAT,32,ERC,0.172
+Barcelona,CAT,32,FA,0.092
+Barcelona,CAT,32,JUNTS,0.09025
+Barcelona,CAT,32,POD,0.003
+Barcelona,CAT,32,PP,0.145
+Barcelona,CAT,32,PSOE,0.364
+Barcelona,CAT,32,SALF,0.00025
+Barcelona,CAT,32,VOX,0.1335
+Bizkaia,PVA,8,BILDU,0.244
+Bizkaia,PVA,8,FA,0.0325
+Bizkaia,PVA,8,PNV,0.27525
+Bizkaia,PVA,8,PP,0.09625
+Bizkaia,PVA,8,PSOE,0.2935
+Bizkaia,PVA,8,VOX,0.0585
+Burgos,CYL,4,PP,0.3835
+Burgos,CYL,4,PSOE,0.14
+Burgos,CYL,4,VOX,0.4765
+Cantabria,CANT,5,PP,0.307
+Cantabria,CANT,5,PSOE,0.65775
+Cantabria,CANT,5,VOX,0.03525
+Castellón/Castelló,CVA,5,FA,0.02775
+Castellón/Castelló,CVA,5,PP,0.23925
+Castellón/Castelló,CVA,5,PSOE,0.66775
+Castellón/Castelló,CVA,5,VOX,0.06525
+Ceuta,CEU,1,PP,0.7485
+Ceuta,CEU,1,PSOE,0.0915
+Ceuta,CEU,1,VOX,0.16
+Ciudad Real,CLM,5,PP,0.221
+Ciudad Real,CLM,5,PSOE,0.7545
+Ciudad Real,CLM,5,VOX,0.0245
+Coruña (A),GAL,8,BNG,0.105
+Coruña (A),GAL,8,FA,0.024
+Coruña (A),GAL,8,PP,0.405
+Coruña (A),GAL,8,PSOE,0.192
+Coruña (A),GAL,8,VOX,0.274
+Cuenca,CLM,3,PP,0.157
+Cuenca,CLM,3,PSOE,0.0335
+Cuenca,CLM,3,VOX,0.8095
+Cáceres,EXT,4,PP,0.39375
+Cáceres,EXT,4,PSOE,0.33975
+Cáceres,EXT,4,VOX,0.2665
+Cádiz,AND,8,AA,0.14375
+Cádiz,AND,8,FA,0.01475
+Cádiz,AND,8,PP,0.32225
+Cádiz,AND,8,PSOE,0.24875
+Cádiz,AND,8,VOX,0.2705
+Córdoba,AND,6,AA,0.0515
+Córdoba,AND,6,FA,0.0055
+Córdoba,AND,6,PP,0.6205
+Córdoba,AND,6,PSOE,0.20075
+Córdoba,AND,6,VOX,0.12175
+Gipuzkoa,PVA,6,BILDU,0.36225
+Gipuzkoa,PVA,6,FA,0.002
+Gipuzkoa,PVA,6,PNV,0.23375
+Gipuzkoa,PVA,6,PP,0.06725
+Gipuzkoa,PVA,6,PSOE,0.3325
+Gipuzkoa,PVA,6,VOX,0.00225
+Girona,CAT,6,ERC,0.2755
+Girona,CAT,6,FA,0.00375
+Girona,CAT,6,JUNTS,0.13225
+Girona,CAT,6,PP,0.19025
+Girona,CAT,6,PSOE,0.23975
+Girona,CAT,6,VOX,0.1585
+Granada,AND,7,AA,0.02325
+Granada,AND,7,FA,0.00125
+Granada,AND,7,PP,0.38825
+Granada,AND,7,PSOE,0.202
+Granada,AND,7,VOX,0.38525
+Guadalajara,CLM,3,PP,0.04075
+Guadalajara,CLM,3,PSOE,0.27825
+Guadalajara,CLM,3,VOX,0.681
+Huelva,AND,5,AA,0.0115
+Huelva,AND,5,PP,0.3325
+Huelva,AND,5,PSOE,0.62675
+Huelva,AND,5,VOX,0.02925
+Huesca,ARA,3,PP,0.4305
+Huesca,ARA,3,PSOE,0.04275
+Huesca,ARA,3,VOX,0.52675
+Jaén,AND,5,PP,0.32125
+Jaén,AND,5,PSOE,0.652
+Jaén,AND,5,VOX,0.02675
+León,CYL,4,PP,0.51875
+León,CYL,4,PSOE,0.18675
+León,CYL,4,VOX,0.2945
+Lleida,CAT,4,ERC,0.16975
+Lleida,CAT,4,JUNTS,0.19475
+Lleida,CAT,4,PP,0.15925
+Lleida,CAT,4,PSOE,0.33575
+Lleida,CAT,4,VOX,0.1405
+Lugo,GAL,4,BNG,0.1705
+Lugo,GAL,4,PP,0.7105
+Lugo,GAL,4,PSOE,0.119
+Madrid,MAD,38,FA,0.0935
 Madrid,MAD,38,POD,0.00475
-Madrid,MAD,38,PP,0.422
-Madrid,MAD,38,PSOE,0.265
+Madrid,MAD,38,PP,0.41775
+Madrid,MAD,38,PSOE,0.26525
 Madrid,MAD,38,SALF,0.00025
-Madrid,MAD,38,VOX,0.21225
+Madrid,MAD,38,VOX,0.2185
 Melilla,MEL,1,PP,1
-Murcia,MUR,10,FA,0.0025
-Murcia,MUR,10,PP,0.4655
-Murcia,MUR,10,PSOE,0.21475
-Murcia,MUR,10,VOX,0.31725
-Málaga,AND,11,AA,0.1015
-Málaga,AND,11,FA,0.09
-Málaga,AND,11,PP,0.32975
-Málaga,AND,11,PSOE,0.2165
-Málaga,AND,11,VOX,0.26225
-Navarra,NAV,5,BILDU,0.10525
-Navarra,NAV,5,FA,0.00175
-Navarra,NAV,5,PP,0.0745
-Navarra,NAV,5,PSOE,0.48575
-Navarra,NAV,5,UPN,0.1525
-Navarra,NAV,5,VOX,0.18025
-Ourense,GAL,4,BNG,0.12875
-Ourense,GAL,4,PP,0.75025
-Ourense,GAL,4,PSOE,0.1205
-Ourense,GAL,4,VOX,5e-04
-Palencia,CYL,3,PP,0.567
-Palencia,CYL,3,PSOE,0.0285
-Palencia,CYL,3,VOX,0.4045
-Palmas (Las),CAN,8,CC,0.046
-Palmas (Las),CAN,8,FA,0.074
-Palmas (Las),CAN,8,PP,0.39275
-Palmas (Las),CAN,8,PSOE,0.31925
-Palmas (Las),CAN,8,VOX,0.168
-Pontevedra,GAL,7,BNG,0.09225
-Pontevedra,GAL,7,FA,0.024
-Pontevedra,GAL,7,PP,0.39525
-Pontevedra,GAL,7,PSOE,0.2595
-Pontevedra,GAL,7,VOX,0.229
-Rioja (La),RIO,4,PP,0.223
-Rioja (La),RIO,4,PSOE,0.4525
-Rioja (La),RIO,4,VOX,0.3245
-Salamanca,CYL,4,PP,0.39175
-Salamanca,CYL,4,PSOE,0.041
-Salamanca,CYL,4,VOX,0.56725
-Santa Cruz de Tenerife,CAN,7,CC,0.131
-Santa Cruz de Tenerife,CAN,7,FA,0.0325
-Santa Cruz de Tenerife,CAN,7,PP,0.34425
-Santa Cruz de Tenerife,CAN,7,PSOE,0.49225
-Segovia,CYL,3,PP,0.5105
-Segovia,CYL,3,PSOE,0.1025
-Segovia,CYL,3,VOX,0.387
-Sevilla,AND,12,AA,0.11325
-Sevilla,AND,12,FA,0.15625
-Sevilla,AND,12,PP,0.29025
-Sevilla,AND,12,PSOE,0.29325
-Sevilla,AND,12,VOX,0.147
-Soria,CYL,2,PP,0.05025
-Soria,CYL,2,PSOE,0.949
-Soria,CYL,2,VOX,0.00075
-Tarragona,CAT,6,ERC,0.2645
-Tarragona,CAT,6,FA,0.0015
-Tarragona,CAT,6,JUNTS,0.18025
-Tarragona,CAT,6,PP,0.15225
-Tarragona,CAT,6,PSOE,0.356
-Tarragona,CAT,6,VOX,0.0455
-Teruel,ARA,3,PP,0.16675
-Teruel,ARA,3,PSOE,0.05475
-Teruel,ARA,3,VOX,0.7785
-Toledo,CLM,6,PP,0.218
-Toledo,CLM,6,PSOE,0.31975
-Toledo,CLM,6,VOX,0.46225
-Valencia/València,CVA,16,FA,0.1345
-Valencia/València,CVA,16,PP,0.3375
-Valencia/València,CVA,16,PSOE,0.284
-Valencia/València,CVA,16,VOX,0.244
-Valladolid,CYL,5,PP,0.27775
-Valladolid,CYL,5,PSOE,0.692
-Valladolid,CYL,5,VOX,0.03025
-Zamora,CYL,3,PP,0.65975
-Zamora,CYL,3,PSOE,0.04
-Zamora,CYL,3,VOX,0.30025
-Zaragoza,ARA,7,FA,0.01675
-Zaragoza,ARA,7,PP,0.40175
-Zaragoza,ARA,7,PSOE,0.17225
-Zaragoza,ARA,7,VOX,0.40925
-Ávila,CYL,3,PP,0.27775
-Ávila,CYL,3,PSOE,0.2765
-Ávila,CYL,3,VOX,0.44575
+Murcia,MUR,10,FA,0.00325
+Murcia,MUR,10,PP,0.46775
+Murcia,MUR,10,PSOE,0.22025
+Murcia,MUR,10,VOX,0.30875
+Málaga,AND,11,AA,0.10675
+Málaga,AND,11,FA,0.09975
+Málaga,AND,11,PP,0.321
+Málaga,AND,11,PSOE,0.22525
+Málaga,AND,11,VOX,0.24725
+Navarra,NAV,5,BILDU,0.1055
+Navarra,NAV,5,FA,0.0025
+Navarra,NAV,5,PP,0.0775
+Navarra,NAV,5,PSOE,0.49175
+Navarra,NAV,5,UPN,0.152
+Navarra,NAV,5,VOX,0.17075
+Ourense,GAL,4,BNG,0.1305
+Ourense,GAL,4,PP,0.74475
+Ourense,GAL,4,PSOE,0.12475
+Palencia,CYL,3,PP,0.59625
+Palencia,CYL,3,PSOE,0.02925
+Palencia,CYL,3,VOX,0.3745
+Palmas (Las),CAN,8,CC,0.0495
+Palmas (Las),CAN,8,FA,0.09025
+Palmas (Las),CAN,8,PP,0.3825
+Palmas (Las),CAN,8,PSOE,0.3125
+Palmas (Las),CAN,8,VOX,0.16525
+Pontevedra,GAL,7,BNG,0.08925
+Pontevedra,GAL,7,FA,0.03075
+Pontevedra,GAL,7,PP,0.39625
+Pontevedra,GAL,7,PSOE,0.28
+Pontevedra,GAL,7,VOX,0.20375
+Rioja (La),RIO,4,PP,0.2215
+Rioja (La),RIO,4,PSOE,0.489
+Rioja (La),RIO,4,VOX,0.2895
+Salamanca,CYL,4,PP,0.3735
+Salamanca,CYL,4,PSOE,0.04125
+Salamanca,CYL,4,VOX,0.58525
+Santa Cruz de Tenerife,CAN,7,CC,0.12275
+Santa Cruz de Tenerife,CAN,7,FA,0.0415
+Santa Cruz de Tenerife,CAN,7,PP,0.34875
+Santa Cruz de Tenerife,CAN,7,PSOE,0.487
+Segovia,CYL,3,PP,0.5435
+Segovia,CYL,3,PSOE,0.0935
+Segovia,CYL,3,VOX,0.363
+Sevilla,AND,12,AA,0.11125
+Sevilla,AND,12,FA,0.14975
+Sevilla,AND,12,PP,0.30725
+Sevilla,AND,12,PSOE,0.29775
+Sevilla,AND,12,VOX,0.134
+Soria,CYL,2,PP,0.05375
+Soria,CYL,2,PSOE,0.94575
+Soria,CYL,2,VOX,5e-04
+Tarragona,CAT,6,ERC,0.25625
+Tarragona,CAT,6,FA,0.003
+Tarragona,CAT,6,JUNTS,0.17775
+Tarragona,CAT,6,PP,0.1515
+Tarragona,CAT,6,PSOE,0.36425
+Tarragona,CAT,6,VOX,0.04725
+Teruel,ARA,3,PP,0.19325
+Teruel,ARA,3,PSOE,0.05325
+Teruel,ARA,3,VOX,0.7535
+Toledo,CLM,6,PP,0.227
+Toledo,CLM,6,PSOE,0.3
+Toledo,CLM,6,VOX,0.473
+Valencia/València,CVA,16,FA,0.12275
+Valencia/València,CVA,16,PP,0.328
+Valencia/València,CVA,16,PSOE,0.3085
+Valencia/València,CVA,16,VOX,0.24075
+Valladolid,CYL,5,PP,0.27125
+Valladolid,CYL,5,PSOE,0.70175
+Valladolid,CYL,5,VOX,0.027
+Zamora,CYL,3,PP,0.6835
+Zamora,CYL,3,PSOE,0.04075
+Zamora,CYL,3,VOX,0.27575
+Zaragoza,ARA,7,FA,0.026
+Zaragoza,ARA,7,PP,0.3775
+Zaragoza,ARA,7,PSOE,0.17975
+Zaragoza,ARA,7,VOX,0.41675
+Ávila,CYL,3,PP,0.294
+Ávila,CYL,3,PSOE,0.26375
+Ávila,CYL,3,VOX,0.44225

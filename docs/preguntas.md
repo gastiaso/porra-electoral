@@ -18,7 +18,7 @@ Es la tendencia de una empresa a dar sistemáticamente más o menos a un partido
 
 ### ¿Cómo entra el CIS? {#cis}
 
-De dos formas. La primera es su propia estimación: la encuesta preelectoral aparece con las cifras que publicó el CIS. La segunda es un recálculo: el CIS publica las respuestas de cada entrevistado (microdatos), y eso permite estimar el voto con un procedimiento explícito y repetible, que consiste en quedarse con quienes probablemente votarán y repartir a los indecisos. Es el mismo que se aplica a los microdatos de More in Common. Hoy ese recálculo solo existe para el barómetro de octubre; el del preelectoral se hará cuando el CIS publique sus microdatos. En los dos casos el sesgo del CIS se estima aparte y no cuenta para la referencia de las empresas privadas, así que no mueve la media.
+De dos formas. La primera es su propia estimación: la encuesta preelectoral y el barómetro de noviembre aparecen con las cifras que publicó el CIS. La segunda es un recálculo: el CIS publica las respuestas de cada entrevistado (microdatos), y eso permite estimar el voto con un procedimiento explícito y repetible, que consiste en quedarse con quienes probablemente votarán y repartir a los indecisos. Es el mismo que se aplica a los microdatos de More in Common. Hoy ese recálculo solo existe para el barómetro de octubre: los microdatos del preelectoral se publicaron el 23-nov, el día del cierre y en versión preliminar, y no se han recalculado. En los dos casos el sesgo del CIS se estima aparte y no cuenta para la referencia de las empresas privadas, así que no mueve la media.
 
 ### ¿Qué se hace con SW Demoscopia y con los paneles de Electomanía? {#sw-electomania}
 

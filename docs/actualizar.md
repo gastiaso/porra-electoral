@@ -20,7 +20,7 @@ Abre `datos/encuestas.csv` con un editor de texto (o con Excel, guardando como �
 - **De dónde tomar las cifras:** la [base de sondeos de Demócrata](https://www.democrata.es/elecciones-generales-espana/herramientas/encuestas), que da fechas de campo, muestra y enlace al original. Si la encuesta no está allí, se toma de otra recopilación o del medio y se cita en `fuente`.
 - **En `nota`:** `n no publicada: se usa la habitual (1.000)`, `inicio de campo supuesto`, `PP 32,6 en algunas recopilaciones`, `publicada 3-nov`. Si la celda lleva comas, va entre comillas dobles.
 - **Trackings acumulados** (Sigma Dos, SW, SocioMétrica…): una sola fila por ventana de campo no solapada. Si la entrega nueva incluye días de la anterior, **sustituye** esa fila (fechas, muestra y cifras) en vez de añadir otra, y anótalo: `tracking acumulado (incluye la entrega del 29-30 oct)`. SW entra con `n` = 1000.
-- **CIS:** no se mete su estimación publicada. La fila `CIS_M3` es la reestimación propia (`R/05_cis_3584.R`).
+- **CIS:** su estimación publicada entra como casa `CIS` (preelectoral 3584 y barómetro de noviembre 3587), fuera de la restricción. El escenario «si acierta el CIS, tal como lo publicó» usa su **última fila del fichero**, así que va al final. Compromís-Front Valencià, UPC y Ara Més-Front Ampli se suman en `FA`. La fila `CIS_M3` es la reestimación propia sobre microdatos (`R/05_cis_3584.R`).
 - **Empresa nueva:** añade también su nombre para la web en `NOMBRE_CASA` de `R/07b_exportar_extra.R`; si no, la validación para.
 
 ## 2. Ejecutar

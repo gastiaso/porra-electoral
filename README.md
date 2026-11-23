@@ -42,7 +42,7 @@ No es una encuesta propia ni una casa de apuestas. Es un modelo hecho con las en
 | Qué | Fuente |
 |---|---|
 | Encuestas publicadas | [Base de sondeos de Demócrata](https://www.democrata.es/elecciones-generales-espana/herramientas/encuestas), que enlaza cada estudio con su publicación original; las que no figuran allí, de la fuente que cita cada fila |
-| CIS | Encuesta preelectoral, con su estimación publicada, y microdatos del barómetro de octubre (estudio 3582), recalculados |
+| CIS | Estimación publicada de la encuesta preelectoral (estudio 3584) y del barómetro de noviembre (3587); microdatos del barómetro de octubre (3582), recalculados |
 | More in Common | Microdatos del *Pulso electoral*, recalculados |
 | Resultados de 2023 | Ministerio del Interior (escrutinio del 23J, BOE-A-2023-18907) |
 | Reparto provincial de Adelante Andalucía | Resultados de las elecciones andaluzas del 17 de mayo de 2026 |

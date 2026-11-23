@@ -8,6 +8,8 @@
 
 *18-nov: entra el preelectoral del CIS con su estimación publicada; el Frente Amplio suma sus candidaturas territoriales; los seguimientos diarios entran por ventanas sin solape (sección 2).*
 
+*23-nov: entra el barómetro de noviembre del CIS (estudio 3587) con su estimación publicada, que pasa a ser la del escenario «si acierta el CIS, tal como lo publicó» (secciones 2 y 5).*
+
 ## 1. Qué es y qué no es
 
 Es una **media de encuestas publicadas**, corregida por el sesgo de cada empresa y convertida en escaños mediante simulación. No es una encuesta propia: no hay trabajo de campo. Tampoco es una predicción con garantías. Si las encuestas fallan juntas, como en 2023, la media falla con ellas. Por eso la portada enseña también qué pasaría con otros supuestos.
@@ -19,7 +21,7 @@ Es una **media de encuestas publicadas**, corregida por el sesgo de cada empresa
 - **Frente Amplio** incluye las candidaturas territoriales de su mismo espacio (Compromís–Front Valencià y las de Canarias, Baleares y Aragón) cuando la encuesta las publica aparte, porque el reparto de escaños las cuenta juntas. Se aplica desde mediados de octubre, cuando se conocieron las listas; las empresas que no las desglosan quedan como las publican.
 - **SW Demoscopia** entra con una muestra efectiva de 1.000 entrevistas, menor que la declarada, por dos razones: acumula entrevistas día a día y hay dudas publicadas sobre su modo de entrevista (llamadas automáticas).
 - Cifras, fechas de campo y muestras se toman de la [base de sondeos de Demócrata](https://www.democrata.es/elecciones-generales-espana/herramientas/encuestas), que enlaza cada estudio con su publicación original. Las pocas que no figuran allí salen de otras recopilaciones, citadas fila a fila; las discrepancias se anotan en la columna `nota`.
-- **CIS:** aparece de dos formas. Su **encuesta preelectoral entra con la estimación que publicó**; y su barómetro de octubre, con una **reestimación propia sobre sus microdatos** (votantes probables más reparto de indecisos, modelo M3). El preelectoral se recalculará igual cuando se publiquen sus microdatos. En los dos casos su sesgo se estima aparte y no cuenta para la referencia de las privadas.
+- **CIS:** aparece de dos formas. Su **encuesta preelectoral y su barómetro de noviembre entran con la estimación que publicó**; y su barómetro de octubre, con una **reestimación propia sobre sus microdatos** (votantes probables más reparto de indecisos, modelo M3). Los microdatos del preelectoral se publicaron el 23-nov, el día del cierre y en versión preliminar, y no se han recalculado. En los dos casos su sesgo se estima aparte y no cuenta para la referencia de las privadas.
 
 ## 3. Agregador
 

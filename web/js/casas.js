@@ -7,8 +7,8 @@ const A_QUIEN = { PP: 'al PP', PSOE: 'al PSOE', VOX: 'a Vox', FA: 'a Frente Ampl
 const CORTO = { PP: 'PP', PSOE: 'PSOE', VOX: 'Vox', FA: 'FA' };
 const MES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
 const NOTA_APARTE = {
-  CIS: 'Su encuesta preelectoral, con la estimación que publicó el propio CIS. Su sesgo se estima aparte: no cuenta para la referencia de las empresas privadas, así que no mueve la media, pero aquí se ve cuánto se separa de ella.',
-  CIS_M3: 'Reestimación propia sobre los microdatos del barómetro de octubre: votantes probables más reparto de indecisos (modelo M3). Por eso estas cifras no son las del CIS. El preelectoral se recalculará igual cuando se publiquen sus microdatos.',
+  CIS: 'Su encuesta preelectoral y su barómetro de noviembre, con la estimación que publicó el propio CIS. Su sesgo se estima aparte: no cuenta para la referencia de las empresas privadas, así que no mueve la media, pero aquí se ve cuánto se separa de ella.',
+  CIS_M3: 'Reestimación propia sobre los microdatos del barómetro de octubre: votantes probables más reparto de indecisos (modelo M3). Por eso estas cifras no son las del CIS. Los microdatos del preelectoral se publicaron el 23-nov, el día del cierre y en versión preliminar, y no se han recalculado.',
   SW: 'Entra con una muestra efectiva de 1000 entrevistas, menor que la declarada, por dos razones: acumula entrevistas día a día y hay dudas publicadas sobre su modo de entrevista (llamadas automáticas).'
 };
 
