@@ -1,24 +1,24 @@
 empresa,medio,inicio,fin,muestra,modo,PP,PSOE,VOX,FA,POD,SALF,fuente,nota
-AteneoDato,elDiario.es,2026-09-29,2026-10-01,1500,online,33.2,27.5,19.2,7,3.3,,elDiario.es,""
 SigmaDos,El Mundo,2026-09-22,2026-10-01,2116,tel,32.6,25.6,18.3,6.6,3.3,,"El Mundo, vía Demócrata",""
+AteneoDato,elDiario.es,2026-09-29,2026-10-01,1500,online,33.2,27.5,19.2,7,3.3,,elDiario.es,""
 Winston,Articulo14,2026-09-29,2026-10-01,1201,"",31.3,24.9,19.1,6.8,3.9,,"Artículo14, vía Demócrata",""
 Data10,Okdiario,2026-10-02,2026-10-02,1000,"",34,26.1,18.6,5.2,4.3,1.4,"Okdiario, vía Demócrata",""
-EMAnalytics,Electomania,2026-10-02,2026-10-03,8171,online,31.3,26.9,19.4,6.3,3.4,1.7,"Electomanía, vía Demócrata",""
 SocioMetrica,El Espanol,2026-10-01,2026-10-03,1000,online,33.4,26.5,18.1,5.3,3.1,2.2,El Español,"Podemos no figura en el texto del medio: sin contrastar; el texto habla de encuestas telefónicas y la ficha, de panel online"
+EMAnalytics,Electomania,2026-10-02,2026-10-03,8171,online,31.3,26.9,19.4,6.3,3.4,1.7,"Electomanía, vía Demócrata",""
 NCReport,La Razon,2026-10-01,2026-10-06,1000,tel,34.1,25,18.2,5.3,3.9,,"La Razón, vía Demócrata",""
 DYM,Henneo,2026-10-05,2026-10-07,1011,mixto,34,28.2,18.2,3.6,2.6,0.5,"Diario de León (Henneo), vía Demócrata","Podemos 2,6: corregido el 19-nov (figuraba 3,6); coincide con la variación que publica el medio (-1,1 sobre el 3,7 de septiembre)"
 IMOP,El Confidencial,2026-10-05,2026-10-07,900,"",30.4,26.5,19,7.6,2.3,1.9,"El Confidencial, vía Demócrata",""
-40dB,El Pais-SER,2026-10-07,2026-10-08,800,online,31.9,28.1,18.9,5.3,2.3,1.8,"El País, vía Demócrata",""
-GAD3,ABC,2026-10-06,2026-10-08,1077,tel,31.4,26.4,18.2,7.4,2.3,1.8,"ABC, vía Demócrata","inicio de campo según recopilaciones, sin contrastar"
 Hamalgama,Vozpopuli,2026-10-05,2026-10-08,1000,tel,33.4,25.3,19.6,5.4,3.3,1.8,Vozpópuli,"Frente Amplio, Podemos y SALF no figuran en el texto del medio: sin contrastar"
 InvyMark,laSexta,2026-10-05,2026-10-08,1200,tel,32.8,28,18.8,6.3,3.2,1.8,"laSexta, vía Demócrata",n no publicada: se usa la de su oleada anterior
+GAD3,ABC,2026-10-06,2026-10-08,1077,tel,31.4,26.4,18.2,7.4,2.3,1.8,"ABC, vía Demócrata","inicio de campo según recopilaciones, sin contrastar"
 GESOP,Prensa Iberica,2026-10-06,2026-10-08,1000,"",28.7,26.1,18.9,8,2.6,2,"El Periódico, vía Demócrata",publicada el 12-oct
+40dB,El Pais-SER,2026-10-07,2026-10-08,800,online,31.9,28.1,18.9,5.3,2.3,1.8,"El País, vía Demócrata",""
 EMAnalytics,Electomania,2026-10-05,2026-10-09,4125,online,31.5,26.9,19.1,6,3.4,1.7,"Electomanía, vía Demócrata",""
 TargetPoint,El Debate,2026-10-06,2026-10-09,1002,online,32,25.9,18.7,6.9,3.4,1.3,El Debate,"el medio da PP, Vox y la suma de Sumar y Podemos (10,3); PSOE, el reparto entre ambos y SALF, sin contrastar"
 IMOP,El Confidencial,2026-10-13,2026-10-16,1000,"",28.5,27.1,20,8.9,1.9,1.2,"El Confidencial, vía Demócrata",""
 EMAnalytics,Electomania,2026-10-15,2026-10-17,3141,online,31.8,27.1,18.9,6.2,2,1.7,"Electomanía, vía Demócrata","panel online; solape revisado (un día con la entrega contigua); FA 4,9 + Compromís-Front Valencià 1,3"
-AteneoDato,elDiario.es,2026-10-20,2026-10-22,2000,online,31.1,27.6,19.8,6.8,2.7,,elDiario.es,""
 SigmaDos,El Mundo,2026-10-08,2026-10-22,3122,tel,30.6,26.1,19.9,8.2,2.8,,"El Mundo, vía Demócrata","tracking: solapa con la entrega del 1-14 oct, que se retira; FA 7,4 + Compromís-Front Valencià 0,8"
+AteneoDato,elDiario.es,2026-10-20,2026-10-22,2000,online,31.1,27.6,19.8,6.8,2.7,,elDiario.es,""
 EMAnalytics,Electomania,2026-10-17,2026-10-23,4309,online,30.9,26.7,19,7,1.7,1.7,"Electomanía, vía Demócrata","panel online; solape revisado (un día con la entrega contigua); FA 5,8 + Compromís-Front Valencià 1,2"
 Winston,Articulo14,2026-10-21,2026-10-23,1200,"",29.4,27.1,19.2,5.6,,,"Artículo14, vía Demócrata",""
 NCReport,La Razon,2026-10-22,2026-10-24,1000,tel,32.9,25.8,19,6.6,2.6,,"La Razón, vía Demócrata",""
@@ -26,30 +26,35 @@ MoreInCommon,propia,2026-10-21,2026-10-25,2210,online,28.3,27.6,20.8,7.8,2.6,2.4
 Hamalgama,Vozpopuli,2026-10-22,2026-10-28,1000,tel,32,26.4,19.9,5.4,2.2,1.8,Vozpópuli,"PP 32,0 según Vozpópuli (corregido el 19-nov; figuraba 32,4); Podemos y SALF no figuran en el texto del medio: sin contrastar"
 Sondaxe,La Voz de Galicia,2026-10-26,2026-10-28,1200,"",29.2,26.9,19.2,7.2,2,2.4,"La Voz de Galicia, vía Demócrata",""
 NCReport,La Razon,2026-10-26,2026-10-29,1000,tel,33,25.6,19.3,6.9,2.4,,"La Razón, vía Demócrata","publicada el 2-nov; n no publicada: se usa la habitual (1.000); PP sin contrastar: la base de Demócrata da 32,6 y aquí figura 33,0, la cifra coherente con los 138-140 escaños de esta entrega"
+CIS,preelectoral,2026-10-07,2026-10-30,45074,tel,25.5,33.3,18.4,6.9,1.1,1.4,"CIS, estudio 3584 (estimación de voto y ficha técnica)","estimación publicada por el CIS (12-nov); FA 4,7 + Compromís-Front Valencià 1,6 + UPC 0,4 + Ara Més-Front Ampli 0,2; Podemos 1,1 no incluye Cataluña, donde el CIS lo da junto a ERC (3,1)"
 EMAnalytics,Electomania,2026-10-28,2026-10-30,1527,online,31.5,25.8,19.2,7.6,1.7,1.6,"Electomanía, vía Demócrata","panel online; FA 6,2 + Compromís-Front Valencià 1,4"
 TargetPoint,El Debate,2026-10-28,2026-10-30,1024,online,31.8,25.5,19.9,6.6,2.4,2.6,El Debate,Podemos y SALF no figuran en el texto del medio: sin contrastar
+YouGov,Ara,2026-10-26,2026-11-02,1221,online,29.6,25.9,20,9.2,1.8,,Ara,"publicada el 14-nov; el Ara da PP, PSOE y Vox («el 20 %»); Frente Amplio y Podemos solo en escaños: sus porcentajes vienen de recopilaciones, sin contrastar"
 CelesteTel,Onda Cero,2026-10-29,2026-11-03,1100,tel,31.4,25.7,19.2,8,1.9,1.6,Celeste-Tel (informe),"PP 31,4 sin UPN (0,4 aparte): corregido el 19-nov, figuraba el 31,8 que suma ambos; FA 6,8 + Compromís-Front Valencià 1,2"
 Data10,Okdiario,2026-11-02,2026-11-03,1500,mixto,32.4,24.7,19.8,6.9,3.1,1.5,Okdiario,""
 40dB,El Pais-SER,2026-11-02,2026-11-04,2000,online,31.9,29.9,18,5,1.2,2,"El País, vía Demócrata","FA 5,0 con las coaliciones territoriales (3,9 sin ellas)"
 Sondaxe,La Voz de Galicia,2026-11-02,2026-11-04,1200,"",29.7,27.3,18.6,7.1,2.2,1.6,"La Voz de Galicia, vía Demócrata",""
 AteneoDato,elDiario.es,2026-11-02,2026-11-05,2000,online,31.5,28.6,18.6,6.1,1.5,,elDiario.es,""
-GAD3,ABC (Vocento),2026-11-03,2026-11-05,1502,tel,31.9,25.9,18.6,7.5,1.4,1.3,"ABC, vía Demócrata","FA 7,5 con sus coaliciones territoriales, como en la entrega de octubre (7,4); 6,0 sin ellas"
 NCReport,La Razon,2026-11-02,2026-11-05,1000,tel,32.6,25.6,19.3,6.9,2.4,,"La Razón, vía Infobae","PP 32,6 según Infobae y otros medios (la base de Demócrata da 33,0); n no publicada: se usa la habitual (1.000)"
-DYM,Henneo,2026-11-04,2026-11-06,1025,online,33.1,27.3,18.6,5.6,1.9,,Heraldo y Diario de León (Henneo),porcentajes según Heraldo; muestra y modo según Diario de León; Podemos sin contrastar
+GAD3,ABC (Vocento),2026-11-03,2026-11-05,1502,tel,31.9,25.9,18.6,7.5,1.4,1.3,"ABC, vía Demócrata","FA 7,5 con sus coaliciones territoriales, como en la entrega de octubre (7,4); 6,0 sin ellas"
+SigmaDos,El Mundo,2026-10-30,2026-11-06,4172,tel,31,25.2,19.4,8.1,1.6,,"El Mundo, vía Demócrata","tracking acumulado (incluye la entrega del 29-30 oct); FA 6,9 + Compromís-Front Valencià 1,2"
 EMAnalytics,Electomania,2026-11-01,2026-11-06,1860,online,31.1,25.3,19.2,7.6,1.8,1.9,"Electomanía, vía Demócrata","panel online; FA 6,1 + Compromís-Front Valencià 1,5"
 IMOP,El Confidencial,2026-11-02,2026-11-06,1000,"",29.8,25.9,19.9,8.1,1.2,1.7,"El Confidencial, vía Demócrata","tercera oleada, publicada el 8-nov; el enlace es el artículo de Demócrata (El Confidencial, solo para suscriptores)"
-SigmaDos,El Mundo,2026-10-30,2026-11-06,4172,tel,31,25.2,19.4,8.1,1.6,,"El Mundo, vía Demócrata","tracking acumulado (incluye la entrega del 29-30 oct); FA 6,9 + Compromís-Front Valencià 1,2"
-40dB,El Pais-SER,2026-11-12,2026-11-16,2000,online,31.8,30.6,17.5,5.4,1.1,,"El País, vía Demócrata","tracking diario (entrega del 17-nov): una fila por ventana sin solape; FA 3,7 + 1,7 de otras coaliciones territoriales"
-EMAnalytics,Electomania,2026-11-09,2026-11-16,4446,online,30.8,27,18.8,7.7,1.3,2.2,Electomanía,"tracking acumulado desde el 9-nov (entrega del 17-nov); FA 6,1 + Compromís-Front Valencià 1,6"
-SigmaDos,El Mundo,2026-11-11,2026-11-16,3759,mixto,30.7,26.4,19.8,6.7,1.2,,"El Mundo, vía Demócrata","quinta entrega del tracking (17-nov); la del 15-nov (campo 3-13) no entra porque solapa con la anterior y con esta; FA 4,9 + Compromís-Front Valencià 1,4 + UPC 0,4"
-SW,La Septima,2026-10-26,2026-11-16,1000,IVR,28.9,31.9,16.5,7.3,,,"La Séptima, vía Demócrata","tracking acumulado desde el 26-oct (más de 9.000 entrevistas declaradas): entra solo la última entrega (17-nov), con n efectiva 1000 por modo y solapamiento"
-Sondaxe,La Voz de Galicia,2026-11-11,2026-11-15,1000,"",29.7,26.7,18,6,2.1,,"La Voz de Galicia, vía Demócrata",tercera entrega del tracking (publicada el 16-nov)
-NCReport,La Razon,2026-11-06,2026-11-12,1000,tel,32.1,26.1,19,7.6,1.5,,"La Razón, vía Infobae","PP 32,1 según Infobae (la base de Demócrata da 32,5); n no publicada: se usa la habitual (1.000)"
-IMOP,El Confidencial,2026-11-10,2026-11-13,1000,"",31.5,26.9,19,6.9,0.9,1.6,"El Confidencial, vía Demócrata",FA incluye Compromís-Front Valencià
-TargetPoint,El Debate,2026-11-12,2026-11-12,1013,online,30.6,27,18.7,7.3,1.6,,El Debate,""
-Data10,Okdiario,2026-11-11,2026-11-12,1500,"",31.7,25.5,20.4,6.7,2.1,,"Okdiario, vía Periodista Digital","PP 31,7 según Periodista Digital e Hispanidad (la base de Demócrata da 32,0); Okdiario publica los porcentajes solo en imagen"
-InvyMark,laSexta,2026-11-09,2026-11-13,1200,tel,32.2,28.2,19.1,6.4,,,"laSexta, vía Demócrata",n no publicada: se usa la de su oleada de octubre
-SocioMetrica,El Espanol,2026-10-19,2026-11-15,1500,online,31.6,27.8,19.1,6,1.2,2.2,El Español,"acumulado CAWI de 5.923 desde 1-sep: ventana y n efectivas supuestas; sustituye a la entrega del 8-nov, con la que comparte casi toda la muestra; PP 31,6 según El Español (la base de Demócrata da 32,1); FA 4,4 + Compromís-FV 0,9 + CHA, MÉS y UPC 0,7 (desglose territorial sin contrastar)"
+DYM,Henneo,2026-11-04,2026-11-06,1025,online,33.1,27.3,18.6,5.6,1.9,,Heraldo y Diario de León (Henneo),porcentajes según Heraldo; muestra y modo según Diario de León; Podemos sin contrastar
 Winston,Articulo14,2026-11-05,2026-11-08,1501,"",31.1,26.4,18.7,8.4,1.6,,"Artículo14, vía Demócrata",publicada el 13-nov
-YouGov,Ara,2026-10-26,2026-11-02,1221,online,29.6,25.9,20,9.2,1.8,,Ara,"publicada el 14-nov; el Ara da PP, PSOE y Vox («el 20 %»); Frente Amplio y Podemos solo en escaños: sus porcentajes vienen de recopilaciones, sin contrastar"
-CIS,preelectoral,2026-10-07,2026-10-30,45074,tel,25.5,33.3,18.4,6.9,1.1,1.4,"CIS, estudio 3584 (estimación de voto y ficha técnica)","estimación publicada por el CIS (12-nov); FA 4,7 + Compromís-Front Valencià 1,6 + UPC 0,4 + Ara Més-Front Ampli 0,2; Podemos 1,1 no incluye Cataluña, donde el CIS lo da junto a ERC (3,1)"
+NCReport,La Razon,2026-11-06,2026-11-12,1000,tel,32.1,26.1,19,7.6,1.5,,"La Razón, vía Infobae","PP 32,1 según Infobae (la base de Demócrata da 32,5); n no publicada: se usa la habitual (1.000)"
+Data10,Okdiario,2026-11-11,2026-11-12,1500,"",31.7,25.5,20.4,6.7,2.1,,"Okdiario, vía Periodista Digital","PP 31,7 según Periodista Digital e Hispanidad (la base de Demócrata da 32,0); Okdiario publica los porcentajes solo en imagen"
+TargetPoint,El Debate,2026-11-12,2026-11-12,1013,online,30.6,27,18.7,7.3,1.6,,El Debate,""
+InvyMark,laSexta,2026-11-09,2026-11-13,1200,tel,32.2,28.2,19.1,6.4,,,"laSexta, vía Demócrata",n no publicada: se usa la de su oleada de octubre
+IMOP,El Confidencial,2026-11-10,2026-11-13,1000,"",31.5,26.9,19,6.9,0.9,1.6,"El Confidencial, vía Demócrata",FA incluye Compromís-Front Valencià
+Sondaxe,La Voz de Galicia,2026-11-11,2026-11-15,1000,"",29.7,26.7,18,6,2.1,,"La Voz de Galicia, vía Demócrata",tercera entrega del tracking (publicada el 16-nov)
+EMAnalytics,Electomania,2026-11-09,2026-11-16,4446,online,30.8,27,18.8,7.7,1.3,2.2,Electomanía,"tracking acumulado desde el 9-nov (entrega del 17-nov); FA 6,1 + Compromís-Front Valencià 1,6"
+40dB,El Pais-SER,2026-11-12,2026-11-16,2000,online,31.8,30.6,17.5,5.4,1.1,,"El País, vía Demócrata","tracking diario (entrega del 17-nov): una fila por ventana sin solape; FA 3,7 + 1,7 de otras coaliciones territoriales"
+SW,La Septima,2026-10-26,2026-11-20,1000,IVR,29.7,32.5,15.9,6.8,,,"La Séptima, vía Demócrata","tracking acumulado desde el 26-oct: entra solo la última entrega (21-nov), con n efectiva 1000 por modo y solapamiento; FA con sus coaliciones"
+Hamalgama,Vozpopuli,2026-11-10,2026-11-20,1000,tel,31.8,25.4,20.6,6.5,,,Vozpópuli,"publicada el 22-nov; PP 31,8 según Vozpópuli (las recopilaciones dan 32,2); la ficha da campo del 10 al 20 y la entradilla, del 10 al 18; el medio no da Podemos ni SALF"
+SigmaDos,El Mundo,2026-11-14,2026-11-20,4511,mixto,31.5,28,18.3,7.2,,,"El Mundo, vía Demócrata","entrega del tracking publicada el 21-nov; sustituye a la del 11-16 nov, con la que solapa; FA 7,2 con sus confluencias; muestra sin contrastar"
+Sondaxe,La Voz de Galicia,2026-11-16,2026-11-20,1000,"",29.5,27.9,19.8,6.8,,,"La Voz de Galicia, vía Demócrata","entrega del tracking publicada el 21-nov; cifras según el artículo de Demócrata (las recopilaciones dan 30,0/27,7/18,8/6,6 para la misma ventana); FA con sus coaliciones territoriales; campo y muestra sin contrastar"
+GAD3,ABC (Vocento),2026-11-17,2026-11-20,1000,tel,31.1,28.4,18.1,7.8,1.3,2.4,"ABC, vía Demócrata","publicada el 22-nov; campo y muestra supuestos (no constan en la fuente consultada); PP incluye UPN-PP; FA 5,8 + Compromís-Front Valencià 1,5 + CHA 0,3 + Ara Més 0,2"
+SocioMetrica,El Espanol,2026-10-25,2026-11-21,1500,online,31.8,28.5,18.8,5.8,1,2.2,El Español,"acumulado CAWI de 6.842 desde 1-sep: ventana y n efectivas supuestas; sustituye a la entrega del 15-nov, con la que comparte casi toda la muestra; PP 31,8 según El Español (las recopilaciones dan 32,3); FA 4,2 más 1,6 de coaliciones territoriales, que es el desglose de la entrega anterior y está sin contrastar"
+40dB,El Pais-SER,2026-11-17,2026-11-21,2000,online,31.9,31.6,16.9,5.3,1,1.4,"El País, vía Demócrata","tracking diario (entrega del 21-nov): una fila por ventana sin solape; FA 3,6 + 1,7 de otras coaliciones territoriales; cifras según el artículo de Demócrata, muestra sin contrastar"
+Data10,Okdiario,2026-11-18,2026-11-21,3000,mixto,32.1,27,19,6.6,,,Okdiario,tracking diario (publicada el 22-nov): entra la última entrega; las del 16-19 y 17-20 nov solapan con ella; el medio no da Podemos ni SALF
