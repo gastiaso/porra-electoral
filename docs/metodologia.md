@@ -8,7 +8,7 @@
 
 *18-nov: entra el preelectoral del CIS con su estimación publicada; el Frente Amplio suma sus candidaturas territoriales; los seguimientos diarios entran por ventanas sin solape (sección 2).*
 
-*23-nov: entra el barómetro de noviembre del CIS (estudio 3587) con su estimación publicada, que pasa a ser la del escenario «si acierta el CIS, tal como lo publicó» (secciones 2 y 5).*
+*23-nov: entra el barómetro de noviembre del CIS (estudio 3587) con su estimación publicada, que pasa a ser la del escenario «si acierta el CIS, tal como lo publicó» (secciones 2 y 5). Se añade una comprobación con las encuestas de los cinco días hasta el corte (sección 3).*
 
 ## 1. Qué es y qué no es
 
@@ -31,6 +31,7 @@ Es una **media de encuestas publicadas**, corregida por el sesgo de cada empresa
 - **SW Demoscopia y el CIS (publicado y recalculado) quedan fuera de esa referencia:** su sesgo se estima libremente, sin obligarlo a compensarse con el de las demás. Los paneles de Electomanía entran como una empresa privada más.
 - Los sesgos pueden ser grandes en una empresa concreta sin arrastrar al resto (distribución de colas anchas).
 - Se estima por MCMC (JAGS) y se proyecta hasta el 29 de noviembre: la incertidumbre crece con los días que faltan.
+- <!-- robustez -->**Comprobación con las encuestas más recientes (corte del 21 de noviembre).** Con solo las encuestas cuyo punto medio de campo cae en los cinco días hasta el corte, del 17 al 21 de noviembre (7: 40dB, DYM, Data10, GAD3, Ipsos, Sigma Dos y Sondaxe; la última de cada empresa; el CIS y SW Demoscopia entran como las demás si caen en esos días), la media simple da PP 31,3, PSOE 28,7, Vox 18,3 y Frente Amplio 6,6. Restando a cada encuesta el sesgo estimado de su empresa, PP 31,2, PSOE 28,5, Vox 18,3 y Frente Amplio 6,9. La media del modelo ese día es PP 31,2, PSOE 28,1, Vox 18,3 y Frente Amplio 7,0. La mayor diferencia es de 0,6 puntos (PSOE, media simple). Con tan pocas encuestas, el resultado depende de qué empresas publicaron esos días.<!-- /robustez -->
 
 ## 4. De votos a escaños
 

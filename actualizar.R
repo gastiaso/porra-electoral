@@ -101,6 +101,7 @@ paso("R/03_escanos.R", "unos 3 minutos")
 paso("R/06_graficos.R")
 paso("R/07_exportar_json.R")
 if (file.exists("R/07b_exportar_extra.R")) paso("R/07b_exportar_extra.R")
+if (file.exists("R/07c_robustez.R")) paso("R/07c_robustez.R", "nota de la metodología")
 paso("R/pruebas.R")
 
 # ------------------------------------------------------------------ resumen de cambios

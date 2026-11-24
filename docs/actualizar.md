@@ -35,7 +35,7 @@ El corte es por defecto la fecha de fin de campo más reciente del fichero, y es
 
 1. Valida `datos/encuestas.csv`. Los **errores** paran (fechas, números, columnas, duplicados, campo posterior al corte). Los **avisos** no paran, pero hay que leerlos: casa nueva, solape de ventanas de una misma casa, saltos de más de 4 puntos frente a su entrega anterior.
 2. Guarda una copia de `web/datos/` en `salidas/copias/<fecha-hora>/`.
-3. Recalcula: agregador (R/02), More in Common si hay un ZIP nuevo en `datos/mic/` (R/04), escaños (R/03), gráficos (R/06) y datos de la web (R/07 y R/07b).
+3. Recalcula: agregador (R/02), More in Common si hay un ZIP nuevo en `datos/mic/` (R/04), escaños (R/03), gráficos (R/06), datos de la web (R/07 y R/07b) y la comprobación con las encuestas de los cinco días hasta el corte, que reescribe su nota en la sección 3 de la metodología (R/07c; si falla, avisa y no para).
 4. Pasa las pruebas de publicación (`R/pruebas.R`).
 5. Muestra el resumen de cambios y lo guarda en `salidas/ultima_actualizacion.txt`.
 
